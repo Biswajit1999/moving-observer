@@ -8,6 +8,7 @@ The current release adds the full embedded and standalone research report, a usa
 - The browser-exported Proxima CSV matches all 1,501 rows and nine numeric fields of the reproducible source export exactly. The displayed closest-approach radial velocity rounds to 0.00 rather than a negative zero.
 - Fixed report text encoding and mobile navigation width after visual inspection. Native MathML displays offline. Print styling is supplied; print pagination has not been separately verified.
 - The renderer samples 180,000 luminous points from the credited ESA reconstruction, uses soft point profiles, illustrative disk/bulge thickness and warp, fades the surface near edge-on, and applies schematic dust attenuation. These are rendering assumptions, not measured stellar positions or a fitted dust model. Solar-system lighting now shows a stronger day/night boundary. The simulation footer and saved images credit Biswajit Jana, 2026.
+- Publication check: the public simulation and standalone report loaded successfully from GitHub Pages. Visible simulation author/year credit, the public +50 Myr state, report equations and tutorial anchors were verified. The GitHub model/build workflow passed on the published source.
 - Preview evidence: preview-v5-galaxy.png, preview-v5-report.png and preview-v5-tutorial-mobile.png. Historical v4 images remain labelled by version.
 - Dependency audit reported zero known vulnerabilities after updating the report build dependencies. Numerical agreement does not validate omitted physics or an observational discovery forecast.
 
