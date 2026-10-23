@@ -1,0 +1,17 @@
+name: Simulation defect
+description: Report incorrect behaviour or a numerical implementation defect.
+title: "Simulation: "
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include view, time, controls and browser/OS.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true

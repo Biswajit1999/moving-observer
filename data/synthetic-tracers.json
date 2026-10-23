@@ -1,0 +1,101 @@
+{
+  "frame": "Same as Galactic model; clockwise rotation viewed from north",
+  "tracers": [
+    {
+      "name": "Illustrative A",
+      "type": "synthetic; not a catalogue star",
+      "initialStateKpcKpcPerMyr": [
+        0.12,
+        -8.16,
+        0.045,
+        -0.24631991363324637,
+        0.0005888160673792916,
+        0.0020454243301074155
+      ],
+      "offsetFromSunKpc": [
+        0.12,
+        0.04,
+        0.025
+      ],
+      "peculiarVelocityKmS": [
+        -8,
+        4,
+        2
+      ],
+      "initial": {
+        "distanceKpc": 0.128937969582276,
+        "relativeSpeedKmS": 9.324655339401607,
+        "radialKmS": -8.096403904986913
+      },
+      "at250Myr": {
+        "distanceKpc": 1.6835094874900127,
+        "relativeSpeedKmS": 37.19815624123434,
+        "radialKmS": 12.460051559929829
+      }
+    },
+    {
+      "name": "Illustrative B",
+      "type": "synthetic; not a catalogue star",
+      "initialStateKpcKpcPerMyr": [
+        -0.18,
+        -8.049999999999999,
+        -0.02,
+        -0.23161243785874627,
+        -0.00491100140794921,
+        0.004090848660214831
+      ],
+      "offsetFromSunKpc": [
+        -0.18,
+        0.15,
+        -0.04
+      ],
+      "peculiarVelocityKmS": [
+        6,
+        -10,
+        4
+      ],
+      "initial": {
+        "distanceKpc": 0.23769728648009447,
+        "relativeSpeedKmS": 8.643764603619259,
+        "radialKmS": -7.471265828525044
+      },
+      "at250Myr": {
+        "distanceKpc": 2.4169015194630163,
+        "relativeSpeedKmS": 59.893379706491565,
+        "radialKmS": 18.074240070715867
+      }
+    },
+    {
+      "name": "Illustrative C",
+      "type": "synthetic; not a catalogue star",
+      "initialStateKpcKpcPerMyr": [
+        0.3,
+        -8.399999999999999,
+        0.08,
+        -0.2510850350382657,
+        -0.00034732014591395445,
+        -0.003068136495161123
+      ],
+      "offsetFromSunKpc": [
+        0.3,
+        -0.2,
+        0.06
+      ],
+      "peculiarVelocityKmS": [
+        -12,
+        8,
+        -3
+      ],
+      "initial": {
+        "distanceKpc": 0.36551333764994093,
+        "relativeSpeedKmS": 16.01843530878066,
+        "radialKmS": -11.722627994398731
+      },
+      "at250Myr": {
+        "distanceKpc": 4.130749501006131,
+        "relativeSpeedKmS": 100.21645731170861,
+        "radialKmS": 31.567251900756442
+      }
+    }
+  ]
+}

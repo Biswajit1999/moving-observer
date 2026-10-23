@@ -1,0 +1,94 @@
+{
+  "version": "5.0.0",
+  "scope": "Numerical and artifact checks, not a forecast uncertainty estimate",
+  "results": [
+    {
+      "name": "Astrometry independently reconstructs radial and transverse speed",
+      "pass": true,
+      "radialAtInputEpochKmS": -22.204,
+      "transverseAtInputEpochKmS": 23.750472686149596
+    },
+    {
+      "name": "Closest approach agrees with independent scalar geometry",
+      "pass": true,
+      "closestYears": 26680.80748699726,
+      "minimumLightYears": 3.0991538852530858
+    },
+    {
+      "name": "Epoch propagation, perspective radial change and domain bounds",
+      "pass": true
+    },
+    {
+      "name": "A shared velocity does not change relative position",
+      "pass": true
+    },
+    {
+      "name": "Flux, angular separation and transit boundaries have correct limits",
+      "pass": true,
+      "solarEarthTransitHalfWidthDeg": 0.2688959516366315
+    },
+    {
+      "name": "Synthetic tracers conserve quantities and agree at half timestep",
+      "pass": true,
+      "tracers": [
+        {
+          "name": "Illustrative A",
+          "maxEnergyFraction": 3.696793401877424e-10,
+          "maxLzFraction": 1.590846594218936e-14,
+          "halfStepEndpointDifferencePc": 0.0003170267173002009
+        },
+        {
+          "name": "Illustrative B",
+          "maxEnergyFraction": 4.2628503584210263e-10,
+          "maxLzFraction": 2.371054292544258e-14,
+          "halfStepEndpointDifferencePc": 0.0002984119349530657
+        },
+        {
+          "name": "Illustrative C",
+          "maxEnergyFraction": 5.095708800921133e-10,
+          "maxLzFraction": 7.790231708810444e-15,
+          "halfStepEndpointDifferencePc": 0.0002982650700060284
+        }
+      ]
+    },
+    {
+      "name": "Published report renders mathematical markup and provides actual report navigation",
+      "pass": true,
+      "mathBlocks": 14
+    }
+  ],
+  "proxima2026": {
+    "years": 0,
+    "rPc": [
+      -0.4742725407673498,
+      -0.36220945207042166,
+      -1.1549219544850031
+    ],
+    "distancePc": 1.2999903272896043,
+    "distanceLy": 4.240001362155811,
+    "radialKmS": -22.18857431649905,
+    "speedKmS": 32.513113797597704,
+    "transverseKmS": 23.764884569817227,
+    "xLy": 4.24000136215581,
+    "yLy": -1.3578987006355044e-16,
+    "fluxRatio": 1,
+    "angularSeparationRatio": 1
+  },
+  "proximaClosest": {
+    "years": 26680.80748699726,
+    "rPc": [
+      -0.7310650118344173,
+      0.24093135532195809,
+      -0.5571224137926468
+    ],
+    "distancePc": 0.9502049007745001,
+    "distanceLy": 3.0991538852530858,
+    "radialKmS": -1.869446093103039e-15,
+    "speedKmS": 32.513113797597704,
+    "transverseKmS": 32.513113797597704,
+    "xLy": 2.2652716317986745,
+    "yLy": 2.1150175504348576,
+    "fluxRatio": 1.871740811405102,
+    "angularSeparationRatio": 1.3681157887419844
+  }
+}

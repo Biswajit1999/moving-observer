@@ -1,0 +1,87 @@
+{
+  "passed": 7,
+  "tests": [
+    {
+      "name": "100-year displacement agrees with independent velocity × time",
+      "passed": true,
+      "detail": {
+        "expectedPlaneAU": 4915.12396907398,
+        "actualPlaneAU": 4915.123969072251,
+        "totalAU": 4917.341604124109
+      }
+    },
+    {
+      "name": "Solar integrator converges at half timestep",
+      "passed": true,
+      "detail": {
+        "endpointDifferenceAU": 9.112693278037043e-13
+      }
+    },
+    {
+      "name": "Zero baseline at release and fixed reference at all epochs",
+      "passed": true,
+      "detail": {
+        "referenceAU": [
+          0.19359882077781848,
+          -0.9521707051451068,
+          0.15087806087302352
+        ]
+      }
+    },
+    {
+      "name": "Coordinate rotation preserves lengths and handedness",
+      "passed": true,
+      "detail": {
+        "eclipticTiltDeg": 60.188561481804754
+      }
+    },
+    {
+      "name": "Earth proxy stays within physically expected perihelion/aphelion bounds",
+      "passed": true,
+      "detail": {
+        "minAU": 0.9832973834989573,
+        "maxAU": 1.016703964604591
+      }
+    },
+    {
+      "name": "Passive-probe integration converges and stays bound to Sun",
+      "passed": true,
+      "detail": {
+        "stepHalvingDifferenceAU": 1.0039708614373823e-7,
+        "minAU": 0.9832780709091188,
+        "maxAU": 1.0167282423428228
+      }
+    },
+    {
+      "name": "Light-time conversion and exoplanet angular example",
+      "passed": true,
+      "detail": {
+        "centuryLightDays": 28.400224252266483,
+        "relative30kmS100lyArcsec": 20.640760040110454
+      }
+    }
+  ],
+  "modelEpoch": "J2000 + 26 Julian years",
+  "century": {
+    "sun": [
+      -4915.123969067064,
+      0.007141326355263368,
+      147.66455330004615
+    ],
+    "earth": [
+      -4914.935457791268,
+      -0.9475986332918742,
+      147.80566235348036
+    ],
+    "beacon": [
+      0.19359882077781848,
+      -0.9521707051451068,
+      0.15087806087302352
+    ],
+    "sunDrift": 4917.341604124109,
+    "earthDrift": 4917.346396024732,
+    "lightDays": 28.400224252266483,
+    "planeDrift": 4915.123969072251,
+    "vertical": 147.66455330004615
+  }
+}

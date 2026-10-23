@@ -1,0 +1,103 @@
+# Version 5 verification - 23 October 2026
+
+The current release adds the full embedded and standalone research report, a usage tutorial, the historical-input Proxima lab and three independently integrated synthetic stellar tracers. Earlier sections below are retained as historical evidence for their stated versions.
+
+- All 32 check groups pass using Node 24.19.0. New stellar checks independently reconstruct radial/transverse speeds, closest-approach geometry and stationarity, common-velocity cancellation, transit boundaries, synthetic-orbit conservation and step-halving convergence. Built report MathML and offline assets are checked.
+- Proxima at 2026: 4.240001 light-years; radial velocity -22.188574 km/s; relative speed 32.513114 km/s. The rectilinear minimum is 3.099154 light-years after 26,680.807 years. These are calculation outputs without uncertainty propagation or binary acceleration, not precision forecasts.
+- Browser verification: report entry/return and section links; desktop equations; tutorial navigation at 390 x 844; Proxima closest-approach and +100,000-year presets; transit control outside the band and at zero angle; synthetic target selection at +50 Myr; visible author/year footer; oblique and edge-on cameras. Browser warning/error logs were empty when inspected.
+- The browser-exported Proxima CSV matches all 1,501 rows and nine numeric fields of the reproducible source export exactly. The displayed closest-approach radial velocity rounds to 0.00 rather than a negative zero.
+- Fixed report text encoding and mobile navigation width after visual inspection. Native MathML displays offline. Print styling is supplied; print pagination has not been separately verified.
+- The renderer samples 180,000 luminous points from the credited ESA reconstruction, uses soft point profiles, illustrative disk/bulge thickness and warp, fades the surface near edge-on, and applies schematic dust attenuation. These are rendering assumptions, not measured stellar positions or a fitted dust model. Solar-system lighting now shows a stronger day/night boundary. The simulation footer and saved images credit Biswajit Jana, 2026.
+- Preview evidence: preview-v5-galaxy.png, preview-v5-report.png and preview-v5-tutorial-mobile.png. Historical v4 images remain labelled by version.
+- Dependency audit reported zero known vulnerabilities after updating the report build dependencies. Numerical agreement does not validate omitted physics or an observational discovery forecast.
+
+---
+
+# Version 4 verification extension — 23 October 2026
+
+The default Milky Way scene now has its own 0–250 Myr clock. The original century model and independent JPL evidence below remain applicable to the 2026–2126 planetary view only; the new long clock does not extrapolate those planetary elements.
+
+## New implementation and evidence
+
+- Same initial Solar position and velocity in both clocks. The 100-year endpoints differ by 4.6e-8 AU, a floating-point level discrepancy.
+- Six new checks pass in `validate-galactic.cjs`. Across 250 Myr, sampled relative energy variation is 2.11e-11 or less and axial angular momentum variation 2.39e-14 or less. Halving the timestep changes sampled positions by at most 0.000307 pc. These are numerical checks, not physical uncertainty bounds.
+- The nominal circular period is 216.214 Myr. At that epoch the integrated path is 51.520 kpc long but ends only 0.06167 kpc from the initial reference. Thus distance travelled is correctly distinguished from separation. The nonzero height and vertical velocity prevent an exactly closed orbit at that nominal period.
+- The Galactic CSV was downloaded through the actual browser control. All 501 rows and 6,513 numeric fields agree with the model. All seven century checks, eight retained potential checks and four prior audit groups also pass.
+- Browser verification: visible Galactic playback; both clock ranges and saved epochs; 10 Myr/s switching to century and back; 0.1 yr/s selection on entering Earth & Sun; one-orbit jump; endpoints; plane camera; pattern toggle; CSV and image downloads; three-year winding path toggle; return to inner-orbit view; responsive control drawer at 390 × 844. The temporary viewport override was reset. Inspected browser warning/error logs were empty.
+- Current preview files are named `preview-v4-*`. Older `preview-v3-*` and `audit-*` images document the earlier audit below. Sidebar scroll resets on scene changes so main readouts remain visible. Trajectory lines and reference symbols are rendered as annotations above the galaxy texture.
+
+## Scientific scope of the new visuals
+
+The Sun is integrated in a static illustrative axisymmetric potential, including vertical oscillation. The disk artwork rotates rigidly at an assumed 20 km/s/kpc, with an explicit schematic label and an off switch. Individual stars, differential rotation, changing spiral structure, encounters, star formation and galaxy-wide spacetime dynamics are not modeled. Arm contrast changes texture brightness and point opacity only; darker inter-arm regions still contain stars. It does not turn the artwork into a density measurement.
+
+The Earth space-path option displays `r_sun(t) + r_earth_relative(t)`, translated by the current Solar position for the camera. It samples up to the last three years at true AU proportions and shows the corresponding Solar track. The ecliptic is oblique to Solar motion. This is a frame-dependent winding spatial trajectory, not a perfect universal helix or a relativistic spacetime simulation.
+
+A fixed cyan reference still requires active velocity cancellation and force compensation. It is a coordinate thought experiment. The 250 Myr endpoint is not a realistic probe lifetime or a mission claim.
+
+---
+
+# Verification audit — The Moving Observer v3.1
+
+Audit date: 23 October 2026. Scope: numerical implementation, scientific claims, browser behavior, responsive layout, exports and packaged files.
+
+## Conclusion
+
+The implementation is internally consistent and suitable as an explicitly approximate **discussion demonstration** of a 2026 fixed-reference experiment. It is not a validated Galactic reconstruction, spacecraft mission model, or exoplanet-discovery forecast. The audit found and corrected presentation defects; it found no error in the century-baseline calculation or the implemented planetary coordinate transformation.
+
+## Independent evidence
+
+The actual planetary code was compared with geometric heliocentric vectors from **JPL Horizons**, not just with another copy of its Kepler formula. All requests use the Sun as origin, ICRF/J2000 ecliptic axes, AU units, TDB and exact model Julian dates. Six epochs were queried for each of Mercury, Venus, the Earth–Moon barycentre and Mars: 2026.0, 2026.25, 2051.0, 2076.0, 2101.0 and 2126.0.
+
+| Body | Largest 3D position difference among six samples |
+|---|---:|
+| Mercury | 3,346 km |
+| Venus | 10,521 km |
+| Earth–Moon barycentre | 27,885 km |
+| Mars | 159,167 km |
+
+These are approximation residuals at selected epochs, not full-century error bounds. The deliberately loose 0.005 AU automated regression guard catches gross calculation changes; it is not a published JPL tolerance or a claim of observational accuracy. Exact API URLs and complete replies are retained in `horizons-*.json`; `compare-horizons.cjs` regenerates `horizons-comparison.json`.
+
+The passive test particle was also compared with an independent analytic Kepler two-body solution derived from its initial position and velocity. Maximum difference at selected stored times was 1.04e-7 AU (about 16 km). Linear interpolation between saved output samples increased selected midpoint differences to 0.00051034 AU (about 76,000 km). The interpolation error is therefore much larger than integration error and is disclosed; the passive comparator is illustrative, not navigational.
+
+The 100-year Solar displacement along the Galactic plane independently agrees with velocity × time: 233 km/s × 100 Julian years = 4,915.124 AU. With the assumed 7 km/s vertical component, total Solar displacement is 4,917.342 AU. Earth's distance to its initial reference is 4,917.346 AU. Instantaneous distance/c is 28.400 days. Ecliptic inclination to the Galactic plane is 60.18856 degrees.
+
+## Numerical and artifact checks
+
+- Seven current-model checks pass: century displacement, Solar timestep convergence, fixed-reference invariance, rotation length/handedness, Earth radial bounds, passive timestep convergence/boundedness, light-time and the PDF's angular example.
+- Eight retained checks pass for the underlying Galactic potential and integrator: normalization, gradient, conservation, convergence and limiting cases. Those long-timescale tests verify numerical machinery, not observational validity of that potential.
+- Four audit groups pass: 24 independent Horizons comparisons; passive analytic-orbit comparison; self-contained/matching HTML aliases; all 101 CSV rows and all 1,616 numeric fields.
+- HTML embeds code and images; source hyperlinks are the only required external destinations when explicitly opened. The two output HTML aliases match. ZIP member hashes and CRCs are checked during packaging; the Downloads HTML matches the tested workspace build.
+
+## Issues corrected
+
+1. **Mobile inset visibility:** inline display style overrode the narrow-screen stylesheet, producing an off-screen inset. A hidden attribute now controls scale visibility while media rules retain control of mobile layout.
+2. **Narrow-screen image exports:** long titles and attribution lines could be cut off. Captions now wrap to the image width; label outlines improve readability against the galaxy core.
+3. **Early-time reference label:** the first 0.8 year was labelled as though Earth and the reference were still together. Combined labelling now applies only at the exact initial epoch; later Earth/Sun labels identify the moving observer.
+4. **Orbital playback readability:** entering Earth & Sun selects 0.1 year/second. Higher rates can visually undersample inner-planet orbits and are explicitly described as such. This changes playback presentation, not computed positions or the shared epoch.
+5. **Small-screen clutter and guidance:** intermediate path-year labels are hidden at narrow widths, and instructions point to Earth & Sun rather than an inset that is unavailable there.
+
+## Browser verification
+
+Checked in the in-app browser at its normal desktop viewport and at 390 × 844 CSS pixels (temporary override subsequently reset). This is responsive browser testing, not a physical-phone or multi-browser certification.
+
+Verified scale switching with a shared epoch, initial reset, timeline endpoint/automatic stop, playback speed selection, plane/edge camera presets, zoom/reset controls, labels and plane visibility, passive comparator, mobile control drawer, model dialog, CSV download and image download. Narrow-screen image output was opened and inspected. The inspected browser console reported no warning or error messages.
+
+## Scientific limits that remain
+
+- The primary cyan object is an **actively held, hypothetical fixed coordinate** in the chosen Galactic frame. No propulsion, fuel, station-keeping, launch or feasibility calculation is included. A released spacecraft retains inherited velocity; there is no universal absolute-rest position implied.
+- The Sun's adopted phase-space state and the axisymmetric potential are illustrative. Solar peculiar radial/tangential motion, updated Galactic measurements and parameter covariance have not been fitted. A 1 km/s speed change alters a century baseline by about 21.1 AU. Display precision is not a measurement uncertainty.
+- Earth is represented by the Earth–Moon barycentre. The four planetary orbits are JPL's lower-accuracy fitted-element approximation, not Horizons trajectories. The illustration does not solve lunar motion, planetary perturbations, Solar barycentric reflex motion, encounters or spacecraft dynamics.
+- The face-on Milky Way is ESA's observationally informed artist reconstruction. Added depths, disk thickness and warp are display assumptions. This project has not reprocessed Gaia observations; its points are not individual catalogue stars.
+- Whole-galaxy motion over 100 years is genuinely too small to resolve. The AU view is needed to see the baseline. Body markers are enlarged, and Earth surface orientation/lighting is illustrative.
+- Distance/c is instantaneous geometric light time. Retarded positions, signals, relativity and actual instrument measurements are absent.
+- No target-star catalogue, full stellar space velocities, planetary inclination evolution, transit selection, signal-to-noise, extinction or detection simulation is present. The original exoplanet question remains a scientific hypothesis to discuss, not an established result.
+
+## Sources and reproduction
+
+Run `npm ci`, `npm run build`, `npm test` in the source directory. Tests use the archived Horizons responses and do not require network access.
+
+- JPL approximate planetary elements and their stated scope: https://ssd.jpl.nasa.gov/planets/approx_pos.html
+- JPL Horizons API: https://ssd-api.jpl.nasa.gov/doc/horizons.html
+- Gaia coordinate transformation, equation 4.62: https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html
+- ESA Milky Way reconstruction and attribution: https://www.esa.int/ESA_Multimedia/Images/2025/01/The_best_Milky_Way_map_by_Gaia
+- Original problem: the user's `discussion-note.pdf`, included unchanged.

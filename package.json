@@ -1,0 +1,26 @@
+{
+  "name": "galactic-journey",
+  "version": "5.0.0",
+  "scripts": {
+    "build": "node export-stellar.cjs && node build.cjs",
+    "test": "node validate2026.cjs && node validate.cjs && node audit.cjs && node validate-galactic.cjs && node validate-stellar.cjs"
+  },
+  "keywords": [],
+  "author": "Biswajit Jana",
+  "license": "UNLICENSED",
+  "description": "Moving observer, moving stars and changing exoplanet viewing geometry \u2014 a reproducible discussion project by Biswajit Jana",
+  "dependencies": {
+    "esbuild": "0.25.10",
+    "katex": "0.19.0",
+    "markdown-it": "15.0.3",
+    "three": "0.180.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Biswajit1999/moving-observer.git"
+  }
+}

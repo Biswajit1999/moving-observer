@@ -1,0 +1,26 @@
+name: Scientific feedback
+description: Correct a claim, suggest prior work, or propose a rigorous next test.
+title: "Scientific feedback: "
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim, equation or question
+      description: Which part of the report or simulation are you addressing?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Correction, reference or analysis
+      description: Include primary sources or a reproducible calculation where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Frames, units, epochs and uncertainties
+  - type: textarea
+    id: next
+    attributes:
+      label: Suggested next step

@@ -1,0 +1,110 @@
+{
+  "model": {
+    "disk": 68000000000,
+    "a": 3,
+    "b": 0.28,
+    "bulge": 5000000000,
+    "c": 0.5,
+    "haloCore": 12,
+    "R0": 8.2,
+    "V0": 233,
+    "haloV2": 0.07601463036202727
+  },
+  "units": "kpc, Myr, Msun",
+  "checks": [
+    {
+      "name": "Halo normalization yields 233 km/s at R=8.2 kpc",
+      "status": "PASS",
+      "result": {
+        "circular_kms": 232.99999999999997
+      }
+    },
+    {
+      "name": "Analytic acceleration equals numerical potential gradient",
+      "status": "PASS",
+      "result": {
+        "maximum_acceleration_error": 2.7529731966291493e-12
+      }
+    },
+    {
+      "name": "Energy and axial angular momentum conserved over 300 Myr",
+      "status": "PASS",
+      "result": [
+        {
+          "name": "Sun",
+          "max_energy_error": 4.085648486196192e-12,
+          "max_lz_error": 4.574118861455645e-14
+        },
+        {
+          "name": "escape",
+          "max_energy_error": 5.7721910584618286e-11,
+          "max_lz_error": 5.728750807065808e-14
+        },
+        {
+          "name": "cancel",
+          "max_energy_error": 3.6389149682403144e-7,
+          "max_lz_error": 0
+        },
+        {
+          "name": "Host A",
+          "max_energy_error": 4.890035598670295e-11,
+          "max_lz_error": 2.886579864025407e-14
+        },
+        {
+          "name": "Host B",
+          "max_energy_error": 1.1641274055840256e-10,
+          "max_lz_error": 2.9976021664879227e-14
+        },
+        {
+          "name": "Host C",
+          "max_energy_error": 7.438463733855372e-11,
+          "max_lz_error": 2.842170943040401e-14
+        }
+      ]
+    },
+    {
+      "name": "Timestep-halving convergence",
+      "status": "PASS",
+      "result": [
+        {
+          "kind": "sun",
+          "position_difference_kpc": 2.3347574739004295e-7
+        },
+        {
+          "kind": "escape",
+          "position_difference_kpc": 2.338341195649277e-7
+        },
+        {
+          "kind": "cancel",
+          "position_difference_kpc": 1.0585494297531022e-7
+        }
+      ]
+    },
+    {
+      "name": "Same initial motion stays coincident",
+      "status": "PASS",
+      "result": "identical trajectories"
+    },
+    {
+      "name": "Zero-velocity probe immediately accelerates",
+      "status": "PASS",
+      "result": {
+        "initial_ax": -0.006924425444619187,
+        "x_after_step": 8.199999653778727
+      }
+    },
+    {
+      "name": "Reference circular orbit remains circular",
+      "status": "PASS",
+      "result": {
+        "maximum_radius_error_kpc": 1.5559853849822503e-7,
+        "period_myr": 216.21428201573775
+      }
+    },
+    {
+      "name": "Sightline angle has correct right-angle and zero limits",
+      "status": "PASS",
+      "result": "passed"
+    }
+  ]
+}

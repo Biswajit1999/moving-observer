@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite this discussion project and the original scientific sources used for each result."
+title: "The Moving Observer: Does a moving viewpoint change the exoplanet sky?"
+authors:
+  - family-names: Jana
+    given-names: Biswajit
+version: 5.0.0
+date-released: 2026-10-23
+url: "https://biswajit1999.github.io/moving-observer/"
+repository-code: "https://github.com/Biswajit1999/moving-observer"
+abstract: "An educational simulation and working discussion report connecting relative stellar motion, Galactic displacement and changing exoplanet viewing geometry."

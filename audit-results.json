@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-23",
+  "version": "5.0.0",
+  "checks": [
+    {
+      "name": "Independent JPL Horizons comparisons: four bodies at six epochs",
+      "status": "PASS",
+      "details": {
+        "comparisons": 24,
+        "regressionGuardAU": 0.005,
+        "note": "Guard is a deliberately loose regression threshold, not an accuracy claim or a JPL error bound.",
+        "results": [
+          {
+            "body": "Mercury",
+            "maxSampledDifferenceKm": 3346.284352845925
+          },
+          {
+            "body": "Venus",
+            "maxSampledDifferenceKm": 10521.234395145993
+          },
+          {
+            "body": "Earth",
+            "maxSampledDifferenceKm": 27885.467388127938
+          },
+          {
+            "body": "Mars",
+            "maxSampledDifferenceKm": 159166.72684998138
+          }
+        ]
+      }
+    },
+    {
+      "name": "Passive orbit against independent analytic two-body solution",
+      "status": "PASS",
+      "details": {
+        "storedSampleMaxAU": 1.043386873368001e-7,
+        "interpolatedSampleMaxAU": 0.000510339599188574
+      }
+    },
+    {
+      "name": "Offline HTML: no external runtime assets, matching build aliases",
+      "status": "PASS",
+      "details": {
+        "htmlBytes": 7461069,
+        "note": "Source hyperlinks are allowed; images and application code are embedded."
+      }
+    },
+    {
+      "name": "Exported CSV: all 101 annual rows agree with model states",
+      "status": "PASS",
+      "details": {
+        "annualRows": 101,
+        "numericFieldsPerRow": 16
+      }
+    }
+  ]
+}

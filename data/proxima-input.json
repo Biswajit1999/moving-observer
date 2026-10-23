@@ -1,0 +1,19 @@
+{
+  "name": "Proxima Centauri",
+  "source": "Kervella, Thevenin & Lovis (2017), A&A 598 L7, Table 2",
+  "url": "https://arxiv.org/html/1611.03495",
+  "doi": "10.1051/0004-6361/201629930",
+  "accessed": "2026-10-23",
+  "astrometric_epoch_jyear": 1991.25,
+  "right_ascension_hms": [14, 29, 47.7474],
+  "declination_dms": [-62, 40, 52.868],
+  "parallax_mas": 768.77,
+  "parallax_sigma_mas": 0.37,
+  "pm_ra_cosdec_mas_yr": -3773.8,
+  "pm_ra_sigma_mas_yr": 0.4,
+  "pm_dec_mas_yr": 770.5,
+  "pm_dec_sigma_mas_yr": 2.0,
+  "radial_velocity_kms": -22.204,
+  "radial_velocity_sigma_kms": 0.032,
+  "note": "Historical published input set, not a claim of latest Gaia astrometry. Radial velocity is the paper's gravitational-redshift-corrected value. The paper neglects the epoch difference between astrometry and RV; this teaching model adopts the same simplification. No covariance or binary orbit is propagated."
+}

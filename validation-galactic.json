@@ -1,0 +1,53 @@
+{
+  "scope": "Numerical consistency of illustrative 250 Myr model; not observational validation",
+  "results": [
+    {
+      "name": "Century and Galactic clocks share initial state and century endpoint",
+      "pass": true,
+      "differenceAU": 4.551550394137682e-8
+    },
+    {
+      "name": "Energy and axial angular momentum conserved across 250 Myr",
+      "pass": true,
+      "energyFraction": 2.100624043328249e-11,
+      "angularMomentumFraction": 2.306816600791177e-14
+    },
+    {
+      "name": "Half-step integration converges across the full interval",
+      "pass": true,
+      "maxPositionDifferencePc": 0.00030681486360286666
+    },
+    {
+      "name": "Fixed reference, travelled distance and orbital geometry",
+      "pass": true,
+      "nominalPeriodMyr": 216.21428201573772,
+      "halfOrbitSeparationKpc": 16.401939155724076,
+      "nearOneOrbit": {
+        "state": [
+          0.0276788785590954,
+          -8.204619082764633,
+          -0.034917902800691736,
+          -0.2381551567764456,
+          -0.000777437738370334,
+          -0.006830081998936575
+        ],
+        "separationKpc": 0.061671973193989864,
+        "travelKpc": 51.52040200989981,
+        "angleDeg": 359.8067092586405,
+        "heightPc": -34.917902800691735,
+        "speedKmS": 232.96324576689548
+      }
+    },
+    {
+      "name": "Endpoints, finite output and domain guards",
+      "pass": true,
+      "trailSamples": 2501
+    },
+    {
+      "name": "Browser-exported Galactic CSV matches all model samples",
+      "pass": true,
+      "rows": 501,
+      "numericFields": 6513
+    }
+  ]
+}

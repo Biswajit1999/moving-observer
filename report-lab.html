@@ -1,0 +1,14 @@
+<span id="report-proxima"></span><section class="research-lab" id="proxima-lab" aria-labelledby="lab-title">
+<div class="report-kicker">Interactive case study · published inputs, simplified motion</div>
+<h2 id="lab-title">Is Proxima getting closer?</h2>
+<p>The Sun is the origin of this relative frame. Shared Galactic translation is removed. This straight-line model omits Alpha Centauri's gravity; it is not a precision encounter forecast.</p>
+<div class="lab-actions"><button id="proxNow">2026</button><button id="proxClosest">Closest approach</button><button id="proxFuture">+100,000 years</button><button id="proxExport">Export Proxima CSV</button></div>
+<label for="proxTime">Years relative to 2026: <strong id="proxYear">0</strong></label>
+<input id="proxTime" type="range" min="-50000" max="100000" step="1" value="0">
+<div class="lab-ticks"><span>−50,000 years</span><span>2026 origin</span><span>+100,000 years</span></div>
+<div class="lab-readouts" aria-live="polite"><div><span>Distance from Sun</span><strong id="proxDistance"></strong></div><div><span>Radial velocity</span><strong id="proxRadial"></strong></div><div><span>Relative speed</span><strong id="proxSpeed"></strong></div><div><span>Direction of change</span><strong id="proxDirection"></strong></div></div>
+<div class="lab-charts"><figure><canvas id="encounterPlot" aria-label="Proxima trajectory in the plane of its relative position and velocity; axes in light-years"></canvas><figcaption>Relative encounter plane · equal spatial scales. Gold: Sun; purple: Proxima; open circle: Proxima in 2026. This is not a Galactic map.</figcaption></figure><figure><canvas id="distancePlot" aria-label="Proxima distance versus time; readouts and CSV provide numeric values"></canvas><figcaption>Distance versus time. The minimum is about 3.10 light-years, approximately 26,700 years after 2026, in this approximation.</figcaption></figure></div>
+<p id="proxGeometry"></p><p class="lab-small">Input source: Kervella, Thévenin &amp; Lovis (2017), Table 2. Astrometry at 1991.25 propagated to 2026. Input errors are recorded but not propagated. Full assumptions and equations follow below.</p>
+<details><summary>Test a transit viewing angle</summary><p>This is an invented circular Earth–Sun analogue, not Proxima b. Change the observer's angle above its orbital plane to see a geometric transit boundary.</p><label for="transitAngle">Angle above orbital plane: <strong id="transitAngleValue"></strong></label><input id="transitAngle" type="range" min="-1" max="1" step=".001" value=".4"><p id="transitResult" aria-live="polite"></p><p>A geometric crossing still requires the planet to reach conjunction during observations. Changing distance alone does not guarantee a transit.</p></details>
+<div id="labStatus" role="status"></div>
+</section>

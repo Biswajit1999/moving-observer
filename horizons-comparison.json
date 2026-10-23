@@ -1,0 +1,146 @@
+[
+  {
+    "planet": "Mercury",
+    "maxPositionErrorKm": 3346.284352845925,
+    "samples": [
+      {
+        "epoch": 2026,
+        "positionErrorKm": 1423.5505806196927,
+        "radialErrorKm": 144.77604208249792
+      },
+      {
+        "epoch": 2026.25,
+        "positionErrorKm": 1044.9465028238678,
+        "radialErrorKm": 359.6806708929189
+      },
+      {
+        "epoch": 2051,
+        "positionErrorKm": 3346.284352845925,
+        "radialErrorKm": 730.7498579017556
+      },
+      {
+        "epoch": 2076,
+        "positionErrorKm": 1378.6030879044777,
+        "radialErrorKm": 935.6124356587202
+      },
+      {
+        "epoch": 2101,
+        "positionErrorKm": 2581.5214888875284,
+        "radialErrorKm": 1218.8758499021951
+      },
+      {
+        "epoch": 2126,
+        "positionErrorKm": 2569.0724957390225,
+        "radialErrorKm": 85.42561871779802
+      }
+    ]
+  },
+  {
+    "planet": "Venus",
+    "maxPositionErrorKm": 10521.234395145993,
+    "samples": [
+      {
+        "epoch": 2026,
+        "positionErrorKm": 7940.037181308943,
+        "radialErrorKm": 6914.01911036753
+      },
+      {
+        "epoch": 2026.25,
+        "positionErrorKm": 6688.439049302286,
+        "radialErrorKm": 3227.3589594000787
+      },
+      {
+        "epoch": 2051,
+        "positionErrorKm": 7701.411602834107,
+        "radialErrorKm": 3599.9334521873793
+      },
+      {
+        "epoch": 2076,
+        "positionErrorKm": 8304.754382445888,
+        "radialErrorKm": 3550.329502738808
+      },
+      {
+        "epoch": 2101,
+        "positionErrorKm": 10521.234395145993,
+        "radialErrorKm": 5336.954629135108
+      },
+      {
+        "epoch": 2126,
+        "positionErrorKm": 7585.754752735768,
+        "radialErrorKm": 304.4061687763589
+      }
+    ]
+  },
+  {
+    "planet": "Earth",
+    "maxPositionErrorKm": 27885.467388127938,
+    "samples": [
+      {
+        "epoch": 2026,
+        "positionErrorKm": 12182.02268252666,
+        "radialErrorKm": 8011.345701402071
+      },
+      {
+        "epoch": 2026.25,
+        "positionErrorKm": 27885.467388127938,
+        "radialErrorKm": 1066.3200276836
+      },
+      {
+        "epoch": 2051,
+        "positionErrorKm": 11125.904806096258,
+        "radialErrorKm": 4211.148641345104
+      },
+      {
+        "epoch": 2076,
+        "positionErrorKm": 7065.108171211607,
+        "radialErrorKm": 3928.581388204864
+      },
+      {
+        "epoch": 2101,
+        "positionErrorKm": 7796.557916164228,
+        "radialErrorKm": 5934.22500623016
+      },
+      {
+        "epoch": 2126,
+        "positionErrorKm": 3508.1526768846443,
+        "radialErrorKm": 2043.1705254900398
+      }
+    ]
+  },
+  {
+    "planet": "Mars",
+    "maxPositionErrorKm": 159166.72684998138,
+    "samples": [
+      {
+        "epoch": 2026,
+        "positionErrorKm": 103782.32514833717,
+        "radialErrorKm": 49118.11351185068
+      },
+      {
+        "epoch": 2026.25,
+        "positionErrorKm": 156983.84478116612,
+        "radialErrorKm": 20095.80600940414
+      },
+      {
+        "epoch": 2051,
+        "positionErrorKm": 159166.72684998138,
+        "radialErrorKm": 14384.931297888763
+      },
+      {
+        "epoch": 2076,
+        "positionErrorKm": 61701.291137358545,
+        "radialErrorKm": 17544.46515048658
+      },
+      {
+        "epoch": 2101,
+        "positionErrorKm": 45684.8193117363,
+        "radialErrorKm": 745.3983563367857
+      },
+      {
+        "epoch": 2126,
+        "positionErrorKm": 98692.03987773054,
+        "radialErrorKm": 10914.88278205624
+      }
+    ]
+  }
+]
