@@ -1,1 +1,5 @@
 data/gaia-nearby.csv -text
+
+*.pdf binary
+
+*.mp4 binary

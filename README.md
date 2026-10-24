@@ -3,7 +3,7 @@
 ### Does a moving viewpoint change the exoplanet sky?
 
 **By Biswajit Jana · Finding Earth 2.0**  
-Version 7.0 · Community discussion project · 24 October 2026
+Version 7.1 · Community discussion project · 24 October 2026
 
 The Sun moves through the Milky Way, and so do the stars around it. Could their changing relative positions bring different planetary systems within reach of observation—or change which planets transit from our viewpoint?
 
@@ -17,7 +17,17 @@ This project connects a 3D Milky Way demonstration with a reproducible Gaia DR3 
 
 The image above is a version 5 preview, not a screenshot of the updated report.
 
-## New in version 7
+## New in version 7.1
+
+- Synthetic example stars are off by default; only the selected example appears. Labels use collision avoidance and leader lines.
+- A smooth-density scenario follows the Solar orbit; a separate radius/height comparison exposes the difference between the adopted force model and observed rotation curves.
+- A one-click 3D winding-path tour, full Galactic and 98% co-moving frames, and an explicitly illustrative Earth–Moon close-up.
+- A textured 3D Earth, local 24-hour orbit clock, stationary/circular Schwarzschild clock rates, and an exterior spatial embedding with labelled height magnification.
+- A [two-page brief](output/pdf/Moving_Observer_Brief.pdf), [24-second scientific model animation](output/video/Moving_Observer_3D_Tour.mp4), and [verified outreach shortlist, tailored drafts and LinkedIn caption](OUTREACH.md). No outreach has been sent.
+
+See [new methods and tutorials](ENVIRONMENT_REPORT.md). The lunar orbit is not a precision ephemeris; the density scenario is not an arm-crossing or discovery forecast.
+
+## Version 7 foundations
 
 - Repaired report equations: section insertion now preserves display-math delimiters. Invalid equations fail the build. The title and author are centred, with a single-column report layout.
 - **Sun & all planets:** all eight planets, a Galactic-path view, and a close-up of the Sun moving around the system barycentre. Outer-planet positions use saved JPL Horizons ephemerides; inner planets use approximate elements.
@@ -101,7 +111,7 @@ The cyan fixed reference is a coordinate thought experiment. A passive probe ret
 
 ## Validation and data
 
-`npm test` runs **53 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks and three scene-construction checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
+`npm test` runs **62 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks four scene-construction checks, and eight environment/label/relativity checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
 
 | File | Purpose |
 |---|---|
@@ -141,3 +151,15 @@ The report contains full references and a dated NASA Exoplanet Archive count. Th
 **Biswajit Jana** is the project originator and credited author. Independent scientific review is welcome. Published measurements and research are credited to their authors. No institutional affiliation or peer-reviewed status is claimed.
 
 Milky Way artwork: **ESA/Gaia/DPAC, Stefan Payne-Wardenaar**, **CC BY-SA 3.0 IGO**; its display adaptation retains that licence. Dependencies retain upstream licences. See [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt). Original code and text remain copyright Biswajit Jana, with no blanket open-source licence granted; see [RIGHTS.md](RIGHTS.md).
+
+## Reproduce the sharing materials
+
+The MP4 is a scientific rendering from the same numerical modules, not a screen recording of the website. It has four six-second chapters: full Galactic paths, a 98% co-moving inner-system view, an illustrative lunar close-up, and an ideal 400 km Earth-orbit clock. Axes use true relative proportions within each shot; body markers are enlarged where stated.
+
+```sh
+node export-media.cjs
+python -m pip install matplotlib numpy imageio imageio-ffmpeg reportlab pypdf Pillow
+python create-share-media.py
+```
+
+The final PDF has two pages. Numerical checks, scene construction and reviewed artifact frames do not establish live browser rendering or interaction; see `AUDIT.md` for the exact verification scope.

@@ -1,3 +1,17 @@
+# Version 7.1 verification - 24 October 2026
+
+- All **62 validation groups** passed locally: the earlier 53, eight density/label/relativity groups and one physical circular-clock animation check. Scene construction exercises all geometry modes at clock boundaries; it is not a browser rendering test.
+- Labels now use bounded screen-space rectangles, marker exclusion and leader lines. Synthetic Galactic example stars are disabled by default, with only the selected example displayed. The supplied overlap screenshot guided the change; fresh live visual behavior remains unverified.
+- The double-exponential density scenario is normalized to a historical 373-star 10 pc census, not inferred from the artwork. Its radial/vertical behavior, symmetry, local normalization and flux units are checked. The existing force model's outward-rising circular speed is explicitly distinguished from current observational findings.
+- Exact isolated spherical stationary/circular clock factors recover the weak-field limit. Earth presets give -24.743 and +38.514 microseconds/day relative to a stationary surface clock at 400 and 20,200 km altitude. The 400 km marker completes a quarter revolution in one quarter of its computed 92.414-minute period. Rotation, oblateness, other bodies and signal propagation remain omitted.
+- A finite-difference check of the unscaled exterior embedding reproduces the Schwarzschild radial metric. Display magnification never changes clock rates. The older potential mesh remains labelled as an analogy.
+- The circular lunar illustration preserves the Earth-Moon barycentre and adopted separation. It is not an ephemeris. The co-moving path option applies a common translating frame; physical distances between bodies remain unchanged.
+- The two-page PDF was rendered with Poppler and both pages visually inspected. Author metadata is Biswajit Jana. The generated 24-second MP4 is H.264/yuv420p at 1280x720 and 16 fps (384 decoded frames); a representative image from each of its four chapters was visually inspected. It is a numerical-model rendering, not a website recording.
+- Browser access remains blocked by the tool security policy. Live WebGL rendering, interaction, device performance and HTML print pagination are not claimed as verified. PDF and video checks concern those standalone artifacts only.
+- Public professional contact details and current NASA routing/leadership roles were researched for `OUTREACH.md`. These are proposed recipients and unsent drafts, not an endorsement or an existing mentorship.
+
+---
+
 # Version 7 verification — 24 October 2026
 
 This release repairs equation rendering and the report cover/layout, adds eight-planet and Solar-reflex views, and adds an explanatory gravitational-potential and clock-rate view.

@@ -4,7 +4,7 @@
 
 **Biswajit Jana**<br>
 Finding Earth 2.0 · Independent research and simulation project<br>
-Research and simulation report, version 7.0 · 24 October 2026 · Not peer reviewed
+Research and simulation report, version 7.1 · 24 October 2026 · Not peer reviewed
 
 ## Report overview
 
@@ -289,6 +289,8 @@ Please distinguish corrections to the implementation, corrections to the physics
 <!--EXPERIMENT-->
 
 <!--SPACE_TIME-->
+
+<!--ENVIRONMENT-->
 
 ## References
 

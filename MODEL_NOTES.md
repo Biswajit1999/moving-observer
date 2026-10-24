@@ -1,3 +1,13 @@
+# Version 7.1 extension
+
+`ENVIRONMENT_REPORT.md` describes the density scenario, observed-versus-model circular speeds, reference-frame transformation, circular lunar approximation and exterior Schwarzschild clock/embedding equations. These additions do not refit the Galactic force model. The hypothetical density count combines published disk scale parameters with a historical 373-star 10 pc normalization; it is a scenario, not a census forecast.
+
+Space & Time now has a separate local 0–86,400-second clock. Circular phase is computed from the selected body's mass and areal radius; changing camera or embedding magnification does not affect physics. Earth field calculations now consistently use Earth's own gravitational parameter, excluding the Moon. The new circular and stationary export columns use exact spherical lapse factors with numerically stable small-difference evaluation.
+
+The optional Moon preserves the eight-system Earth–Moon barycentre and uses an illustrative circular relative orbit. Other moons, eccentricity, lunar perturbations and precession are not included. The scientific MP4 and two-page PDF are generated from saved numerical-module exports, independently of browser rendering.
+
+---
+
 # Version 7 extension
 
 The current report layout is single-column with a centred cover. All mathematical expressions are compiled at build time; the section replacement uses a callback to preserve double-dollar delimiters.
