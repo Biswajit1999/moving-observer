@@ -97,4 +97,3 @@ Only radii outside the physical body are drawn. The embedding height is magnifie
 
 Download the [two-page project brief](https://biswajit1999.github.io/moving-observer/output/pdf/Moving_Observer_Brief.pdf) and [24-second scientific model animation](https://biswajit1999.github.io/moving-observer/output/video/Moving_Observer_3D_Tour.mp4). The animation is generated from the numerical modules, not recorded from the website. It labels its reference frames, scale changes between shots and illustrative lunar assumptions.
 
-A [verified researcher shortlist, tailored email drafts and LinkedIn caption](https://github.com/Biswajit1999/moving-observer/blob/main/OUTREACH.md) are available for review. No outreach has been sent, and no listed researcher has endorsed the project.

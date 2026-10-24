@@ -7,3 +7,7 @@ previous-*/
 tmp/
 *.log
 .DS_Store
+
+# Outreach drafts are maintained outside the public project.
+OUTREACH.md
+Outrage.md

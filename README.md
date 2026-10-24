@@ -23,7 +23,7 @@ The image above is a version 5 preview, not a screenshot of the updated report.
 - A smooth-density scenario follows the Solar orbit; a separate radius/height comparison exposes the difference between the adopted force model and observed rotation curves.
 - A one-click 3D winding-path tour, full Galactic and 98% co-moving frames, and an explicitly illustrative Earth–Moon close-up.
 - A textured 3D Earth, local 24-hour orbit clock, stationary/circular Schwarzschild clock rates, and an exterior spatial embedding with labelled height magnification.
-- A [two-page brief](output/pdf/Moving_Observer_Brief.pdf), [24-second scientific model animation](output/video/Moving_Observer_3D_Tour.mp4), and [verified outreach shortlist, tailored drafts and LinkedIn caption](OUTREACH.md). No outreach has been sent.
+- A [two-page brief](output/pdf/Moving_Observer_Brief.pdf), [24-second scientific model animation](output/video/Moving_Observer_3D_Tour.mp4).
 
 See [new methods and tutorials](ENVIRONMENT_REPORT.md). The lunar orbit is not a precision ephemeris; the density scenario is not an arm-crossing or discovery forecast.
 
