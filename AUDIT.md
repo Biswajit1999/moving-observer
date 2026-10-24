@@ -1,3 +1,7 @@
+## Illustrated discussion report · 24 October 2026
+
+The new six-page PDF was rendered with Poppler and every page visually inspected. Revised figure pages were re-rendered and checked after adding the planetary legend. It contains seven numbered figures and a separate reference/tutorial page. Numerical figure data come from `export-illustrated.cjs` and the existing media export. The PDF preserves the distinction between an illustrative Galactic potential, historical Proxima inputs, schematic transit geometry and the Gaia accessibility experiment. Model plots are not represented as browser screenshots. The original note and two-page brief are retained.
+
 ## 100-light-year recording and original-note revision · 24 October 2026
 
 - The 100-light-year journey ends after 128,608.38 model years; the constant-233-km/s estimate is 128,666.29 years. The existing integration includes 7 km/s initial vertical velocity. This is path length, not distance gained relative to neighbouring stars.

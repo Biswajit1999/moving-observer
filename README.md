@@ -173,3 +173,15 @@ The integrated Sun travels 100 light-years in approximately 128,608 model years.
 The revised two-page brief includes the original A/B/C observer question, transit geometry and long-timescale examples. Its source is `brief-report.py`; the unchanged original is `discussion-note.pdf`.
 
 Browser recording uses the standard [canvas capture API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream) and checks [MediaRecorder format support](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported_static) at runtime.
+
+### Illustrated discussion report
+
+[Download the six-page illustrated report](output/pdf/Moving_Observer_Illustrated_Report.pdf). It includes seven numbered figures, the original sightline/transit question, the catalogue experiment, stellar environment, 3D path comparisons, Earth-orbit clocks and a tutorial. The Milky Way artwork retains its ESA credit and licence; other figures are generated from model data. The two-page brief remains separate.
+
+Reproduce using the same Python media dependencies listed above:
+
+```sh
+node export-media.cjs
+node export-illustrated.cjs
+python illustrated-report.py
+```
