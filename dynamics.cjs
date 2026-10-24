@@ -8,8 +8,8 @@ function force(p){const [x,y,z]=p,R2=x*x+y*y,s=R2+z*z,B=Math.sqrt(z*z+M.b*M.b),b
 function circular(R){return Math.sqrt(-R*force([R,0,0])[0]);}
 function energy(s){return potential(s.slice(0,3))+(s[3]*s[3]+s[4]*s[4]+s[5]*s[5])/2;}
 function step(s,h){const a=force(s),v=s.slice(3).map((u,i)=>u+a[i]*h/2),p=s.slice(0,3).map((u,i)=>u+v[i]*h),b=force(p);return [...p,...v.map((u,i)=>u+b[i]*h/2)];}
-function orbit(s,horizon=300,dt=.01,sample=.1){const n=Math.round(horizon/sample),sub=Math.round(sample/dt),h=sample/sub,out=new Float64Array((n+1)*6);out.set(s);for(let i=1;i<=n;i++){for(let j=0;j<sub;j++)s=step(s,h);out.set(s,i*6);}return out;}
-function at(data,t){const raw=Math.max(0,Math.min(data.length/6-1,t/.1)),i=Math.min(Math.floor(raw),data.length/6-2),f=raw-i;return Array.from({length:6},(_,j)=>data[i*6+j]*(1-f)+data[(i+1)*6+j]*f);}
+function orbit(s,horizon=300,dt=.01,sample=.1){if(![horizon,dt,sample].every(Number.isFinite)||horizon<sample||dt<=0||sample<=0)throw Error('Invalid integration interval');const n=Math.round(horizon/sample),sub=Math.max(1,Math.ceil(sample/dt)),h=sample/sub,out=new Float64Array((n+1)*6);out.sample=sample;out.set(s);for(let i=1;i<=n;i++){for(let j=0;j<sub;j++)s=step(s,h);out.set(s,i*6);}return out;}
+function at(data,t,sample=data.sample){if(!Number.isFinite(t)||!Number.isFinite(sample)||sample<=0||data.length<12)throw Error('Interpolation requires time and sample cadence');const raw=Math.max(0,Math.min(data.length/6-1,t/sample)),i=Math.min(Math.floor(raw),data.length/6-2),f=raw-i;return Array.from({length:6},(_,j)=>data[i*6+j]*(1-f)+data[(i+1)*6+j]*f);}
 const sun=[8.2,0,.02,0,233*K,7*K];
 const hosts=[{name:'Host A',p:[8.3,.15,.04],dv:[-8,4,2]},{name:'Host B',p:[7.7,-.4,-.08],dv:[6,-10,4]},{name:'Host C',p:[9,.35,.12],dv:[-12,8,-3]}];
 function hostState(h){const R=Math.hypot(h.p[0],h.p[1]),v=circular(R);return [...h.p,-v*h.p[1]/R+h.dv[0]*K,v*h.p[0]/R+h.dv[1]*K,h.dv[2]*K];}

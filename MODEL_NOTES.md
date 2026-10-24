@@ -1,3 +1,9 @@
+# Version 6 extension
+
+The underlying model notes below describe the earlier demonstration. The new catalogue experiment is specified in `RESEARCH_EXPERIMENT.md` and `data/GAIA_PROVENANCE.md`. It uses actual selected Gaia DR3 sources independently of the illustrative particles in the Galaxy view. `warp.cjs` supplies a separate, labelled kinematic surface, using a 700 pc scale at 14 kpc and a 10.86 km/s/kpc precession magnitude. Its adopted onset is 8.4 kpc; these choices do not alter the gravitational integration. The source benchmark against Astropy is in `data/astropy-comparison.json`.
+
+---
+
 # The Moving Observer — Galactic journey and the 2026 reference
 
 **Does a moving viewpoint change the exoplanet sky?**

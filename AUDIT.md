@@ -1,3 +1,18 @@
+# Version 6 verification - 24 October 2026
+
+This release adds a frozen 1,387-source Gaia DR3 experiment, a four-scenario accessibility comparison, formal covariance sampling, IWA sensitivity, a kinematic warp display, inner-planet spatial tracks and a paper-style report.
+
+- All 41 numerical/model check groups passed locally. Nine new groups cover cadence interpolation, catalogue integrity, covariance reconstruction, radial/transverse transformations, paired epoch-zero controls, independent phase quadrature, instrument monotonicity, warp material derivatives and exact seeded reproduction.
+- The prior hard-coded 0.1 Myr interpolation cadence is corrected. Tables carry their own sample interval, with an explicit parameter available for externally supplied arrays.
+- An optional independent Astropy 8.0.2 comparison reconstructs ICRS Cartesian positions and velocities for all 1,387 sources. Maximum distance differences at 2026 and 2126 are 7.11e-15 pc. This verifies transformation/units, not omitted astrophysics. See `compare-astropy.py` and `data/astropy-comparison.json`.
+- The Gaia CSV is preserved byte-for-byte through Git using `.gitattributes`; the experiment checksum must match on every platform. Builds and tests use a frozen snapshot without external queries.
+- The direct-imaging calculation is a single-visit threshold proxy, with no observing-time budget or planet occurrence model. Its scores must not be presented as new discoveries. The instrument settings are hypothetical.
+- The report's four-scenario result table is generated from the result JSON during the build. Interpretation text requires review when model assumptions change.
+- The outer-disk warp has a sourced scale and precession rate but assumed profile/phase. Its tested material derivative is a kinematic consistency check, not a validation of a self-consistent Galactic potential. The Sun remains independently integrated in the existing smooth potential.
+- Browser inspection was unavailable during this release. Numerical and static checks do not establish visual rendering, shader execution, browser interaction or print-pagination correctness. Prior screenshots and browser checks below belong to their explicitly labelled older versions.
+
+---
+
 # Version 5 verification - 23 October 2026
 
 The current release adds the full embedded and standalone research report, a usage tutorial, the historical-input Proxima lab and three independently integrated synthetic stellar tracers. Earlier sections below are retained as historical evidence for their stated versions.

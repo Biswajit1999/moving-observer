@@ -1,0 +1,10 @@
+{
+  "comparison": "Independent ICRS spherical-to-Cartesian positions and velocities, then geometric rectilinear propagation",
+  "astropy_version": "8.0.2",
+  "sources": 1387,
+  "max_absolute_distance_difference_pc": {
+    "2026": 7.105427357601002e-15,
+    "2126": 7.105427357601002e-15
+  },
+  "scope": "Coordinate and unit implementation only; no independent validation of binary, light-time, selection or instrument assumptions."
+}

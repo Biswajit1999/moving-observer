@@ -3,11 +3,11 @@
 **A moving observer, moving stars, and changing opportunities for detection**
 
 **Author and project originator: Biswajit Jana · Finding Earth 2.0**  
-Working discussion report, version 5.0 · 23 October 2026 · Not peer reviewed
+Working discussion report, version 6.0 · 24 October 2026 · Not peer reviewed
 
 ## Abstract
 
-The Solar System travels through the Milky Way while neighbouring stars follow their own orbits. This project asks how their **relative** motion changes distances, directions and opportunities to observe exoplanets. We distinguish three questions: how far we move from a fixed spatial reference; how far we move relative to a particular star; and whether the resulting geometry improves a specified detection method. These are different calculations. The demonstration combines a 250-million-year illustrative Galactic orbit model, a published-input Proxima Centauri case study, and a simple transit-geometry experiment. It does not forecast a number of newly discovered or habitable planets. Its purpose is to make the question reproducible and invite scientific criticism.
+The Solar System travels through the Milky Way while neighbouring stars follow their own orbits. This project asks how their **relative** motion changes distances, directions and opportunities to observe exoplanets. We distinguish three questions: how far we move from a fixed spatial reference; how far we move relative to a particular star; and whether the resulting geometry improves a specified detection method. These are different calculations. The demonstration combines a 250-million-year illustrative Galactic orbit model, a published-input Proxima Centauri case study, and a simple transit-geometry experiment. It does not forecast a number of newly discovered or habitable planets. A new Gaia DR3 experiment adds 1,387 selected sources, correlated astrometric errors and a four-scenario comparison of century motion and instrument thresholds. It finds a small, threshold-dependent motion contribution in a standardised planet-injection experiment. This is single-visit accessibility, not a mission discovery forecast.
 
 ## 1. What can already be answered?
 
@@ -15,7 +15,7 @@ The Solar System travels through the Milky Way while neighbouring stars follow t
 
 **Will 250 million years give us a different sky?** Yes, but not because we travel through stationary stars. Both observer and targets move. With our assumed 8.2 kpc radius and 233 km/s circular speed, one nominal Galactic period is about 216 million years. After roughly one revolution the Sun is again near the starting azimuth; its neighbours need not be the same. A travelled path length alone cannot tell us which target becomes closer.
 
-**Could that help us detect planets?** It can change apparent brightness, angular separation and transit alignment. Whether that helps depends on the instrument, observing schedule and system geometry. We can already point telescopes in different directions without waiting for Galactic travel. NASA's exoplanet archive displayed **6,451 confirmed planets, dated 15 October 2026**, when checked on 23 October 2026. This is a dated catalogue count, not an estimate of all planets that exist. Kepler's concentrated fields and TESS's much broader sky survey also make it incorrect to treat the catalogue as one fully explored patch of space. [1–3]
+**Could that help us detect planets?** It can change apparent brightness, angular separation and transit alignment. Whether that helps depends on the instrument, observing schedule and system geometry. We can already point telescopes in different directions without waiting for Galactic travel. NASA's exoplanet archive displayed **6,451 confirmed planets, dated 15 October 2026**, when checked on 24 October 2026. This is a dated catalogue count, not an estimate of all planets that exist. Kepler's concentrated fields and TESS's much broader sky survey also make it incorrect to treat the catalogue as one fully explored patch of space. [1–3]
 
 **Is Proxima approaching?** Yes. In our historical-input calculation it is approaching along the line of sight at about 22.2 km/s, while also moving sideways. Its full relative speed is about 32.5 km/s. It does not share exactly the Sun's velocity. The interactive case below shows the distinction.
 
@@ -193,9 +193,9 @@ The broad idea that stellar motion changes transit viewing opportunities is alre
 
 Bailer-Jones and colleagues (2018) studied stellar encounters with the Sun using six-dimensional Gaia DR2 data, integrating Galactic orbits and propagating correlated measurement uncertainties. That workflow illustrates what a scientifically defensible encounter calculation needs. It is not evidence that our three synthetic targets are actual predicted encounters. [9]
 
-The contribution claimed here is a **transparent educational implementation and a focused community discussion question**, originating in Biswajit Jana's supplied note. It connects fixed-reference displacement, relative stellar motion and detection geometry in one inspectable demonstration. No priority claim is made for the general physical principle, and the present code has not established a new planet or a new detection opportunity for a particular real planetary orbit.
+The project began as a **transparent educational implementation and a focused community discussion question**, originating in Biswajit Jana's supplied note. It connects fixed-reference displacement, relative stellar motion and detection geometry in one inspectable demonstration. No priority claim is made for the general physical principle, and the present code has not established a new planet or a new detection opportunity for a particular real planetary orbit.
 
-## 7. What remains to be done for predictive science?
+## 7. From the initial demonstration to a catalogue experiment
 
 1. Select a dated stellar catalogue and documented quality cuts. Obtain positions, parallaxes, proper motions, radial velocities, covariance matrices and binary-system information. Missing radial velocities must not silently become zero.
 2. Transform all stars and the Sun into a consistent frame and epoch. Integrate full systems where required, including Proxima–Alpha Centauri binding. Sample uncertainties and alternative Galactic parameters.
@@ -204,7 +204,7 @@ The contribution claimed here is a **transparent educational implementation and 
 5. Define actual instruments and observing schedules. Separate pure geometric gains from improvements in technology, survey coverage, extinction, target availability and selection bias.
 6. Validate against independent astrometry/orbit software and published encounter cases. Report posterior distributions, sample completeness and sensitivity to model choices, not just a single future animation.
 
-A useful first research deliverable would be a quality-controlled nearby-star sample over a modest timespan with uncertainty propagation and one specified instrument model. The 250 Myr scene supplies Galactic context; it is not the appropriate precision forecast for Proxima's next encounter.
+Section 11 now implements a first catalogue experiment: a dated nearby-source selection, full five-parameter covariance plus independent RV errors, century propagation, a specified threshold model and paired instrument comparisons. The requirements above remain relevant to a full mission forecast; binary dynamics, observatory scheduling and realistic planetary demographics are not solved by this first experiment. The 250 Myr scene supplies Galactic context; it is not the appropriate precision forecast for Proxima's next encounter.
 
 ## 8. The stationary probe thought experiment
 
@@ -215,7 +215,7 @@ $$
 B(t)=\lVert\mathbf r_{\rm obs}(t)-\mathbf r_{\rm ref}\rVert.
 $$
 
-A passive spacecraft inherits its release velocity and accelerates under gravity. Holding it at a fixed coordinate would require cancellation of inherited velocity and continued force compensation. The simulation does not demonstrate that such a mission is feasible. There is no universal absolute-rest location.
+A passive spacecraft inherits its release velocity and accelerates under gravity. Holding it at a fixed coordinate would require cancellation of inherited velocity and continued force compensation. The simulation does not demonstrate that such a mission is feasible. There is no universal absolute-rest location. A useful spacecraft need not remain fixed: [New Horizons and Earth measured stellar parallax from separated observing locations](https://arxiv.org/abs/2506.21666). A future probe extension should compare a feasible trajectory and measured baseline against existing astrometry; this project does not supply a propulsion or navigation design.
 
 The reference is a place, not a preserved moment in time. Looking toward it does not show the year 2026 indefinitely. The century view's distance/c readout is an instantaneous geometric light-time scale, not a solution of retarded emission times. Earth plus Solar motion gives a winding spatial path in some frames; it is not a universal helix through spacetime.
 
@@ -223,13 +223,13 @@ The reference is a place, not a preserved moment in time. Looking toward it does
 
 Run `npm ci`, `npm run build` and `npm test` using Node.js 22.12 or newer. Build output embeds application assets and pre-rendered mathematical markup; no online library is needed to use the downloaded HTML. `data/proxima-input.json` preserves the cited input set. `stellar-motion.cjs` defines its unit conversions, rectilinear propagation, synthetic tracers and transit geometry. `stellar-results.json` and the exported CSV preserve derived values.
 
-Tests check astrometric basis reconstruction, radial/transverse decomposition, closest-approach stationarity, common-velocity cancellation, transit boundaries, Galactic integration conservation/convergence and data exports. Existing tests also compare approximate planetary states with archived JPL Horizons samples. These checks establish limited implementation consistency; they do not validate omitted physics or the long-term future of named stars. Detailed historical checks and current results are supplied in `AUDIT.md` and the validation JSON files.
+The new research tests also check all catalogue covariance decompositions, source identifier integrity, phase-integrated accessibility, paired epoch-zero controls, threshold monotonicity, warp velocities and exact reproduction of the saved experiment. Tests check astrometric basis reconstruction, radial/transverse decomposition, closest-approach stationarity, common-velocity cancellation, transit boundaries, Galactic integration conservation/convergence and data exports. Existing tests also compare approximate planetary states with archived JPL Horizons samples. These checks establish limited implementation consistency; they do not validate omitted physics or the long-term future of named stars. Detailed historical checks and current results are supplied in `AUDIT.md` and the validation JSON files.
 
 ## 10. Questions for researchers and interested readers
 
 - Which parts of this question are already answered by existing transit-zone, encounter, astrometric or direct-imaging studies? Which references should be added?
 - Which measurable detection opportunity could change appreciably because of relative motion, with today's instrument capabilities held fixed?
-- Which catalogue, Solar state and Galactic potential should form the first defensible target sample? How should binaries and missing radial velocities be handled?
+- Which selection biases and unresolved binaries most affect the supplied Gaia DR3 sample? Does the source ranking survive a more complete nearby-star catalogue?
 - What uncertainty treatment and comparison case would make the Proxima example scientifically useful?
 - Over what timespan does a deterministic calculation stop being informative for the chosen observable?
 - What findings would show that this proposed observing advantage is negligible?
@@ -244,7 +244,7 @@ Please distinguish corrections to the implementation, corrections to the physics
 2. Click **Play Galactic journey** or **Play**. Gold marks the Sun and its elapsed path. The cyan reference stays at its 2026 Galactic coordinate. The timeline slider selects an epoch; **2026** resets the active clock. **Playback speed** changes how many model years pass per real second; it does not change the equations.
 3. Compare **Distance travelled** with **Sun → fixed 2026 reference**. The first is accumulated path length; the second is straight-line separation. **Jump to ≈ one Galactic orbit** illustrates why they differ: the Sun can return near its starting location after travelling a long distance.
 4. Use **Plane view** for the disk from above, **Edge-on** for thickness, or **Reset camera** for the initial perspective. Drag to rotate and scroll or use **Zoom + / −** to change magnification. **Plane guides** and **Object labels** can be switched off.
-5. **Animate disk pattern** controls schematic rotation of the artwork. It does not control the integrated Solar orbit. **Enhance arm contrast** changes display brightness and haze; it does not change stellar density or the gravity model.
+5. **Evolving outer-disk warp** controls a sourced-scale kinematic surface. Use **Edge-on** to inspect it; the Solar-height plot separately reveals vertical oscillation. **Animate disk pattern** controls schematic rotation of the artwork. It does not control the integrated Solar orbit. **Enhance arm contrast** changes display brightness and haze; it does not change stellar density or the gravity model.
 
 ### B. Compare the Sun with moving stars
 
@@ -275,7 +275,7 @@ Please distinguish corrections to the implementation, corrections to the physics
 2. Move the century clock to **2126**. The Earth-to-reference separation is about 4,917 AU in this assumed model. The cyan marker is a hypothetical fixed coordinate, not a passive spacecraft.
 3. Select **Compare a passively released probe** to display the separate simplified tracer that inherits Earth's initial motion. It remains near the Solar System rather than staying at the starting coordinate.
 4. Select **Earth & Sun** to resolve the inner orbits. Entry selects **0.1 yr / s**. Faster playback can visually undersample planetary orbits.
-5. Enable **Show 3-year path through Galaxy** to see the sum of Earth's orbit and Solar translation. If the clock is earlier than 2029, enabling this control advances it to 2029 so a three-year trail is available. Blue is Earth's spatial path; gold is the Sun's. The distances are not stretched into a decorative helix. Turn the option off to return to the inner-orbit framing.
+5. Enable **Show inner-planet paths through Galaxy** to see the sum of Earth's orbit and Solar translation. If the clock is earlier than 2029, enabling this control advances it to 2029 so a three-year trail is available. Blue is Earth's spatial path; gold is the Sun's. The distances are not stretched into a decorative helix. Turn the option off to return to the inner-orbit framing.
 6. The century and Galactic clocks retain their own times. Changing views pauses playback. They do not turn a million-year epoch into a planetary ephemeris millions of years beyond its valid range.
 
 ### F. Export and request review
@@ -285,9 +285,11 @@ Please distinguish corrections to the implementation, corrections to the physics
 - **Print / save PDF** in this report opens the browser's print dialogue. Choose its PDF destination if you want a document copy. The interactive controls become a static snapshot at their selected state.
 - Use **GitHub & feedback** to inspect source, data and tests, or open a scientific-feedback issue. When requesting review, state which claim or result you mean, its frame, units and epoch, and whether you are asking about geometry, measurement capability or habitability.
 
+<!--EXPERIMENT-->
+
 ## References
 
-1. **NASA Exoplanet Archive**, homepage count dated 15 October 2026; accessed 23 October 2026. https://exoplanetarchive.ipac.caltech.edu/
+1. **NASA Exoplanet Archive**, homepage count dated 15 October 2026; accessed 24 October 2026. https://exoplanetarchive.ipac.caltech.edu/
 2. **NASA, Kepler / K2 mission overview.** https://science.nasa.gov/mission/kepler/
 3. **NASA, TESS mission overview.** https://science.nasa.gov/mission/tess/
 4. **NASA, The Habitable Zone**, and **An Earth-like Atmosphere May Not Survive Proxima b's Orbit** (2017). https://science.nasa.gov/exoplanets/habitable-zone/ ; https://www.nasa.gov/science-research/heliophysics/an-earth-like-atmosphere-may-not-survive-proxima-bs-orbit/

@@ -3,17 +3,30 @@
 ### Does a moving viewpoint change the exoplanet sky?
 
 **By Biswajit Jana · Finding Earth 2.0**  
-Version 5.0 · Community discussion project · 23 October 2026
+Version 6.0 · Community discussion project · 24 October 2026
 
 The Sun moves through the Milky Way, and so do the stars around it. Could their changing relative positions bring different planetary systems within reach of observation—or change which planets transit from our viewpoint?
 
-This project connects a 3D Milky Way demonstration, a fixed 2026 reference experiment, a published-input Proxima Centauri calculation, and a research report with equations, prior work and questions for scientific review.
+This project connects a 3D Milky Way demonstration with a reproducible Gaia DR3 experiment: 1,387 selected nearby sources, correlated astrometric uncertainties, and a paired comparison of century-scale motion versus instrument thresholds. It includes a fixed-reference experiment, Proxima case study, and a paper-style report with equations and tutorials.
 
 **[Open the simulation](https://biswajit1999.github.io/moving-observer/)** · **[Read the report](https://biswajit1999.github.io/moving-observer/Report.html)** · **[Discuss or correct the work](https://github.com/Biswajit1999/moving-observer/issues/new/choose)**
 
 > **Status:** an educational model and working discussion report, not a peer-reviewed discovery, spacecraft proposal, or reliable 250-million-year forecast for named stars. The principle that stellar motion changes transit viewing opportunities already has published precedent, cited explicitly in the report.
 
-![The Milky Way and independently moving illustrative targets](preview-v5-galaxy.png)
+![Version 5 overview; version 6 adds the warp and catalogue experiment](preview-v5-galaxy.png)
+
+The image above is a version 5 preview, not a screenshot of the updated report.
+
+## New in version 6
+
+- A frozen ESA Gaia DR3 snapshot, exact query, provenance, full five-parameter covariance and measured radial velocities. Missing RVs are excluded, never set to zero.
+- A 2026–2126 four-scenario experiment: present/future geometry crossed with baseline/improved instrument thresholds. A fixed hypothetical Earth-radius, 1 AU population isolates geometry. Outputs are single-visit accessibility scores, not discovered planets.
+- Formal astrometric uncertainty intervals, source-level CSV export and a threshold sensitivity control. At the default settings, motion changes the summed score by +0.00911; improved thresholds add +73.09093. The motion effect changes sign at 70 mas IWA. These are model-dependent screening results.
+- A sourced-scale, precessing outer-disk warp illustration; a separate gravity-integrated Solar-height plot; and true-proportion winding paths for the four inner planets.
+- A justified, two-column desktop paper layout, responsive single-column reading, printable equations, and the experiment tutorial.
+- A corrected interpolation cadence and nine new validation groups.
+
+**Research question:** Which individual targets retain a useful motion-induced gain after realistic observing budgets, binary dynamics and planetary populations are included? The current contribution is an inspectable comparison and source ranking. Novelty is not established; see [literature search](LITERATURE_SEARCH.md).
 
 ## What the project answers
 
@@ -51,6 +64,7 @@ Requires **Node.js 22.12 or newer**; CI uses Node 24.
 git clone https://github.com/Biswajit1999/moving-observer.git
 cd moving-observer
 npm ci
+npm run research
 npm run build
 npm test
 ```
@@ -58,6 +72,10 @@ npm test
 Optionally run `python -m http.server 8788` and open `http://localhost:8788/`.
 
 The source uses plain JavaScript, Three.js and CommonJS numerical modules. esbuild bundles the application. Markdown-it and KaTeX run at build time; equations become native MathML for offline reading.
+
+The research calculation is in `research.cjs`, its frozen inputs and formal uncertainties are described in [data provenance](data/GAIA_PROVENANCE.md), and results are in [JSON](data/research-results.json) and [CSV](data/research-targets.csv). Run `python fetch-gaia.py` only for an intentional data refresh. Ordinary builds and tests use local inputs.
+
+The Gaia sample is incomplete and quality-selected; it is not a census of nearby planetary systems. The threshold proxy has no exposure-time budget, scheduler or occurrence model. It cannot predict the number of new planets discovered by 2126. The warp is a kinematic display, not an evolving gravitational potential. Do not use the 250 Myr illustration to propagate named nearby systems.
 
 ## Scientific model
 
@@ -79,11 +97,13 @@ The cyan fixed reference is a coordinate thought experiment. A passive probe ret
 
 ## Validation and data
 
-`npm test` runs **32 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks and seven stellar-motion checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
+`npm test` runs **41 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks seven stellar-motion checks and nine new research checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
 
 | File | Purpose |
 |---|---|
-| [REPORT.md](REPORT.md) / [Report.html](Report.html) | Working report; source and rendered version |
+| [REPORT.md](REPORT.md) + [RESEARCH_EXPERIMENT.md](RESEARCH_EXPERIMENT.md) / [Report.html](Report.html) | Paper sources and rendered report |
+| [data/research-results.json](data/research-results.json) | Paired experiment and uncertainty outputs |
+| [data/astropy-comparison.json](data/astropy-comparison.json) | Independent coordinate/unit benchmark |
 | [data/proxima-input.json](data/proxima-input.json) | Measurements, units, epoch, source and recorded errors |
 | [data/synthetic-tracers.json](data/synthetic-tracers.json) | Exact assumed states for the example targets |
 | [stellar-results.json](stellar-results.json) | Derived results used in the report |
