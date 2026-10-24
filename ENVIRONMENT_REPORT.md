@@ -97,3 +97,11 @@ Only radii outside the physical body are drawn. The embedding height is magnifie
 
 Download the [two-page project brief](https://biswajit1999.github.io/moving-observer/output/pdf/Moving_Observer_Brief.pdf) and [24-second scientific model animation](https://biswajit1999.github.io/moving-observer/output/video/Moving_Observer_3D_Tour.mp4). The animation is generated from the numerical modules, not recorded from the website. It labels its reference frames, scale changes between shots and illustrative lunar assumptions.
 
+
+### The original question and the 100-light-year preview
+
+The revised [two-page brief](output/pdf/Moving_Observer_Brief.pdf) restores the A-to-B-to-C sightline question, transit-boundary geometry and longer timescales from the [original discussion note](discussion-note.pdf), which is preserved in full. The original's A, B and C denote observer epochs, unlike the optional synthetic comparison stars in the simulation. The present direct-imaging score experiment does not settle transit-zone crossings for known orbital planes.
+
+**100 light-years is a distance, not 100 years.** At a constant 233 km/s it takes about 128,666 years. The integrated Solar path includes its 7 km/s initial vertical component and reaches that path length in about 128,608 years. These are model-dependent estimates, not target-encounter forecasts. The idealized orbit is nearly circular in a static smooth axisymmetric potential. Evolution of the Galactic plane is omitted; the animated warp is not coupled to the force model.
+
+**Record from the website:** click **100 light-years · preview & record**, then **Preview 10 seconds** or **Record 10 seconds**. The local 3D scene uses equal light-year scales and 10 ly grid spacing; the path covers only about 0.2 degrees around the Galactic centre, so it appears almost straight. Planetary ephemerides are not extrapolated over 129,000 years. The browser records the live scene with its labels and assumptions at 1280 × 720. It saves MP4 where supported, otherwise WebM. Keep the tab visible; hiding it cancels the capture. No audio or external screen content is captured. The earlier 24-second model-rendered animation remains a separate resource.

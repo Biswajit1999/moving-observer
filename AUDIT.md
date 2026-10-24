@@ -1,3 +1,11 @@
+## 100-light-year recording and original-note revision · 24 October 2026
+
+- The 100-light-year journey ends after 128,608.38 model years; the constant-233-km/s estimate is 128,666.29 years. The existing integration includes 7 km/s initial vertical velocity. This is path length, not distance gained relative to neighbouring stars.
+- An independent 2,000-step integration gives a path-length difference below 0.000001 ly and an endpoint difference of about 0.00000141 ly relative to the coarser existing orbit. These are numerical consistency checks, not physical uncertainty bounds.
+- Five new validation groups cover distance, input bounds, public markup, mock recording completion and hidden-tab cancellation. Actual browser video encoding and fresh live UI inspection remain unverified because browser automation was blocked by security policy.
+- The revised brief was rendered and both pages visually inspected. It restores the original sightline/transit question and links the full original note. The original uploaded PDF and repository `discussion-note.pdf` have identical SHA-256 hashes.
+- Outreach drafts and the LinkedIn caption are maintained outside this repository. The current branch no longer contains them; this does not purge earlier Git history.
+
 # Version 7.1 verification - 24 October 2026
 
 - All **62 validation groups** passed locally: the earlier 53, eight density/label/relativity groups and one physical circular-clock animation check. Scene construction exercises all geometry modes at clock boundaries; it is not a browser rendering test.

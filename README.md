@@ -111,7 +111,7 @@ The cyan fixed reference is a coordinate thought experiment. A passive probe ret
 
 ## Validation and data
 
-`npm test` runs **62 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks four scene-construction checks, and eight environment/label/relativity checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
+`npm test` runs **67 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks, four scene-construction checks, eight environment/label/relativity checks, and five journey/recording-control checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
 
 | File | Purpose |
 |---|---|
@@ -163,3 +163,13 @@ python create-share-media.py
 ```
 
 The final PDF has two pages. Numerical checks, scene construction and reviewed artifact frames do not establish live browser rendering or interaction; see `AUDIT.md` for the exact verification scope.
+
+### Live 100-light-year preview and recording
+
+Click **100 light-years · preview & record** on the simulation, then **Preview 10 seconds** or **Record 10 seconds**. The latter captures the actual live website canvas, with labels and model assumptions. It saves MP4 if the browser supports that encoder, otherwise WebM. Recording needs a visible tab and a supported desktop browser. Nothing is uploaded. This is separate from the older model-rendered MP4.
+
+The integrated Sun travels 100 light-years in approximately 128,608 model years. The view uses local Galactic axes in light-years and omits unresolved planetary orbits. It assumes a nearly circular orbit in a static smooth potential; evolution of the Galactic plane is not included. Tests check the distance against a finer independent integration, recording completion and hidden-tab cancellation with a mock media backend. Actual browser encoding has not been verified in this environment.
+
+The revised two-page brief includes the original A/B/C observer question, transit geometry and long-timescale examples. Its source is `brief-report.py`; the unchanged original is `discussion-note.pdf`.
+
+Browser recording uses the standard [canvas capture API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream) and checks [MediaRecorder format support](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported_static) at runtime.

@@ -62,55 +62,9 @@ def make_figure():
     fig.savefig(TMP/'trajectory-brief.png',dpi=190);plt.close(fig)
 
 def make_pdf():
-    make_figure(); style=getSampleStyleSheet()
-    style.add(ParagraphStyle(name='Cover',fontName='Helvetica',fontSize=26,leading=30,textColor=colors.HexColor('#18384b'),alignment=TA_CENTER,spaceAfter=9))
-    style.add(ParagraphStyle(name='Sub',fontName='Helvetica',fontSize=12,leading=17,alignment=TA_CENTER,spaceAfter=6,textColor=colors.HexColor('#486372')))
-    style.add(ParagraphStyle(name='By',fontName='Helvetica',fontSize=9,leading=13,alignment=TA_CENTER,spaceAfter=14))
-    style.add(ParagraphStyle(name='Section',fontName='Helvetica-Bold',fontSize=12,leading=16,spaceBefore=13,spaceAfter=6,textColor=colors.HexColor('#18384b')))
-    style.add(ParagraphStyle(name='Copy',fontName='Helvetica',fontSize=10.2,leading=15,spaceAfter=8,textColor=colors.HexColor('#263a45')))
-    style.add(ParagraphStyle(name='SmallCopy',fontName='Helvetica',fontSize=8.4,leading=12,spaceAfter=6,textColor=colors.HexColor('#4e626e')))
-    story=[]
-    def p(text,kind='Copy'):story.append(Paragraph(text,style[kind]))
-    p('THE MOVING OBSERVER','Cover');p('Can a changing viewpoint improve exoplanet access?','Sub')
-    p('<b>Biswajit Jana</b> | Finding Earth 2.0<br/>Independent research and simulation project | 24 October 2026 | Discussion brief v7.1','By')
-    p('The question','Section')
-    p('The Solar System moves through the Milky Way, while neighbouring stars follow their own orbits. Could changing <b>relative</b> positions make particular exoplanets easier to observe? I built this project to separate three effects: Galactic travel, motion relative to a target, and improvements in an instrument.')
-    p('What the present calculation says','Section')
-    table=[['Selected Gaia sample: 1,387 sources','Accessibility sum'],['2026 geometry; baseline thresholds','29.63207'],['2126 geometry; same thresholds','29.64118'],['2026 geometry; improved thresholds','102.72300']]
-    t=Table(table,colWidths=[365,145],hAlign='LEFT');t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#e9f0f0')),('TEXTCOLOR',(0,0),(-1,-1),colors.HexColor('#18384b')),('FONTNAME',(0,0),(-1,0),'Helvetica-Bold'),('FONTSIZE',(0,0),(-1,-1),9),('LEADING',(0,0),(-1,-1),13),('TOPPADDING',(0,0),(-1,-1),8),('BOTTOMPADDING',(0,0),(-1,-1),8),('LINEBELOW',(0,0),(-1,-1),.4,colors.HexColor('#ccd8dc')),('ALIGN',(1,1),(1,-1),'RIGHT')]))
-    story.append(t);story.append(Spacer(1,9))
-    p('<b>Century motion adds about 0.03% to the baseline score.</b> The assumed instrument change has a much larger effect. These are single-visit accessibility scores for an injected planet distribution - <b>not counts of discovered or habitable planets</b>. Some threshold choices reverse the sign of the motion effect.','SmallCopy')
-    story.append(Image(str(TMP/'trajectory-brief.png'),width=510,height=178.5))
-    p('Why the frame matters','Section')
-    p('In the current model the Sun moves about 4,917 AU in a century. Nearby stars move too. A released probe inherits its velocity and follows gravity; it does not remain at a fixed Galactic coordinate. A fixed 2026 marker is a hypothetical reference. Winding planetary paths depend on the chosen frame.','Copy')
-    story.append(PageBreak())
-    p('A request for scientific guidance','Cover')
-    p('I am an independent researcher without a formal supervisor. My aim is to make the question testable and invite correction, not to claim a new physical principle.','Copy')
-    p('Three questions for an expert','Section')
-    for text in [
-        '<b>1. Is the comparison useful?</b> Which prior or follow-up work best addresses changing observer-side accessibility at fixed instrument capability?',
-        '<b>2. Which targets survive a fuller model?</b> Do any gains remain after binary dynamics, astrometric systematics, planet populations, exposure times and observing schedules are included?',
-        '<b>3. Would a second observer help?</b> What feasible probe trajectory and measurable observable would improve on Earth-orbit and long-term astrometry?']:
-        p(text)
-    p('How to explore the simulation','Section')
-    p('<b>Milky Way:</b> play the 250 Myr illustration; compare radius, height and a labelled smooth-density scenario. Synthetic example stars are off by default.<br/><b>Sun &amp; all planets:</b> choose the winding-path tour, then compare full Galactic and 98% co-moving frames. Use the separate Solar-wobble and Earth-Moon close-ups.<br/><b>Space &amp; Time:</b> compare a stationary clock with ideal circular-orbit clocks around a 3D Earth. The 400 km and 20,200 km presets give about -24.7 and +38.5 microseconds/day relative to a stationary surface clock.')
-    p('Limits and the next test','Section')
-    p('The Galaxy artwork is not a measured star-count map. The existing illustrative potential is not a fit to the latest rotation curve. Smooth density does not predict spiral-arm crossings. The Moon is a circular illustration; the relativistic model assumes an isolated, nonrotating spherical body. The next research step is a small, carefully chosen real-target sample with a realistic observing budget and uncertainty propagation.','Copy')
-    p('Selected foundations','Section')
-    refs=[
-        ('Kaltenegger & Faherty (2021): changing Earth transit-zone membership.','https://doi.org/10.1038/s41586-021-03596-y'),
-        ('Bailer-Jones (2022): stellar encounters from Gaia DR3.','https://arxiv.org/abs/2207.06258'),
-        ('Stark et al. (2024): robust HWO exoplanet yield margins.','https://doi.org/10.1117/1.JATIS.10.3.034006'),
-        ('Poggio et al. (2025): Galactic vertical corrugation.','https://doi.org/10.1051/0004-6361/202451668'),
-        ('JPL Horizons; Gaia DR3; NIST clock tests. Full provenance is in the report.','https://biswajit1999.github.io/moving-observer/Report.html')]
-    for text,url in refs:p(f'<link href="{url}" color="#176d85">{text}</link>','SmallCopy')
-    p('<b>Simulation, full report and reproducible source</b><br/><link href="https://biswajit1999.github.io/moving-observer/" color="#176d85">biswajit1999.github.io/moving-observer/</link><br/><link href="https://github.com/Biswajit1999/moving-observer" color="#176d85">github.com/Biswajit1999/moving-observer</link>','SmallCopy')
-    def footer(canvas,doc):
-        canvas.setStrokeColor(colors.HexColor('#c7d5da'));canvas.line(42,37,A4[0]-42,37);canvas.setFont('Helvetica',8);canvas.setFillColor(colors.HexColor('#526773'));canvas.drawString(42,24,'Biswajit Jana | Finding Earth 2.0 | Working report; not peer reviewed');canvas.drawRightString(A4[0]-42,24,f'{doc.page} / 2')
-    dest=PDF/'Moving_Observer_Brief.pdf'
-    SimpleDocTemplate(str(dest),pagesize=A4,rightMargin=42,leftMargin=42,topMargin=34,bottomMargin=48,title='The Moving Observer - Two-page project brief',author='Biswajit Jana').build(story,onFirstPage=footer,onLaterPages=footer)
-    assert len(PdfReader(dest).pages)==2,'Brief must be exactly two pages'
-    print('Created two-page PDF',flush=True)
+    import runpy
+    runpy.run_path(str(ROOT/'brief-report.py'),run_name='__main__')
+
 
 def make_video():
     fps=16;frames_per_chapter=96
