@@ -1,9 +1,9 @@
 {
   "name": "galactic-journey",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "scripts": {
-    "build": "node export-stellar.cjs && node build.cjs",
-    "test": "node validate2026.cjs && node validate.cjs && node audit.cjs && node validate-galactic.cjs && node validate-stellar.cjs && node validate-research.cjs",
+    "build": "node export-stellar.cjs && node export-extensions.cjs > extensions-build.log && node build.cjs",
+    "test": "node validate2026.cjs && node validate.cjs && node audit.cjs && node validate-galactic.cjs && node validate-stellar.cjs && node validate-research.cjs && node validate-extensions.cjs && node validate-scenes.cjs",
     "research": "node research.cjs"
   },
   "keywords": [],

@@ -1,0 +1,335 @@
+[
+  {
+    "body": "Jupiter",
+    "check": "saved node / Solar reconstruction",
+    "samples": [
+      {
+        "year": 2026,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2038,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2051,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2076,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2101,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2126,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      }
+    ],
+    "maxPositionErrorKm": 0
+  },
+  {
+    "body": "Saturn",
+    "check": "saved node / Solar reconstruction",
+    "samples": [
+      {
+        "year": 2026,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2038,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2051,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2076,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2101,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2126,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      }
+    ],
+    "maxPositionErrorKm": 0
+  },
+  {
+    "body": "Uranus",
+    "check": "saved node / Solar reconstruction",
+    "samples": [
+      {
+        "year": 2026,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2038,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2051,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2076,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2101,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2126,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      }
+    ],
+    "maxPositionErrorKm": 0
+  },
+  {
+    "body": "Neptune",
+    "check": "saved node / Solar reconstruction",
+    "samples": [
+      {
+        "year": 2026,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2038,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2051,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2076,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2101,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      },
+      {
+        "year": 2126,
+        "positionErrorAU": 0,
+        "positionErrorKm": 0
+      }
+    ],
+    "maxPositionErrorKm": 0
+  },
+  {
+    "body": "Sun",
+    "check": "saved node / Solar reconstruction",
+    "samples": [
+      {
+        "year": 2026,
+        "positionErrorAU": 8.590512922424876e-7,
+        "positionErrorKm": 128.51224414155956
+      },
+      {
+        "year": 2038,
+        "positionErrorAU": 9.309821987437526e-7,
+        "positionErrorKm": 139.2729545916696
+      },
+      {
+        "year": 2051,
+        "positionErrorAU": 9.923195705188768e-7,
+        "positionErrorKm": 148.44889480356244
+      },
+      {
+        "year": 2076,
+        "positionErrorAU": 0.0000010650300140125467,
+        "positionErrorKm": 159.32622232786812
+      },
+      {
+        "year": 2101,
+        "positionErrorAU": 0.0000010812220170267707,
+        "positionErrorKm": 161.74851150116405
+      },
+      {
+        "year": 2126,
+        "positionErrorAU": 0.00000105462829688153,
+        "positionErrorKm": 157.77014759344434
+      }
+    ],
+    "maxPositionErrorKm": 161.74851150116405
+  },
+  {
+    "body": "Jupiter",
+    "check": "independent interpolation midpoint",
+    "samples": [
+      {
+        "year": 2026.125,
+        "positionErrorAU": 0.0000040606856911618585,
+        "positionErrorKm": 607.4699329797718
+      },
+      {
+        "year": 2038.125,
+        "positionErrorAU": 0.000004084577150871656,
+        "positionErrorKm": 611.0440444802724
+      },
+      {
+        "year": 2051.125,
+        "positionErrorAU": 0.000003265791902487292,
+        "positionErrorKm": 488.55551476140084
+      },
+      {
+        "year": 2076.125,
+        "positionErrorAU": 0.0000028188978290503695,
+        "positionErrorKm": 421.7011129467879
+      },
+      {
+        "year": 2101.125,
+        "positionErrorAU": 0.000003082554456001714,
+        "positionErrorKm": 461.1435829346532
+      },
+      {
+        "year": 2125.875,
+        "positionErrorAU": 0.00000315189000461671,
+        "positionErrorKm": 471.51603337127295
+      }
+    ],
+    "maxPositionErrorKm": 611.0440444802724
+  },
+  {
+    "body": "Saturn",
+    "check": "independent interpolation midpoint",
+    "samples": [
+      {
+        "year": 2026.125,
+        "positionErrorAU": 3.947793800160325e-7,
+        "positionErrorKm": 59.05815464666459
+      },
+      {
+        "year": 2038.125,
+        "positionErrorAU": 3.403898884580937e-7,
+        "positionErrorKm": 50.92160252114132
+      },
+      {
+        "year": 2051.125,
+        "positionErrorAU": 2.388547944950963e-7,
+        "positionErrorKm": 35.73216866295248
+      },
+      {
+        "year": 2076.125,
+        "positionErrorAU": 7.102433756864622e-8,
+        "positionErrorKm": 10.625089668147488
+      },
+      {
+        "year": 2101.125,
+        "positionErrorAU": 3.1672611805009983e-7,
+        "positionErrorKm": 47.381552855371766
+      },
+      {
+        "year": 2125.875,
+        "positionErrorAU": 3.420163699325924e-7,
+        "positionErrorKm": 51.16492068645932
+      }
+    ],
+    "maxPositionErrorKm": 59.05815464666459
+  },
+  {
+    "body": "Uranus",
+    "check": "independent interpolation midpoint",
+    "samples": [
+      {
+        "year": 2026.125,
+        "positionErrorAU": 2.2277058919221035e-7,
+        "positionErrorKm": 33.3260057977391
+      },
+      {
+        "year": 2038.125,
+        "positionErrorAU": 1.1098908977422599e-7,
+        "positionErrorKm": 16.60373150115535
+      },
+      {
+        "year": 2051.125,
+        "positionErrorAU": 1.2057993493363805e-7,
+        "positionErrorKm": 18.038501515216797
+      },
+      {
+        "year": 2076.125,
+        "positionErrorAU": 6.031136283294597e-8,
+        "positionErrorKm": 9.022451458823838
+      },
+      {
+        "year": 2101.125,
+        "positionErrorAU": 1.5155671735447314e-7,
+        "positionErrorKm": 22.672562206510918
+      },
+      {
+        "year": 2125.875,
+        "positionErrorAU": 2.8439974285176087e-7,
+        "positionErrorKm": 42.54559595825097
+      }
+    ],
+    "maxPositionErrorKm": 42.54559595825097
+  },
+  {
+    "body": "Neptune",
+    "check": "independent interpolation midpoint",
+    "samples": [
+      {
+        "year": 2026.125,
+        "positionErrorAU": 2.1806382072416938e-7,
+        "positionErrorKm": 32.62188325704227
+      },
+      {
+        "year": 2038.125,
+        "positionErrorAU": 1.0558518196718903e-7,
+        "positionErrorKm": 15.795318399763515
+      },
+      {
+        "year": 2051.125,
+        "positionErrorAU": 1.1689162189142448e-7,
+        "positionErrorKm": 17.48673773762661
+      },
+      {
+        "year": 2076.125,
+        "positionErrorAU": 6.588534128120176e-8,
+        "positionErrorKm": 9.856306766010592
+      },
+      {
+        "year": 2101.125,
+        "positionErrorAU": 1.5397015057995187e-7,
+        "positionErrorKm": 23.03360667811917
+      },
+      {
+        "year": 2125.875,
+        "positionErrorAU": 2.785990425808373e-7,
+        "positionErrorKm": 41.677823549151896
+      }
+    ],
+    "maxPositionErrorKm": 41.677823549151896
+  }
+]

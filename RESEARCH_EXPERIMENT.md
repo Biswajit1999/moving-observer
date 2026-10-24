@@ -16,7 +16,7 @@ We propagate barycentric Cartesian positions at constant relative velocity from 
 
 ### A deliberately controlled planet and instrument model
 
-Each source is assigned the same **hypothetical** circular 1 AU orbit, Earth radius and geometric albedo 0.3. Orbital orientations and phases are isotropic/random. This standardised injection isolates geometry; it is neither a list of actual planets nor a habitable-zone prescription for different stellar types. It assumes no occurrence rate. For phase angle alpha, Lambert reflection and angular separation are:
+Each source is assigned the same **hypothetical** circular 1 AU orbit, Earth radius and geometric albedo 0.3. Orbital orientations and phases are isotropic/random. This standardised injection isolates geometry; it is neither a list of actual planets nor a habitable-zone prescription for different stellar types. It assumes no occurrence rate. For phase angle $\alpha$, Lambert reflection and angular separation are:
 
 $$
 \Phi(\alpha)=\frac{\sin\alpha+(\pi-\alpha)\cos\alpha}{\pi},\qquad
@@ -24,9 +24,9 @@ c(\alpha)=A_g\left(\frac{R_p}{a}\right)^2\Phi(\alpha),\qquad
 \theta(\alpha)=\frac{1000a_{\rm AU}}{d_{\rm pc}}\sin\alpha\ \mathrm{mas}.
 $$
 
-The baseline thresholds are 60 mas inner working angle, a contrast floor of 10^-10, and limiting planet G magnitude 30. The improved scenario uses 40 mas, 5 × 10^-11 and G = 31. These are chosen sensitivity settings, **not specifications or forecasts for an approved telescope**. We assume grey reflection in Gaia's G band. For constant stellar luminosity, stellar magnitude changes by 5 log10(d_future/d_initial), and planet magnitude is stellar magnitude minus 2.5 log10(c).
+The baseline thresholds are 60 mas inner working angle, a contrast floor of $10^{-10}$, and limiting planet G magnitude 30. The improved scenario uses 40 mas, 5 × $10^{-11}$ and G = 31. These are chosen sensitivity settings, **not specifications or forecasts for an approved telescope**. We assume grey reflection in Gaia's G band. For constant stellar luminosity, stellar magnitude changes by $5\log_{10}(d_{\rm future}/d_{\rm initial})$, and planet magnitude is stellar magnitude minus $2.5\log_{10}c$.
 
-With isotropically distributed planet positions, cos(alpha) is uniform. We solve the simultaneous angular-separation, contrast and magnitude inequalities to obtain the allowed phase interval [alpha_min, alpha_max]. The resulting single-visit accessibility is:
+With isotropically distributed planet positions, $\cos\alpha$ is uniform. We solve the simultaneous angular-separation, contrast and magnitude inequalities to obtain the allowed phase interval $[\alpha_{\min},\alpha_{\max}]$. The resulting single-visit accessibility is:
 
 $$
 C_i=\frac{\cos\alpha_{\min}-\cos\alpha_{\max}}{2}
@@ -37,7 +37,7 @@ This marginalisation removes dependence on the absolute sky direction for an iso
 
 ### Paired experiment and uncertainty
 
-Let S be the sum of C over the fixed sample. The first index below denotes present/future geometry; the second denotes baseline/improved thresholds:
+Let $S$ be the sum of $C$ over the fixed sample. The first index below denotes present/future geometry; the second denotes baseline/improved thresholds:
 
 $$
 \Delta_{\rm motion}=S_{10}-S_{00},\qquad
@@ -59,7 +59,7 @@ All four evaluations share the same star and astrometric draw. We use 1,024 draw
 | Instrument change alone | +73.09093 | +73.06238 to +73.14632 |
 | Interaction | -0.00735 | -0.00976 to -0.00692 |
 
-The baseline motion change is approximately **0.031%** of the initial accessibility sum. Forty-two sources gain and 45 lose accessibility (absolute changes greater than 10^-12); the remainder are unchanged under these thresholds. This is not a claim that 42 planets become detectable or that 45 planets disappear. The largest nominal absolute change belongs to Gaia DR3 **762815470562110464**, with +0.00350 in accessibility and a model distance change from 2.54526 to 2.53656 pc. It is a screening result, not a validated observing recommendation or confirmation of a planet around that source.
+The baseline motion change is approximately **0.031%** of the initial accessibility sum. Forty-two sources gain and 45 lose accessibility (absolute changes greater than $10^{-12}$); the remainder are unchanged under these thresholds. This is not a claim that 42 planets become detectable or that 45 planets disappear. The largest nominal absolute change belongs to Gaia DR3 **762815470562110464**, with +0.00350 in accessibility and a model distance change from 2.54526 to 2.53656 pc. It is a screening result, not a validated observing recommendation or confirmation of a planet around that source.
 
 The result is threshold-sensitive: keeping contrast and magnitude cuts fixed, a 70 mas IWA produces a net motion contribution of **−0.00145**, whereas 60 mas produces +0.00911. This counterexample rejects the simple assertion that waiting always improves aggregate accessibility. The negative interaction means the improved thresholds reduce the marginal benefit of motion in this chosen example; it is not evidence that improved instruments perform worse overall.
 
@@ -94,7 +94,7 @@ $$
 z_w(R,\phi,t)=0.7\left[\max\left(0,\frac{R-8.4}{5.6}\right)\right]^2\sin(\phi-\Omega_w t)\ \mathrm{kpc},
 $$
 
-where R is in kpc, t in Myr, and the signed precession rate in this coordinate convention is −10.86 × 0.001022712 Myr^-1. A material tracer following this surface would require:
+where R is in kpc, t in Myr, and the signed precession rate in this coordinate convention is −10.86 × 0.001022712 $\mathrm{Myr}^{-1}$. A material tracer following this surface would require:
 
 $$
 v_z=\partial_t z_w+v_R\partial_R z_w+\frac{v_\phi}{R}\partial_\phi z_w.
@@ -104,4 +104,4 @@ The implementation supplies and tests this derivative. It remains a kinematic de
 
 The Sun already undergoes vertical oscillation in the smooth axisymmetric potential. A new height-versus-time plot makes this motion visible at its true parsec scale without artificially stretching the 3D Galaxy. Select **Edge-on**, enable **Evolving outer-disk warp**, and play the million-year clock to distinguish the two motions. Disabling the warp does not change the Solar integration.
 
-In **Earth & Sun**, the three-year paths of Mercury, Venus, Earth and Mars now show their individual orbital motions added to the common Solar translation. The ecliptic is oblique to the Galactic plane. The paths can look winding in Galactic coordinates, but the Sun does not follow a small helix merely because its planets orbit it, and the planets do not trail behind it in a single plane perpendicular to its velocity. A trajectory's appearance depends on the chosen frame. No curved-spacetime calculation is performed.
+In **Sun & all planets**, all eight planets can be viewed in Solar System coordinates or with Galactic translation included. A separate Solar-wobble close-up resolves the small barycentric reflex motion. **Earth & Sun** retains a simpler two-body viewing option. The ecliptic is oblique to the Galactic plane. The paths can look winding in Galactic coordinates, while the Sun also has a smaller, non-circular barycentric wobble caused by the planets, and the planets do not trail behind it in a single plane perpendicular to its velocity. A trajectory's appearance depends on the chosen frame. The separate Space & Time view explains weak-field gravity and clock rates using a labelled potential-grid analogy; it does not solve the Einstein field equations.

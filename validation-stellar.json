@@ -1,5 +1,5 @@
 {
-  "version": "5.0.0",
+  "version": "7.0.0",
   "scope": "Numerical and artifact checks, not a forecast uncertainty estimate",
   "results": [
     {
@@ -54,7 +54,7 @@
     {
       "name": "Published report renders mathematical markup and provides actual report navigation",
       "pass": true,
-      "mathBlocks": 14
+      "mathBlocks": 35
     }
   ],
   "proxima2026": {

@@ -1,3 +1,18 @@
+# Version 7 verification — 24 October 2026
+
+This release repairs equation rendering and the report cover/layout, adds eight-planet and Solar-reflex views, and adds an explanatory gravitational-potential and clock-rate view.
+
+- All **53 numerical, artifact and scene-construction validation groups** passed locally. The 12 added groups test preserved display-math delimiters, invalid-equation rejection, full-source mathematics, barycentric identities, gravity/clock scaling, epoch guards, Horizons comparisons, generated controls, finite scene geometry and CSV exports.
+- The original equation failure was JavaScript replacement-string handling of `$$`. Callback replacement now preserves those delimiters. Visible-text inspection of both built HTML documents found no leaked TeX, duplicate IDs or missing local fragment targets.
+- Outer planets use 401 saved Horizons position/velocity states per body and cubic Hermite interpolation. Six independent between-node dates per body give maximum sampled errors of 611.1 km (Jupiter), 59.1 km (Saturn), 42.6 km (Uranus), and 41.7 km (Neptune). A 1,000 km regression threshold applies to these samples; it is not an all-epoch accuracy guarantee. Saved-node checks test ingestion only.
+- Six independent Solar barycentric comparisons give a maximum reconstruction difference of 161.8 km. The regression criterion is 0.1% of the Solar radius. Inner-planet approximations and omitted small bodies limit the reconstruction. This is not a full N-body solver.
+- At 1 AU from an isolated Sun, the stationary weak-field clock lag relative to infinity is 852.82 microseconds/day. Tests verify inverse-radius clock scaling, inverse-square acceleration and invariance of readouts under visual-depth changes. Actual terrestrial or spacecraft clocks need additional terms and a defined reference system.
+- The supplied screenshots were inspected. Fresh live browser inspection was blocked by the browser tool's security policy. Scene-construction tests run without a renderer and cannot establish visual layout, shader execution, interaction, performance or print pagination. These remain unverified for version 7; no older screenshots are presented as new evidence.
+- The Galactic warp remains kinematic and independent of the integrated Solar vertical orbit. Labelled vertical display magnification changes neither numerical distances nor the force model.
+- The 1,000-year catalogue row is a nominal sensitivity extrapolation with no new uncertainty or binary propagation. Accessibility scores are not planet counts. No claim of established novelty is made.
+
+---
+
 # Version 6 verification - 24 October 2026
 
 This release adds a frozen 1,387-source Gaia DR3 experiment, a four-scenario accessibility comparison, formal covariance sampling, IWA sensitivity, a kinematic warp display, inner-planet spatial tracks and a paper-style report.

@@ -32,5 +32,5 @@ test('Synthetic tracers conserve quantities and agree at half timestep',()=>{
 test('Published report renders mathematical markup and provides actual report navigation',()=>{
  const html=fs.readFileSync(__dirname+'/index.html','utf8'),report=fs.readFileSync(__dirname+'/Report.html','utf8');assert(html.includes('id="reportOpen"'));assert(html.includes('id="reportPage"'));assert(html.includes('id="proxTime"'));assert((report.match(/<math /g)||[]).length>=14);assert(!html.includes('/*__REPORT_'));assert(!report.includes('EQUATION_'));assert(!/<script[^>]+src=["']https?:/i.test(report));return {mathBlocks:(report.match(/<math /g)||[]).length};
 });
-const output={version:'5.0.0',scope:'Numerical and artifact checks, not a forecast uncertainty estimate',results,proxima2026:S.proxima(0),proximaClosest:S.proxima(S.closestYears)};
+const output={version:require('./package.json').version,scope:'Numerical and artifact checks, not a forecast uncertainty estimate',results,proxima2026:S.proxima(0),proximaClosest:S.proxima(S.closestYears)};
 fs.writeFileSync(__dirname+'/validation-stellar.json',JSON.stringify(output,null,2)+'\n');console.log(`Passed ${results.length} stellar-motion checks`);

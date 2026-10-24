@@ -3,28 +3,30 @@
 ### Does a moving viewpoint change the exoplanet sky?
 
 **By Biswajit Jana · Finding Earth 2.0**  
-Version 6.0 · Community discussion project · 24 October 2026
+Version 7.0 · Community discussion project · 24 October 2026
 
 The Sun moves through the Milky Way, and so do the stars around it. Could their changing relative positions bring different planetary systems within reach of observation—or change which planets transit from our viewpoint?
 
-This project connects a 3D Milky Way demonstration with a reproducible Gaia DR3 experiment: 1,387 selected nearby sources, correlated astrometric uncertainties, and a paired comparison of century-scale motion versus instrument thresholds. It includes a fixed-reference experiment, Proxima case study, and a paper-style report with equations and tutorials.
+This project connects a 3D Milky Way demonstration with a reproducible Gaia DR3 experiment: 1,387 selected nearby sources, correlated astrometric uncertainties, and a paired comparison of century-scale motion versus instrument thresholds. It includes a fixed-reference experiment, Proxima case study, and a report with equations and tutorials.
 
 **[Open the simulation](https://biswajit1999.github.io/moving-observer/)** · **[Read the report](https://biswajit1999.github.io/moving-observer/Report.html)** · **[Discuss or correct the work](https://github.com/Biswajit1999/moving-observer/issues/new/choose)**
 
 > **Status:** an educational model and working discussion report, not a peer-reviewed discovery, spacecraft proposal, or reliable 250-million-year forecast for named stars. The principle that stellar motion changes transit viewing opportunities already has published precedent, cited explicitly in the report.
 
-![Version 5 overview; version 6 adds the warp and catalogue experiment](preview-v5-galaxy.png)
+![Historical version 5 overview](preview-v5-galaxy.png)
 
 The image above is a version 5 preview, not a screenshot of the updated report.
 
-## New in version 6
+## New in version 7
 
-- A frozen ESA Gaia DR3 snapshot, exact query, provenance, full five-parameter covariance and measured radial velocities. Missing RVs are excluded, never set to zero.
-- A 2026–2126 four-scenario experiment: present/future geometry crossed with baseline/improved instrument thresholds. A fixed hypothetical Earth-radius, 1 AU population isolates geometry. Outputs are single-visit accessibility scores, not discovered planets.
-- Formal astrometric uncertainty intervals, source-level CSV export and a threshold sensitivity control. At the default settings, motion changes the summed score by +0.00911; improved thresholds add +73.09093. The motion effect changes sign at 70 mas IWA. These are model-dependent screening results.
-- A sourced-scale, precessing outer-disk warp illustration; a separate gravity-integrated Solar-height plot; and true-proportion winding paths for the four inner planets.
-- A justified, two-column desktop paper layout, responsive single-column reading, printable equations, and the experiment tutorial.
-- A corrected interpolation cadence and nine new validation groups.
+- Repaired report equations: section insertion now preserves display-math delimiters. Invalid equations fail the build. The title and author are centred, with a single-column report layout.
+- **Sun & all planets:** all eight planets, a Galactic-path view, and a close-up of the Sun moving around the system barycentre. Outer-planet positions use saved JPL Horizons ephemerides; inner planets use approximate elements.
+- **Reveal Galactic wobble:** an edge-on tour with explicitly labelled vertical magnification. The integrated Solar oscillation remains separate from the kinematic disk warp.
+- **Space & Time:** moving potential diagrams and isolated-body gravity/clock comparisons. Diagram depth is arbitrary; numerical clock rates use a specified weak-field approximation.
+- Reproducible 10-, 100- and 1,000-year accessibility comparisons. The millennium row is a sensitivity extrapolation, not a discovery forecast.
+- Independent Horizons checks and regressions for mathematics, barycentric identity, clock scaling and scene construction. See [verification and limits](AUDIT.md).
+
+The frozen 1,387-source Gaia DR3 experiment, correlated uncertainties, four-scenario comparison and threshold-sensitivity controls remain available. Its outputs are accessibility scores, not planet discoveries.
 
 **Research question:** Which individual targets retain a useful motion-induced gain after realistic observing budgets, binary dynamics and planetary populations are included? The current contribution is an inspectable comparison and source ranking. Novelty is not established; see [literature search](LITERATURE_SEARCH.md).
 
@@ -43,14 +45,16 @@ The research question is: **for which real systems and observing methods does re
 |---|---|---|
 | Milky Way | Sun, fixed 2026 reference, integrated paths and three moving targets | 0–250 Myr; illustrative Galactic potential |
 | 2026 reference | Earth/Sun drift from the initial Earth location | 2026–2126; AU distances |
-| Earth & Sun | Inclined inner orbits; optional three-year winding spatial track | JPL approximation; same century clock |
+| Earth & Sun | Earth orbit and optional three-year spatial track | JPL approximation; century clock |
+| Sun & all planets | Eight planets, Galactic paths and Solar barycentric wobble | 2026–2126; separate scale/frame choices |
+| Space & Time | Potential diagrams, isolated gravity and clock-rate comparisons | Weak-field educational model; arbitrary plotted depth |
 | Research report | Full equations, evidence, assumptions and questions | Embedded reading view, printable and offline |
 | Proxima lab | Approach, minimum and recession; distance/flux/angle readouts and CSV | −50 kyr to +100 kyr; constant relative velocity |
 | Transit control | Entry/exit from a circular orbit's transit band | Invented Earth–Sun analogue, not Proxima b |
 
 Click **Research report** in the main navigation, or **Is Proxima approaching?** in the Galactic sidebar. This full reading view is separate from the shorter **Model & sources** notes. The report includes a [step-by-step tutorial](https://biswajit1999.github.io/moving-observer/Report.html#report-section-12) for every view, both clocks and the exports. Use **Print / save PDF** for a printable copy. Standalone [Report.html](Report.html) includes the same interactive case study.
 
-The Galactic and century clocks are saved separately. Switching scenes pauses playback. Drag to orbit, scroll to zoom, or use **Plane view** and **Edge-on**. In **Earth & Sun**, select **Show 3-year path through Galaxy** for the winding spatial trajectory at true AU proportions. Body markers are enlarged.
+The Galactic and century clocks are saved separately. Switching scenes pauses playback. Drag to orbit, scroll to zoom, or use **Plane view** and **Edge-on**. In **Earth & Sun**, select **Show Earth’s path through Galaxy** for the winding spatial trajectory at true AU proportions. Body markers are enlarged.
 
 ## Run offline
 
@@ -73,7 +77,7 @@ Optionally run `python -m http.server 8788` and open `http://localhost:8788/`.
 
 The source uses plain JavaScript, Three.js and CommonJS numerical modules. esbuild bundles the application. Markdown-it and KaTeX run at build time; equations become native MathML for offline reading.
 
-The research calculation is in `research.cjs`, its frozen inputs and formal uncertainties are described in [data provenance](data/GAIA_PROVENANCE.md), and results are in [JSON](data/research-results.json) and [CSV](data/research-targets.csv). Run `python fetch-gaia.py` only for an intentional data refresh. Ordinary builds and tests use local inputs.
+The research calculation is in `research.cjs`, its frozen inputs and formal uncertainties are described in [data provenance](data/GAIA_PROVENANCE.md), and results are in [JSON](data/research-results.json) and [CSV](data/research-targets.csv). Run `python fetch-gaia.py` only for an intentional data refresh. Ordinary builds and tests use local inputs. The outer-planet inputs, source URLs and units are stored in `data/ephemeris-*.json`. `python fetch-horizons-v7.py` intentionally refreshes those inputs and independent midpoint checks; `node compare-extensions.cjs` regenerates the error summary. The original six-date benchmark requests remain frozen. [Space & Time and Solar-motion methods](SPACE_TIME_REPORT.md) describe the approximations.
 
 The Gaia sample is incomplete and quality-selected; it is not a census of nearby planetary systems. The threshold proxy has no exposure-time budget, scheduler or occurrence model. It cannot predict the number of new planets discovered by 2126. The warp is a kinematic display, not an evolving gravitational potential. Do not use the 250 Myr illustration to propagate named nearby systems.
 
@@ -97,7 +101,7 @@ The cyan fixed reference is a coordinate thought experiment. A passive probe ret
 
 ## Validation and data
 
-`npm test` runs **41 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks seven stellar-motion checks and nine new research checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
+`npm test` runs **53 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks and three scene-construction checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
 
 | File | Purpose |
 |---|---|

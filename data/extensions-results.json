@@ -1,0 +1,126 @@
+{
+  "model": "v7 explanatory extensions; nominal sweeps are not mission forecasts",
+  "solarReflex": {
+    "minOffsetKm": 93703.61419845738,
+    "maxOffsetKm": 1273966.4619336887,
+    "samples": 1001
+  },
+  "solarCentury": {
+    "travelAU": 4917.341604124109,
+    "departureFromInitialTangentAU": 0.0071422570601001704
+  },
+  "galacticHeightPc": {
+    "min": -99.03784062830037,
+    "max": 99.02899899667271
+  },
+  "isolatedSurfaceClocks": [
+    {
+      "body": "Sun",
+      "radiusKm": 695700,
+      "potentialKm2S2": -190761.0177393696,
+      "accelerationMS2": 274.2001117426615,
+      "schwarzschildRadiusKm": 2.953250077018841,
+      "clockLagMicrosecondsPerDay": 183384.22211759948
+    },
+    {
+      "body": "Mercury",
+      "radiusKm": 2439.4,
+      "potentialKm2S2": -9.031675227924898,
+      "accelerationMS2": 3.702416671281831,
+      "schwarzschildRadiusKm": 4.902751955647222e-7,
+      "clockLagMicrosecondsPerDay": 8.682417171597931
+    },
+    {
+      "body": "Venus",
+      "radiusKm": 6051.8,
+      "potentialKm2S2": -53.679664232129284,
+      "accelerationMS2": 8.870032755895648,
+      "schwarzschildRadiusKm": 0.000007229078611965992,
+      "clockLagMicrosecondsPerDay": 51.60385274413082
+    },
+    {
+      "body": "Earth",
+      "radiusKm": 6371,
+      "potentialKm2S2": -62.564814865327264,
+      "accelerationMS2": 9.82025033202437,
+      "schwarzschildRadiusKm": 0.000008870055938197208,
+      "clockLagMicrosecondsPerDay": 60.14541147859353
+    },
+    {
+      "body": "Mars",
+      "radiusKm": 3389.5,
+      "potentialKm2S2": -12.635602836996608,
+      "accelerationMS2": 3.7278663038786273,
+      "schwarzschildRadiusKm": 9.530598950471569e-7,
+      "clockLagMicrosecondsPerDay": 12.146979632995185
+    },
+    {
+      "body": "Jupiter",
+      "radiusKm": 69911,
+      "potentialKm2S2": -1812.4867917781178,
+      "accelerationMS2": 25.925631042012242,
+      "schwarzschildRadiusKm": 0.002819739281571479,
+      "clockLagMicrosecondsPerDay": 1742.3972903246683
+    },
+    {
+      "body": "Saturn",
+      "radiusKm": 58232,
+      "potentialKm2S2": -651.5418471252918,
+      "accelerationMS2": 11.188725221962011,
+      "schwarzschildRadiusKm": 0.0008442918770187168,
+      "clockLagMicrosecondsPerDay": 626.3464948346024
+    },
+    {
+      "body": "Uranus",
+      "radiusKm": 25362,
+      "potentialKm2S2": -228.4739531582683,
+      "accelerationMS2": 9.008514831569602,
+      "schwarzschildRadiusKm": 0.0001289462700653171,
+      "clockLagMicrosecondsPerDay": 219.63878506512495
+    },
+    {
+      "body": "Neptune",
+      "radiusKm": 24622,
+      "potentialKm2S2": -277.6592925261961,
+      "accelerationMS2": 11.27687809788791,
+      "schwarzschildRadiusKm": 0.00015213324523344842,
+      "clockLagMicrosecondsPerDay": 266.9221100676213
+    }
+  ],
+  "solarFieldAt1AU": {
+    "radiusKm": 149597870.7,
+    "potentialKm2S2": -887.1278676647597,
+    "accelerationMS2": 0.005930083519997319,
+    "schwarzschildRadiusKm": 2.953250077018841,
+    "clockLagMicrosecondsPerDay": 852.8223211349086
+  },
+  "catalogueTimeSweep": [
+    {
+      "years": 10,
+      "motionScore": 0.0009155207471855109,
+      "initialScore": 29.63207064352205,
+      "motionPercent": 0.0030896279851629453,
+      "medianAbsoluteDistanceFraction": 0.000012603354698659253,
+      "approaching": 684,
+      "receding": 703
+    },
+    {
+      "years": 100,
+      "motionScore": 0.009111122579828296,
+      "initialScore": 29.63207064352205,
+      "motionPercent": 0.03074750559768966,
+      "medianAbsoluteDistanceFraction": 0.00012603307847458556,
+      "approaching": 684,
+      "receding": 703
+    },
+    {
+      "years": 1000,
+      "motionScore": 0.08370639970380156,
+      "initialScore": 29.63207064352205,
+      "motionPercent": 0.28248582662616206,
+      "medianAbsoluteDistanceFraction": 0.0012565951306097167,
+      "approaching": 682,
+      "receding": 705
+    }
+  ]
+}

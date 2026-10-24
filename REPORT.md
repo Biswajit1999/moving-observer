@@ -1,13 +1,14 @@
 # Does a moving viewpoint change the exoplanet sky?
 
-**A moving observer, moving stars, and changing opportunities for detection**
+**A report on relative motion, gravity, and changing opportunities to observe exoplanets**
 
-**Author and project originator: Biswajit Jana · Finding Earth 2.0**  
-Working discussion report, version 6.0 · 24 October 2026 · Not peer reviewed
+**Biswajit Jana**<br>
+Finding Earth 2.0 · Independent research and simulation project<br>
+Research and simulation report, version 7.0 · 24 October 2026 · Not peer reviewed
 
-## Abstract
+## Report overview
 
-The Solar System travels through the Milky Way while neighbouring stars follow their own orbits. This project asks how their **relative** motion changes distances, directions and opportunities to observe exoplanets. We distinguish three questions: how far we move from a fixed spatial reference; how far we move relative to a particular star; and whether the resulting geometry improves a specified detection method. These are different calculations. The demonstration combines a 250-million-year illustrative Galactic orbit model, a published-input Proxima Centauri case study, and a simple transit-geometry experiment. It does not forecast a number of newly discovered or habitable planets. A new Gaia DR3 experiment adds 1,387 selected sources, correlated astrometric errors and a four-scenario comparison of century motion and instrument thresholds. It finds a small, threshold-dependent motion contribution in a standardised planet-injection experiment. This is single-visit accessibility, not a mission discovery forecast.
+This report investigates a question prompted by curiosity: as the Solar System moves through the Milky Way, could our changing viewpoint help us observe different planetary systems? It describes what the simulation calculates, what the current results mean, and what evidence would be needed for a stronger conclusion. Neighbouring stars move too, so relative motion is central to the question. This project asks how their **relative** motion changes distances, directions and opportunities to observe exoplanets. We distinguish three questions: how far we move from a fixed spatial reference; how far we move relative to a particular star; and whether the resulting geometry improves a specified detection method. These are different calculations. The demonstration combines a 250-million-year illustrative Galactic orbit model, a published-input Proxima Centauri case study, and a simple transit-geometry experiment. It does not forecast a number of newly discovered or habitable planets. A new Gaia DR3 experiment adds 1,387 selected sources, correlated astrometric errors and a four-scenario comparison of century motion and instrument thresholds. It finds a small, threshold-dependent motion contribution in a standardised planet-injection experiment. This is single-visit accessibility, not a mission discovery forecast.
 
 ## 1. What can already be answered?
 
@@ -275,7 +276,7 @@ Please distinguish corrections to the implementation, corrections to the physics
 2. Move the century clock to **2126**. The Earth-to-reference separation is about 4,917 AU in this assumed model. The cyan marker is a hypothetical fixed coordinate, not a passive spacecraft.
 3. Select **Compare a passively released probe** to display the separate simplified tracer that inherits Earth's initial motion. It remains near the Solar System rather than staying at the starting coordinate.
 4. Select **Earth & Sun** to resolve the inner orbits. Entry selects **0.1 yr / s**. Faster playback can visually undersample planetary orbits.
-5. Enable **Show inner-planet paths through Galaxy** to see the sum of Earth's orbit and Solar translation. If the clock is earlier than 2029, enabling this control advances it to 2029 so a three-year trail is available. Blue is Earth's spatial path; gold is the Sun's. The distances are not stretched into a decorative helix. Turn the option off to return to the inner-orbit framing.
+5. Enable **Show Earth’s path through Galaxy** to see the sum of Earth's orbit and Solar translation. If the clock is earlier than 2029, enabling this control advances it to 2029 so a three-year trail is available. Blue is Earth's spatial path; gold is the Sun's. The distances are not stretched into a decorative helix. Turn the option off to return to the Earth-orbit framing.
 6. The century and Galactic clocks retain their own times. Changing views pauses playback. They do not turn a million-year epoch into a planetary ephemeris millions of years beyond its valid range.
 
 ### F. Export and request review
@@ -286,6 +287,8 @@ Please distinguish corrections to the implementation, corrections to the physics
 - Use **GitHub & feedback** to inspect source, data and tests, or open a scientific-feedback issue. When requesting review, state which claim or result you mean, its frame, units and epoch, and whether you are asking about geometry, measurement capability or habitability.
 
 <!--EXPERIMENT-->
+
+<!--SPACE_TIME-->
 
 ## References
 

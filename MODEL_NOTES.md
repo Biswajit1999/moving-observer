@@ -1,3 +1,15 @@
+# Version 7 extension
+
+The current report layout is single-column with a centred cover. All mathematical expressions are compiled at build time; the section replacement uses a callback to preserve double-dollar delimiters.
+
+`solar-system.cjs` reconstructs an eight-system barycentre from mass parameters. The outer four systems use saved Horizons positions/velocities every quarter Julian year and cubic Hermite interpolation (`ephemeris.cjs`); inner positions and orbit guides use approximate JPL elements. `data/horizons-v7-comparison.json` records independent sample checks. The new Solar-reflex view is separate from the original smooth-Sun century reference experiment, preserving its stated assumptions. This is not a new N-body integration.
+
+`gravity.cjs` separates arbitrary potential-diagram height from physical isolated-body weak-field gravity and stationary-clock rates. `extended-views.js` supplies the two new scenes. Vertical magnification affects the entire Galactic display and its labels, never the measured quantities. The warp remains kinematic, while the Solar vertical orbit comes from the existing axisymmetric potential.
+
+See `SPACE_TIME_REPORT.md` for equations, tutorials and limitations; `export-extensions.cjs` regenerates time-sweep and physical-scale tables. Numerical checks do not establish fresh browser rendering or print pagination; those remain unverified for this release.
+
+---
+
 # Version 6 extension
 
 The underlying model notes below describe the earlier demonstration. The new catalogue experiment is specified in `RESEARCH_EXPERIMENT.md` and `data/GAIA_PROVENANCE.md`. It uses actual selected Gaia DR3 sources independently of the illustrative particles in the Galaxy view. `warp.cjs` supplies a separate, labelled kinematic surface, using a 700 pc scale at 14 kpc and a 10.86 km/s/kpc precession magnitude. Its adopted onset is 8.4 kpc; these choices do not alter the gravitational integration. The source benchmark against Astropy is in `data/astropy-comparison.json`.
