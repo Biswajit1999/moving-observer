@@ -111,7 +111,7 @@ The cyan fixed reference is a coordinate thought experiment. A passive probe ret
 
 ## Validation and data
 
-`npm test` runs **81 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks, six scene-construction checks, eight environment/label/relativity checks, five journey/recording-control checks, and twelve relativistic-dynamics checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
+`npm test` runs **82 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks, seven scene-construction checks, eight environment/label/relativity checks, five journey/recording-control checks, and twelve relativistic-dynamics checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
 
 | File | Purpose |
 |---|---|
@@ -202,3 +202,7 @@ Starting data and independent comparison epochs: [relativity-horizons.json](data
 - **Six-page report**: newly drawn labelled top-down map with A/today, B/future, C/later future, arms, centre, Solar orbit and warp inset. This is explicitly a conceptual diagram. Rebuild with `python illustrated-report.py` after the numerical exports; `report-galaxy.py` creates the reusable map.
 
 Scene checks include projected warp visibility and all-body/reference motion. They are not live browser screenshots or WebGL validation.
+
+### Visible warped disk revision
+
+The opening Galactic view now uses a labelled 5x vertical display and follows the warp line of nodes as time advances. A height-coloured outer surface (blue below, amber above) makes the bend visible where the artist reconstruction is faint. This is a structural overlay, not measured stellar colour or density. The edge-on surface no longer fades to zero based on the orientation of an unwarped plane. Uncheck the height overlay for artwork alone, choose 1x for true proportions, or drag to release the camera-follow mode. The cross-section uses physical parsec heights from the same warp equation.

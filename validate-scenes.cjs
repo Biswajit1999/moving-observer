@@ -42,11 +42,19 @@ const Grav=require('./gravity.cjs'),assert=require('node:assert/strict'),esbuild
  assert.ok(elements.systemMotion.textContent.includes('98%'));finiteScene(views.system);
  console.log('PASS All ten body markers are visible and the reference advances by residual Solar travel');
  const W=require('./warp.cjs'),THREE=require('three');
- for(const time of [0,30,125,250]){
+ for(const time of [0,30,119.9,125,250]){
   const camera=new THREE.PerspectiveCamera(46,1.5,.01,100);camera.up.set(0,0,1);camera.position.set(...W.edgeCamera(time));camera.lookAt(0,0,0);camera.updateMatrixWorld();
   const section=W.section(time),flat=W.section(time,false);const i=150;assert.ok(Math.abs(section[i][2]-.7)<1e-12);assert.equal(flat[i][2],0);
   const project=p=>new THREE.Vector3(...p).project(camera);assert.ok(Math.abs(project(section[i]).y-project(flat[i]).y)>.025,'edge-on projection must expose the physical bend');
  }
  console.log('PASS Warp camera exposes the +/-700 pc bend at multiple precession phases');
- console.log('6 scene-construction validation groups passed (rendering unverified)');
+ const surface=require('./galaxy-surface.cjs');
+ for(const face of [0,.035,.1,.5,1])assert.ok(surface.visibility(face)>=.65&&surface.visibility(face)<=1);
+ assert.ok(surface.vertexShader.includes('p.z+=warpZ'));
+ assert.ok(surface.fragmentShader.includes('structure*outer*.6'));
+ const html=require('fs').readFileSync('index.html','utf8');
+ for(const id of ['warpSurface','warpFollow','warpProfile'])assert.ok(html.includes('id="'+id+'"'));
+ assert.ok(html.includes('<option value="5" selected>'));
+ console.log('PASS Edge-on disk remains visible; height overlay and default warp controls exist');
+ console.log('7 scene-construction validation groups passed (rendering unverified)');
 })().catch(e=>{console.error(e);process.exitCode=1;});

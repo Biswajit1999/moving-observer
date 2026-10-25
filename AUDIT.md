@@ -1,3 +1,9 @@
+## Visible outer-disk warp correction
+
+The supplied screenshot showed a faint warped outer disk dominated by a flat bright centre. The surface shader's global plane-angle fade was nearly zero at the intended edge-on camera angle. The correction retains at least 65% of the surface fade multiplier and adds an optional, explicitly labelled height-coloured structural surface in the outer disk. The same height function deforms the surface, points and guide rings; no dynamics parameters changed.
+
+The default view is 5x vertically magnified, and the camera follows the precessing line of nodes so the bend stays across the image. Manual camera interaction releases follow mode. The reveal button preserves the selected epoch. Tests cover edge-on visibility and the screenshot epoch of 119.9 Myr. Live WebGL rendering remains unverified due the existing browser restriction; source/scene checks do not replace that verification.
+
 ## Warp, forward motion and report revision · 25 October 2026
 
 The edge-on camera now looks along the warp line of nodes, exposing the bend across the image. Rings and a maximum-bend cross-section follow the same height function as the artwork, against a flat-plane reference. The reveal preset turns the warp on and labels its 5× vertical display. Projection checks resolve the 700 pc bend at four precession phases.
