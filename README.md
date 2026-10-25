@@ -111,7 +111,7 @@ The cyan fixed reference is a coordinate thought experiment. A passive probe ret
 
 ## Validation and data
 
-`npm test` runs **67 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks, four scene-construction checks, eight environment/label/relativity checks, and five journey/recording-control checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
+`npm test` runs **79 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks, four scene-construction checks, eight environment/label/relativity checks, five journey/recording-control checks, and twelve relativistic-dynamics checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
 
 | File | Purpose |
 |---|---|
@@ -185,3 +185,11 @@ node export-media.cjs
 node export-illustrated.cjs
 python illustrated-report.py
 ```
+
+### Coupled relativistic Solar System lab
+
+Open **Space & Time → Relativistic Solar System · coupled 1PN lab**. It integrates the Sun, eight planetary point masses and Moon with all-included-body order-reduced Einstein–Infeld–Hoffmann 1PN dynamics and a paired Newtonian control. Choose 1, 5, 10 or 20 years; refine the RK4 step; inspect ideal relative surface clocks and a limited Solar Shapiro-delay diagnostic; export paired trajectories. See [the equations, validation and limitations](RELATIVITY_REPORT.md).
+
+This is a weak-field 1PN model, not a full Einstein-field solver or JPL ephemeris replacement. Sparse JPL comparisons measure actual discrepancies; the Moon differs by about 17.8 km at one year and 215 km at ten years. The isolated Mercury precession benchmark gives 42.9798 arcseconds/century (analytic 42.9807). Live browser execution remains unverified; model and worker calculations are tested under Node.
+
+Starting data and independent comparison epochs: [relativity-horizons.json](data/relativity-horizons.json). Saved checks: [relativity-validation.json](data/relativity-validation.json). Refresh data sequentially with `python fetch-relativity.py`; run checks with `node validate-relativity.cjs` after building. Surface-clock estimates and signal-delay approximations have separate, documented scopes.

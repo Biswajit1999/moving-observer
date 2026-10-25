@@ -41,7 +41,7 @@
       "name": "Offline HTML: no external runtime assets, matching build aliases",
       "status": "PASS",
       "details": {
-        "htmlBytes": 8150737,
+        "htmlBytes": 8484603,
         "note": "Source hyperlinks are allowed; images and application code are embedded."
       }
     },

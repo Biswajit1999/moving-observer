@@ -54,7 +54,7 @@
     {
       "name": "Published report renders mathematical markup and provides actual report navigation",
       "pass": true,
-      "mathBlocks": 44
+      "mathBlocks": 60
     }
   ],
   "proxima2026": {

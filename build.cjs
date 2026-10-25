@@ -13,7 +13,7 @@ function report(){
  const labels={c00:'2026, baseline thresholds S00',c10:'2126, baseline thresholds S10',c01:'2026, improved thresholds S01',c11:'2126, improved thresholds S11',motion:'Motion alone',technology:'Instrument change alone',interaction:'Interaction'};
  const rows=Object.entries(labels).map(([k,label])=>'| '+label+' | '+sum[k].toFixed(5)+' | '+(results.interval[k]?results.interval[k].map(x=>x.toFixed(5)).join(' to '):'—')+' |').join('\n');
  experiment=experiment.replace(/\| Quantity \|[\s\S]*?(?=\n\n)/,'| Quantity | Nominal score | 95% formal-astrometry interval for differences |\n|---|---:|---|\n'+rows);
- const source=includeSection(includeSection(includeSection(read('REPORT.md'),'<!--EXPERIMENT-->',experiment),'<!--SPACE_TIME-->',spaceTime),'<!--ENVIRONMENT-->',read('ENVIRONMENT_REPORT.md'));
+ const source=includeSection(includeSection(includeSection(read('REPORT.md'),'<!--EXPERIMENT-->',experiment),'<!--SPACE_TIME-->',spaceTime),'<!--ENVIRONMENT-->',includeSection(read('ENVIRONMENT_REPORT.md'),'<!--RELATIVITY-->',read('RELATIVITY_REPORT.md')));
  let html=renderReport(source).html;let n=0;html=html.replace(/<h2>/g,()=>'<h2 id="report-section-'+(++n)+'">');
  const toc='<nav class="report-toc" aria-label="Report contents"><span>In this report</span><a href="#report-section-1">Overview</a><a href="#catalogueExperiment">Catalogue experiment</a><a href="#report-space-time">Space &amp; Time</a><a href="#report-environment">Density, speed &amp; 3D clocks</a><a href="#report-section-3">Equations &amp; frames</a><a href="#report-proxima">Proxima lab</a><a href="#report-section-14">Warp &amp; trajectories</a><a href="#report-section-12">Simulation tutorial</a><a href="#report-section-11">Review questions</a></nav>';
  html=html.replace(/^([\s\S]*?)(?=<h2)/,(_,intro)=>'<header class="report-cover"><p class="report-kicker">Finding Earth 2.0 / Research &amp; simulation report</p>'+intro+'</header>');
@@ -23,7 +23,8 @@ function report(){
 }
 (async()=>{
  const content=report(),css=read('report.css');
- await esbuild.build({entryPoints:[path.join(__dirname,'app.js')],bundle:true,format:'iife',minify:true,legalComments:'inline',loader:{'.jpg':'dataurl'},outfile:path.join(__dirname,'bundle.js')});
+ const worker=await esbuild.build({entryPoints:[path.join(__dirname,'relativity-worker.js')],bundle:true,format:'iife',minify:true,write:false});
+ await esbuild.build({entryPoints:[path.join(__dirname,'app.js')],bundle:true,format:'iife',minify:true,legalComments:'inline',define:{__RELATIVITY_WORKER__:JSON.stringify(worker.outputFiles[0].text)},loader:{'.jpg':'dataurl'},outfile:path.join(__dirname,'bundle.js')});
  const html=read('index.template.html').replace('/*__REPORT_CSS__*/',()=>css).replace('/*__REPORT_CONTENT__*/',()=>content).replace('/*__BUNDLE__*/',()=>read('bundle.js').replace(/<\/script/gi,'<\\/script'));
  for(const file of ['index.html','Galactic_Journey.html','Moving_Observer_2026.html'])write(file,html);
  await esbuild.build({entryPoints:[path.join(__dirname,'report-main.js')],bundle:true,format:'iife',minify:true,outfile:path.join(__dirname,'report-bundle.js')});

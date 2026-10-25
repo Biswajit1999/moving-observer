@@ -1,3 +1,7 @@
+## Coupled 1PN Solar System lab · 25 October 2026
+
+The new dynamics branch uses order-reduced all-included-body EIH 1PN equations, frozen geometric barycentric Horizons states and paired Newtonian integration. Twelve validation groups include a Mercury apsidal benchmark, the Schwarzschild test-particle limit, covariance/scaling, 30-day step refinement, three sparse JPL comparison epochs, clocks, signal geometry, and actual worker numerical execution under Node. Measured errors and the distinction from a full-GR solver are in `RELATIVITY_REPORT.md`. No browser rendering or encoding claim is added. The previous illustrated PDF remains unchanged.
+
 ## Illustrated discussion report · 24 October 2026
 
 The new six-page PDF was rendered with Poppler and every page visually inspected. Revised figure pages were re-rendered and checked after adding the planetary legend. It contains seven numbered figures and a separate reference/tutorial page. Numerical figure data come from `export-illustrated.cjs` and the existing media export. The PDF preserves the distinction between an illustrative Galactic potential, historical Proxima inputs, schematic transit geometry and the Gaia accessibility experiment. Model plots are not represented as browser screenshots. The original note and two-page brief are retained.

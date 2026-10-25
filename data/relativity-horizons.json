@@ -1,0 +1,456 @@
+{
+  "epochJDTDB": 2461041.5,
+  "frame": "J2000 ecliptic, ICRF orientation, Solar System barycentre",
+  "units": "AU, AU/day",
+  "days": [
+    0,
+    30,
+    365.25,
+    3652.5
+  ],
+  "bodies": {
+    "Sun": {
+      "command": 10,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=10&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          -0.003067316167378726,
+          -0.005533329071575707,
+          0.00013168419397952,
+          7.176071432730415e-06,
+          1.778134123198417e-07,
+          -1.358857619127603e-07
+        ],
+        [
+          2461071.5,
+          -0.00285308292992336,
+          -0.005523855515405198,
+          0.0001275775695822197,
+          7.108688302405706e-06,
+          4.54877388426195e-07,
+          -1.382395407785093e-07
+        ],
+        [
+          2461406.75,
+          -0.0007047412320916529,
+          -0.00487179724938295,
+          8.292126553049691e-05,
+          5.581182164661009e-06,
+          3.332181167468042e-06,
+          -1.218750560885561e-07
+        ],
+        [
+          2464694.0,
+          -0.002480524465662761,
+          -0.006933932015453326,
+          8.379593164264491e-05,
+          7.138297864164066e-06,
+          -4.00116520967931e-06,
+          -1.754613218076275e-07
+        ]
+      ],
+      "rawSha256": "cffb1759512c269292738a05706981c7bc7982df2e2597f0cac331041267a60d",
+      "header": "*******************************************************************************\n Revised: July 31, 2013                  Sun                                 10\n\n PHYSICAL PROPERTIES (updated 2024-Oct-30):\n  GM, km^3/s^2          = 132712440041.93938  Mass, 10^24 kg        = ~1988410\n  Vol. mean radius, km  = 695700              Volume, 10^12 km^3    = 1412000\n  Solar radius (IAU2015)= 695700 km           Mean density, g/cm^3  = 1.408\n  Radius (photosphere)  = 696500 km           Angular diam at 1 AU  = 1919.3\"\n  Photosphere temp., K  = 6600 (bottom)       Photosphere temp., K  = 4400(top)\n  Photospheric depth    = ~500 km             Chromospheric depth   = ~2500 km\n  Flatness, f           = 0.00005             Adopted sid. rot. per.= 25.38 d\n  Surface gravity       =  274.0 m/s^2        Escape speed, km/s    =  617.7\n  Pole (RA,DEC), deg.   = (286.13, 63.87)     Obliquity to ecliptic = 7.25 deg.\n  Solar constant (1 AU) = 1367.6 W/m^2        Luminosity, 10^24 J/s = 382.8\n  Mass-energy conv rate = 4.260 x 10^9 kg/s   Effective temp, K     = 5772\n  Sunspot cycle         = 11.4 yr             Cycle 24 sunspot min. = 2008 A.D.\n\n  Motion relative to nearby stars = apex : R.A.= 271 deg.; DEC.= +30 deg.\n                                    speed: 19.4 km/s (0.0112 au/day)\n  Motion relative to 2.73K BB/CBR = apex : l= 264.7 +- 0.8; b= 48.2 +- 0.5 deg.\n                                    speed: 369 +-11 km/s\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:05 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Sun (10)                        {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Mercury": {
+      "command": 1,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=1&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          -0.2182686205450464,
+          -0.4147409447718479,
+          -0.01357158539794414,
+          0.01923902835424443,
+          -0.01173744846416334,
+          -0.002723291810929642
+        ],
+        [
+          2461071.5,
+          0.3455865711535922,
+          -0.1723255854089857,
+          -0.04546206715273861,
+          0.006656511588681009,
+          0.02665264895505098,
+          0.001568081458463862
+        ],
+        [
+          2461406.75,
+          0.07347309298383914,
+          -0.454727803905078,
+          -0.04348452154991002,
+          0.02212231228362181,
+          0.006021985406918117,
+          -0.001536708905106477
+        ],
+        [
+          2464694.0,
+          0.1795962499492504,
+          0.2461459485857231,
+          0.004074513074631359,
+          -0.02842701867746089,
+          0.01756929706169051,
+          0.004043417955882695
+        ]
+      ],
+      "rawSha256": "7fc78b26ad58bedb22c1e88fcdd49e20eb89408f7c2e0322f4dfec5f00b5c14b",
+      "header": "*******************************************************************************\n Revised: April 12, 2021             Mercury                            199 / 1\n\n PHYSICAL DATA (updated 2024-Mar-04):\n  Vol. Mean Radius (km) =  2439.4+-0.1    Density (g cm^-3)     = 5.427\n  Mass x10^23 (kg)      =     3.302       Volume (x10^10 km^3)  = 6.085  \n  Sidereal rot. period  =    58.6463 d    Sid. rot. rate (rad/s)= 0.00000124001\n  Mean solar day        =   175.9421 d    Core radius (km)      = ~1600 \n  Geometric Albedo      =     0.106       Surface emissivity    = 0.77+-0.06\n  GM (km^3/s^2)         = 22031.86855     Equatorial radius, Re = 2440.53 km\n  GM 1-sigma (km^3/s^2) =                 Mass ratio (Sun/plnt) = 6023682\n  Mom. of Inertia       =     0.33        Equ. gravity  m/s^2   = 3.701     \n  Atmos. pressure (bar) = < 5x10^-15      Max. angular diam.    = 11.0\"   \n  Mean Temperature (K)  = 440             Visual mag. V(1,0)    = -0.42 \n  Obliquity to orbit[1] =  2.11' +/- 0.1' Hill's sphere rad. Rp = 94.4 \n  Sidereal orb. per.    =  0.2408467 y    Mean Orbit vel.  km/s = 47.362 \n  Sidereal orb. per.    = 87.969257  d    Escape vel. km/s      =  4.435\n                                 Perihelion  Aphelion    Mean\n  Solar Constant (W/m^2)         14462       6278        9126\n  Maximum Planetary IR (W/m^2)   12700       5500        8000\n  Minimum Planetary IR (W/m^2)   6           6           6\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:06 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Mercury Barycenter (199)        {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Venus": {
+      "command": 2,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=2&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          0.08580993344897782,
+          -0.7272957113886563,
+          -0.01491237238108241,
+          0.01994573625940069,
+          0.002400543706150917,
+          -0.001117607682227194
+        ],
+        [
+          2461071.5,
+          0.5887595931804184,
+          -0.4280722145163885,
+          -0.03981339519048434,
+          0.01163729396362374,
+          0.01637926323721977,
+          -0.000446174958034678
+        ],
+        [
+          2461406.75,
+          -0.5652181530761006,
+          0.4379889843899458,
+          0.03874135096892641,
+          -0.01255562949443387,
+          -0.01601282616629367,
+          0.0005045460652176223
+        ],
+        [
+          2464694.0,
+          0.7157437992634798,
+          0.09126740747639774,
+          -0.04000108684905616,
+          -0.002810358464153819,
+          0.01994447339070408,
+          0.0004370094966965811
+        ]
+      ],
+      "rawSha256": "4f2dd787fbd410ba6d6f8457af653bcda809fbf9e8d8ea647698bc8dc9e85383",
+      "header": "*******************************************************************************\n Revised: April 12, 2021                Venus                           299 / 2\n \n PHYSICAL DATA (updated 2020-Oct-19):\n  Vol. Mean Radius (km) =  6051.84+-0.01 Density (g/cm^3)      =  5.204\n  Mass x10^23 (kg)      =    48.685      Volume (x10^10 km^3)  = 92.843\n  Sidereal rot. period  =   243.018484 d Sid. Rot. Rate (rad/s)= -0.00000029924\n  Mean solar day        =   116.7490 d   Equ. gravity  m/s^2   =  8.870\n  Mom. of Inertia       =     0.33       Core radius (km)      = ~3200\n  Geometric Albedo      =     0.65       Potential Love # k2   = ~0.25\n  GM (km^3/s^2)         = 324858.592     Equatorial Radius, Re = 6051.893 km\n  GM 1-sigma (km^3/s^2) =    +-0.006     Mass ratio (Sun/Venus)= 408523.72\n  Atmos. pressure (bar) =  90            Max. angular diam.    =   60.2\"\n  Mean Temperature (K)  = 735            Visual mag. V(1,0)    =   -4.40\n  Obliquity to orbit    = 177.3 deg      Hill's sphere rad.,Rp =  167.1\n  Sidereal orb. per., y =   0.61519726   Orbit speed, km/s     =   35.021\n  Sidereal orb. per., d = 224.70079922   Escape speed, km/s    =   10.361\n                                 Perihelion  Aphelion    Mean\n  Solar Constant (W/m^2)         2759         2614       2650\n  Maximum Planetary IR (W/m^2)    153         153         153\n  Minimum Planetary IR (W/m^2)    153         153         153\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:07 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Venus Barycenter (299)          {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Earth": {
+      "command": 399,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=399&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          -0.1773487970879621,
+          0.9622255911830275,
+          7.223908380425527e-05,
+          -0.01719737129724856,
+          -0.003116429209131983,
+          1.012925163112427e-07
+        ],
+        [
+          2461071.5,
+          -0.6459061350401665,
+          0.7408173773430935,
+          8.425927866235787e-05,
+          -0.01329905642830926,
+          -0.01129207850286658,
+          1.005221359471221e-06
+        ],
+        [
+          2461406.75,
+          -0.1748397899377144,
+          0.962928142886122,
+          2.589609355534318e-05,
+          -0.01720955896753173,
+          -0.003102657146361568,
+          4.481983126307332e-07
+        ],
+        [
+          2464694.0,
+          -0.1756221274707152,
+          0.9610612614701688,
+          3.322473718108757e-06,
+          -0.01721344615587385,
+          -0.003102354469305779,
+          7.928375443492623e-07
+        ]
+      ],
+      "rawSha256": "c98c8ad75f8fce39dc5fe0b994f2f63caaaa24ae2fb0c455a8603b225b4be92a",
+      "header": "*******************************************************************************\n Revised: April 12, 2021                 Earth                              399\n \n GEOPHYSICAL PROPERTIES (revised May 9, 2022):\n  Vol. Mean Radius (km)    = 6371.01+-0.02   Mass x10^24 (kg)= 5.97219+-0.0006\n  Equ. radius, km          = 6378.137        Mass layers:\n  Polar axis, km           = 6356.752          Atmos         = 5.1   x 10^18 kg\n  Flattening               = 1/298.257223563   oceans        = 1.4   x 10^21 kg\n  Density, g/cm^3          = 5.51              crust         = 2.6   x 10^22 kg\n  J2 (IERS 2010)           = 0.00108262545     mantle        = 4.043 x 10^24 kg\n  g_p, m/s^2  (polar)      = 9.8321863685      outer core    = 1.835 x 10^24 kg\n  g_e, m/s^2  (equatorial) = 9.7803267715      inner core    = 9.675 x 10^22 kg\n  g_o, m/s^2               = 9.82022         Fluid core rad  = 3480 km\n  GM, km^3/s^2             = 398600.435436   Inner core rad  = 1215 km\n  GM 1-sigma, km^3/s^2     =      0.0014     Escape velocity = 11.186 km/s\n  Rot. Rate (rad/s)        = 0.00007292115   Surface area:\n  Mean sidereal day, hr    = 23.9344695944     land          = 1.48 x 10^8 km\n  Mean solar day 2000.0, s = 86400.002         sea           = 3.62 x 10^8 km\n  Mean solar day 1820.0, s = 86400.0         Love no., k2    = 0.299\n  Moment of inertia        = 0.3308          Atm. pressure   = 1.0 bar\n  Mean surface temp (Ts), K= 287.6           Volume, km^3    = 1.08321 x 10^12\n  Mean effect. temp (Te), K= 255             Magnetic moment = 0.61 gauss Rp^3\n  Geometric albedo         = 0.367           Vis. mag. V(1,0)= -3.86\n  Solar Constant (W/m^2)   = 1367.6 (mean), 1414 (perihelion), 1322 (aphelion)\n HELIOCENTRIC ORBIT CHARACTERISTICS:\n  Obliquity to orbit, deg  = 23.4392911  Sidereal orb period  = 1.0000174 y\n  Orbital speed, km/s      = 29.79       Sidereal orb period  = 365.25636 d\n  Mean daily motion, deg/d = 0.9856474   Hill's sphere radius = 234.9       \n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:08 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Earth (399)                     {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Mars": {
+      "command": 4,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=4&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          0.3375123606947087,
+          -1.392535345017499,
+          -0.03728554259370234,
+          0.01412658804156271,
+          0.004540381003546958,
+          -0.0002512212534152572
+        ],
+        [
+          2461071.5,
+          0.7389448095995357,
+          -1.194305265350362,
+          -0.04297417258361851,
+          0.01240938014527486,
+          0.008609755762717363,
+          -0.0001238406899513654
+        ],
+        [
+          2461406.75,
+          -1.027685835919102,
+          1.281464738969414,
+          0.0522207203560489,
+          -0.01040246651978809,
+          -0.007535919819887369,
+          9.706834482111544e-05
+        ],
+        [
+          2464694.0,
+          0.8211523811055129,
+          1.230578110710077,
+          0.005843140724573721,
+          -0.01111347573497345,
+          0.00894292966664722,
+          0.0004598380225816088
+        ]
+      ],
+      "rawSha256": "7632c7a673aad131462f69e0524b0ae942ff5a93c90a9a823a2ad1d6dd48bb1f",
+      "header": "*******************************************************************************\n Revised: April 12, 2021        Mars Barycenter                               4\n \n Dynamical point:\n ---------------\n The common center of mass about which the Martian system (planet and\n satellites Phobos and Deimos) revolve.\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:09 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Mars Barycenter (4)             {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Jupiter": {
+      "command": 5,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=5&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          -1.697070346353225,
+          4.923349385564657,
+          0.01755792409730332,
+          -0.00722343982789003,
+          -0.00210136204696616,
+          0.0001703650410958014
+        ],
+        [
+          2461071.5,
+          -1.912115731518793,
+          4.855702566414432,
+          0.02265091409171461,
+          -0.007110793928594161,
+          -0.002407401992176551,
+          0.0001691158226259034
+        ],
+        [
+          2461406.75,
+          -3.993329467755365,
+          3.534153761900061,
+          0.07471166041913796,
+          -0.005091845423919564,
+          -0.005296544981214385,
+          0.0001359438369489613
+        ],
+        [
+          2464694.0,
+          3.205723775465033,
+          3.821372755464494,
+          -0.08760145285425161,
+          -0.00587089845368308,
+          0.005200175177547223,
+          0.0001096983427810039
+        ]
+      ],
+      "rawSha256": "1faf1ca13806e86fa3d8560935bc408084831f06c10a613e4bdc1353a43fc88e",
+      "header": "*******************************************************************************\n Revised: April 12, 2021        Jupiter Barycenter                            5\n \n Dynamical point:\n ---------------\n The location of the center-of-mass of the Jupiter system. The point about \n which Jupiter and its satellites revolve. See 599 for Jupiter center.\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:10 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Jupiter Barycenter (5)          {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Saturn": {
+      "command": 6,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=6&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          9.504276049054493,
+          0.2522051287305764,
+          -0.3828038443137736,
+          -0.0004559084781779595,
+          0.005564849965275845,
+          -7.862514484979138e-05
+        ],
+        [
+          2461071.5,
+          9.489129343081403,
+          0.419102533948055,
+          -0.3851032648408932,
+          -0.0005538931362262155,
+          0.005561354999463614,
+          -7.466368794371115e-05
+        ],
+        [
+          2461406.75,
+          9.119601609350633,
+          2.263112805802368,
+          -0.4024604033858257,
+          -0.001649258740705058,
+          0.005402510809792055,
+          -2.829399349582321e-05
+        ],
+        [
+          2464694.0,
+          -6.354996043684214,
+          6.560091720197282,
+          0.1389478621475975,
+          -0.004308653333359594,
+          -0.003894973766773029,
+          0.0002392690070900728
+        ]
+      ],
+      "rawSha256": "5e84ce917d7d1179122e39203b9ecb368683b3f8485cf4b938bf7ed293f9fec5",
+      "header": "*******************************************************************************\n Revised: April 12, 2021         Saturn Barycenter                            6\n \n Dynamical point:\n ---------------\n The location of the center-of-mass of the Saturn system. The point about which\n Saturn and its satellites revolve. See 699 for Saturn center.\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:11 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Saturn Barycenter (6)           {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Uranus": {
+      "command": 7,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=7&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          9.877250659026895,
+          16.79448208074637,
+          -0.0655881149433342,
+          -0.003419224980854433,
+          0.001810555427714117,
+          5.101817757255198e-05
+        ],
+        [
+          2461071.5,
+          9.774496455792892,
+          16.84849569734005,
+          -0.06405639708860433,
+          -0.003431036175177777,
+          0.001790338849975815,
+          5.109604894969269e-05
+        ],
+        [
+          2461406.75,
+          8.603035295764839,
+          17.41020896983959,
+          -0.04679482330014806,
+          -0.003555092845414502,
+          0.001559058525638663,
+          5.184342982459279e-05
+        ],
+        [
+          2464694.0,
+          -4.078335872723523,
+          18.37254131224849,
+          0.1210044860893199,
+          -0.003868764436124641,
+          -0.001036931422008586,
+          4.623910016348599e-05
+        ]
+      ],
+      "rawSha256": "914c3fafc9c542d38f031b1c745439dbd1df0771422388505493a464487bcb7d",
+      "header": "*******************************************************************************\n Revised: April 12, 2021         Uranus Barycenter                            7\n \n Dynamical point:\n ---------------\n The location of the center-of-mass of the Uranus system. The point about \n which Uranus and its satellites revolve. See 799 for Uranus center.\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:12 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Uranus Barycenter (7)           {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Neptune": {
+      "command": 8,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=8&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          29.8690527247216,
+          0.5134061341695503,
+          -0.6989354910096494,
+          -7.462115765231789e-05,
+          0.003157285164825036,
+          -6.32992143360024e-05
+        ],
+        [
+          2461071.5,
+          29.86666483197296,
+          0.6081219638973554,
+          -0.7008309720090055,
+          -8.45716584048691e-05,
+          0.003157098223817794,
+          -6.306607810225975e-05
+        ],
+        [
+          2461406.75,
+          29.81967676819371,
+          1.665939210370128,
+          -0.7215321090248541,
+          -0.0001957277855147794,
+          0.003152862481054217,
+          -6.041750251631972e-05
+        ],
+        [
+          2464694.0,
+          27.41355215360641,
+          11.7243767325334,
+          -0.873219559588367,
+          -0.001254267308177397,
+          0.00290508527757431,
+          -3.092018172544301e-05
+        ]
+      ],
+      "rawSha256": "fc9e28ec51a119c865fca356b6cfcc8583da1ebf572c004a81627e2efcfa3709",
+      "header": "*******************************************************************************\n Revised: April 12, 2021       Neptune Barycenter                             8\n \n Dynamical point:\n ---------------\n The location of the center-of-mass of the Neptune system. The point about \n which Neptune and its satellites revolve. See 899 for Neptune center.\n*******************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:13 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Neptune Barycenter (8)          {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    },
+    "Moon": {
+      "command": 301,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=301&CENTER=500%400&MAKE_EPHEM=YES&EPHEM_TYPE=VECTORS&REF_PLANE=ECLIPTIC&REF_SYSTEM=ICRF&OUT_UNITS=AU-D&VEC_TABLE=2&VEC_CORR=NONE&CSV_FORMAT=YES&TLIST=%272461041.5+2461071.5+2461406.75+2464694.0%27&OBJ_DATA=YES",
+      "states": [
+        [
+          2461041.5,
+          -0.1763840391885575,
+          0.9644274663123614,
+          0.0002844946205616522,
+          -0.01777741124760916,
+          -0.002873359211769047,
+          3.327021959334017e-06
+        ],
+        [
+          2461071.5,
+          -0.6465419872244411,
+          0.7431770442402652,
+          0.0002637619782365789,
+          -0.01390022159773662,
+          -0.01144246306814355,
+          -3.156903117045759e-05
+        ],
+        [
+          2461406.75,
+          -0.1771629517121208,
+          0.961725029774209,
+          -0.0001907647182473806,
+          -0.01697221129299669,
+          -0.003626762238006819,
+          -2.291049518455524e-05
+        ],
+        [
+          2464694.0,
+          -0.173831153809737,
+          0.959028725880624,
+          6.683529530463752e-05,
+          -0.01679924551698574,
+          -0.002726951473145007,
+          -4.80965722733751e-05
+        ]
+      ],
+      "rawSha256": "2bc23fcd6ac07c5fb4143478f4db7f91d0d932ce20fde52118945ebdd2847d2b",
+      "header": "*******************************************************************************\n Revised: July 31, 2013             Moon / (Earth)                          301\n \n GEOPHYSICAL DATA (updated 2018-Aug-15):\n  Vol. mean radius, km  = 1737.53+-0.03    Mass, x10^22 kg       =    7.349\n  Radius (gravity), km  = 1738.0           Surface emissivity    =    0.92\n  Radius (IAU), km      = 1737.4           GM, km^3/s^2          = 4902.800066\n  Density, g/cm^3       =    3.3437        GM 1-sigma, km^3/s^2  =  +-0.0001  \n  V(1,0)                =   +0.21          Surface accel., m/s^2 =    1.62\n  Earth/Moon mass ratio = 81.3005690769    Farside crust. thick. = ~80 - 90 km\n  Mean crustal density  = 2.97+-.07 g/cm^3 Nearside crust. thick.= 58+-8 km \n  Heat flow, Apollo 15  = 3.1+-.6 mW/m^2   Mean angular diameter = 31'05.2\"\n  Heat flow, Apollo 17  = 2.2+-.5 mW/m^2   Sid. rot. rate, rad/s = 0.0000026617\n  Geometric Albedo      = 0.12             Mean solar day        = 29.5306 d\n  Obliquity to orbit    = 6.67 deg         Orbit period          = 27.321582 d\n  Semi-major axis, a    = 384400 km        Eccentricity          = 0.05490\n  Mean motion, rad/s    = 2.6616995x10^-6  Inclination           = 5.145 deg\n  Apsidal period        = 3231.50 d        Nodal period          = 6798.38 d\n                                 Perihelion  Aphelion    Mean\n  Solar Constant (W/m^2)         1414+-7     1323+-7     1368+-7\n  Maximum Planetary IR (W/m^2)   1314        1226        1268\n  Minimum Planetary IR (W/m^2)      5.2         5.2         5.2\n********************************************************************************\n\n\n*******************************************************************************\nEphemeris / API_USER Sat Oct 24 18:49:14 2026 Pasadena, USA      / Horizons\n*******************************************************************************\nTarget body name: Moon (301)                      {source: DE441}\nCenter body name: Solar System Barycenter (0)     {source: DE441}\nCenter-site name: BODY CENTER\n*******************************************************************************\nStart time      : A.D. 2026-Jan-01 00:00:00.0000 TDB\nStop  time      : A.D. 2036-Jan-01 12:00:00.0000 TDB\nStep-size       : DISCRETE TIME-LIST\n*******************************************************************************\nCenter geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}\nCenter radii    : (undefined)\nOutput units    : AU-D\nCalendar mode   : Mixed Julian/Gregorian\nOutput type     : GEOMETRIC cartesian states\nOutput format   : 2 (position and velocity)\nReference frame : Ecliptic of J2000.0\n*******************************************************************************\n            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,\n**************************************************************************************************************************************************************************************************\n"
+    }
+  },
+  "retrieved": "2026-10-25",
+  "source": "https://ssd.jpl.nasa.gov/horizons/",
+  "note": "Outer planets and Mars are system barycentres represented as point masses. Earth and Moon are separate."
+}

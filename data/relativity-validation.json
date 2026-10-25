@@ -1,0 +1,107 @@
+{
+  "model": "Order-reduced EIH 1PN; point masses; RK4",
+  "epochJDTDB": 2461041.5,
+  "stepDays": 0.0625,
+  "scope": "Numerical consistency plus sparse ephemeris comparisons; not a total uncertainty budget",
+  "mercury": {
+    "numericalArcsecCentury": 42.97983319519412,
+    "analyticArcsecCentury": 42.980718489034345,
+    "fitYears": 10,
+    "stepDays": 0.0625
+  },
+  "convergence30days": {
+    "Sun": {
+      "refinementKm": 0,
+      "relativisticDifferenceKm": 0
+    },
+    "Mercury": {
+      "refinementKm": 0.00008532295901022058,
+      "relativisticDifferenceKm": 8.825137673106871
+    },
+    "Venus": {
+      "refinementKm": 0.000005727052205745273,
+      "relativisticDifferenceKm": 1.6649669384741819
+    },
+    "Earth": {
+      "refinementKm": 0.00003024314132610076,
+      "relativisticDifferenceKm": 0.6395599808634319
+    },
+    "Mars": {
+      "refinementKm": 2.101263127884029e-7,
+      "relativisticDifferenceKm": 0.2062568487537034
+    },
+    "Jupiter": {
+      "refinementKm": 8.719185974301419e-7,
+      "relativisticDifferenceKm": 0.004188266184764071
+    },
+    "Saturn": {
+      "refinementKm": 5.509108560050926e-7,
+      "relativisticDifferenceKm": 0.0006922425904242968
+    },
+    "Uranus": {
+      "refinementKm": 0.0000022549330572488487,
+      "relativisticDifferenceKm": 0.0000795203702870122
+    },
+    "Neptune": {
+      "refinementKm": 0.0000021291550218295448,
+      "relativisticDifferenceKm": 0.000020754954875955417
+    },
+    "Moon": {
+      "refinementKm": 0.002388433194662513,
+      "relativisticDifferenceKm": 0.7102400358869921
+    }
+  },
+  "horizons": [
+    {
+      "days": 30,
+      "heliocentricErrorKm": {
+        "Sun": 0,
+        "Mercury": 0.0035013982846376873,
+        "Venus": 0.0001745602341107649,
+        "Earth": 0.01635831873031522,
+        "Mars": 0.0026228274585458626,
+        "Jupiter": 0.0013304979721083681,
+        "Saturn": 0.0016243753984913486,
+        "Uranus": 0.0012540175236800467,
+        "Neptune": 0.000989019188194594,
+        "Moon": 1.3406043027662438
+      }
+    },
+    {
+      "days": 365.25,
+      "heliocentricErrorKm": {
+        "Sun": 0,
+        "Mercury": 0.0665748873351263,
+        "Venus": 0.00938915913070852,
+        "Earth": 0.20418548768819808,
+        "Mars": 0.4864227432956539,
+        "Jupiter": 0.2572919891217044,
+        "Saturn": 0.23999762216838066,
+        "Uranus": 0.18361641118961253,
+        "Neptune": 0.16456405006476651,
+        "Moon": 17.753842750287397
+      }
+    },
+    {
+      "days": 3652.5,
+      "heliocentricErrorKm": {
+        "Sun": 0,
+        "Mercury": 0.3241944681070215,
+        "Venus": 0.061856122632786906,
+        "Earth": 1.8517204745328257,
+        "Mars": 1.3088931516530944,
+        "Jupiter": 17.007143514810434,
+        "Saturn": 10.46544520698988,
+        "Uranus": 0.8544821484377353,
+        "Neptune": 6.452963493343257,
+        "Moon": 215.38152615991777
+      }
+    }
+  ],
+  "worker": {
+    "years": 1,
+    "savedEpochs": 184,
+    "mercuryClockSecondsVsEarth": -0.7111763104871854
+  },
+  "groups": 12
+}

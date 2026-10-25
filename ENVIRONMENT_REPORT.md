@@ -109,3 +109,5 @@ The revised [two-page brief](output/pdf/Moving_Observer_Brief.pdf) restores the 
 ### Illustrated report
 
 The [six-page illustrated discussion report](https://biswajit1999.github.io/moving-observer/output/pdf/Moving_Observer_Illustrated_Report.pdf) follows the original note's visual style, with seven numbered figures, rendered equations, quantitative results, a simulation tutorial and references. It is separate from the two-page brief. Its diagrams and scientific plots are model renderings, not browser screenshots.
+
+<!--RELATIVITY-->
