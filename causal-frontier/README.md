@@ -10,7 +10,7 @@ Research direction from Biswajit Jana's *Beyond the Light Cone* report. Initial 
 
 **M1 implemented scope:** Minkowski interval classification, Lorentz boosts, a conditional tachyonic-antitelephone thought experiment, empirical mutual information with permutation null test, Bell pair reduced-state/marginal calculations, constant-velocity moving-endpoint light-time and a basic ideal optical link estimate. The speculative GR, coding, data-frozen Proxima and web visualization modules are **not implemented** in this stage.
 
-**Status:** Not an FTL demonstration. This staged code has not yet been executed or independently validated by the assistant environment. Do not cite numerical outputs until the tests run.
+**Status:** Not an FTL demonstration. The first GitHub Actions run (2026-10-25) installed the package, executed **19 passing pytest checks**, and generated a baseline diagnostic JSON. This verifies the specified code tests on that runner; it does **not** constitute independent scientific validation or a physical experiment. See https://github.com/Biswajit1999/moving-observer/actions/runs/40216466174.
 
 ## Installation and checks
 
