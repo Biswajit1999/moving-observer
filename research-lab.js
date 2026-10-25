@@ -1,5 +1,7 @@
+import future from './data/future-sightlines.json';
 import results from './data/research-results.json';
 export function initResearchLab(){
+ const comparison=document.getElementById('futureComparison');if(comparison){comparison.innerHTML='<label for="futureYears">Compare interval <select id="futureYears">'+future.epochs.map(x=>'<option value="'+x.years+'">'+x.years.toLocaleString()+' years</option>').join('')+'</select></label><p id="futureReadout" aria-live="polite"></p><p class="lab-small">Nominal linear propagation; no new uncertainty calculation for 1,000 or 10,000 years. These selected sources do not represent all stars or planets.</p>';const choose=document.getElementById('futureYears'),show=()=>{const x=future.epochs.find(x=>x.years===+choose.value);document.getElementById('futureReadout').textContent=x.approaching+' sources end closer, '+x.receding+' farther. '+x.gainers+' have increased nonzero accessibility and '+x.losers+' decreased accessibility; the rest are unchanged at the numerical tolerance. Median sightline change: '+(x.medianSightlineArcsec/3600).toFixed(4)+'°. Net accessibility change: '+x.accessibilityChange.toFixed(6)+'. These are score changes, not discoveries.';};choose.onchange=show;show();}
  const root=document.getElementById('catalogueExperiment');if(!root)return;
  const f=(v,n=5)=>Number(v).toLocaleString('en-GB',{maximumFractionDigits:n}),signed=v=>(v>=0?'+':'')+f(v);
  const s=results.sum;

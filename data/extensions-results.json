@@ -121,6 +121,15 @@
       "medianAbsoluteDistanceFraction": 0.0012565951306097167,
       "approaching": 682,
       "receding": 705
+    },
+    {
+      "years": 10000,
+      "motionScore": 0.5057889658359576,
+      "initialScore": 29.63207064352205,
+      "motionPercent": 1.7068971383089273,
+      "medianAbsoluteDistanceFraction": 0.012620724544660011,
+      "approaching": 667,
+      "receding": 720
     }
   ]
 }

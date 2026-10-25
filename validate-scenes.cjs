@@ -48,14 +48,11 @@ const Grav=require('./gravity.cjs'),assert=require('node:assert/strict'),esbuild
   const project=p=>new THREE.Vector3(...p).project(camera);assert.ok(Math.abs(project(section[i]).y-project(flat[i]).y)>.025,'edge-on projection must expose the physical bend');
  }
  console.log('PASS Warp camera exposes the +/-700 pc bend at multiple precession phases');
- const surface=require('./galaxy-surface.cjs');
- for(const face of [0,.035,.1,.5,1])assert.ok(surface.visibility(face)>=.65&&surface.visibility(face)<=1);
- assert.ok(surface.vertexShader.includes('p.z+=warpZ'));
- assert.ok(surface.fragmentShader.includes('structure*outer*.6'));
  const html=require('fs').readFileSync('index.html','utf8');
- for(const id of ['warpSurface','warpFollow','warpProfile'])assert.ok(html.includes('id="'+id+'"'));
- assert.ok(html.includes('<option value="5" selected>'));
- console.log('PASS Edge-on disk remains visible; height overlay and default warp controls exist');
+ for(const id of ['warpSurface','warpFollow','warpProfile','evidenceTour','hydroOpen'])assert.ok(html.includes('id="'+id+'"'));
+ assert.ok(html.includes('<option value="1" selected>'));
+ const app=require('fs').readFileSync('app.js','utf8');assert.ok(!app.includes('new Image()'));assert.ok(app.includes('createMilkyWay(scenes.galaxy)'));
+ console.log('PASS Measured and synthetic layers replace the image surface; true vertical scale is default');
  elements.gravityBody.value='All';elements.gravityGeometry.value='body';
  views.update(0,'spacetime');const earth=views.labels.find(l=>l.scene==='spacetime'&&l.text==='EARTH'),initialEarth=earth.position().clone();
  views.update(.25,'spacetime');assert.ok(earth.position().distanceTo(initialEarth)>1);

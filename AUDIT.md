@@ -1,3 +1,12 @@
+## Current release: v7.3 — 25 October 2026
+
+- Replaced the photo-derived Galaxy and filled outer surface with deterministic synthetic light plus selectable published arm fits and 199 archived VLBI parallax entries. Imported positions pass independent rounded Galactic-coordinate checks; raw table checksum is preserved across platforms.
+- The observed overlay is explicitly at catalogue epochs, disappears during future playback, and is not a predicted stellar census. Faint arm extensions and light weights are display assumptions. Default vertical scale is 1×; bend tour is labelled 5×.
+- Added a 2D isothermal finite-volume gas experiment with a 3D density plot, separate clock and CSV export. Uniform gas, acoustic-wave refinement, force gradient, positivity and boundary mass accounting pass. At 100 Myr, mass-budget residual is about 1.34e-15; this does not validate omitted astrophysics.
+- Added reproducible nominal 100/1,000/10,000-year Gaia sightline and accessibility comparisons. Longer rows have no new uncertainty propagation and are labelled screening calculations.
+- Build and 92 numerical/source/scene validation groups pass. The static scientific figure and all six PDF pages are inspected separately. Browser access was unavailable: no live WebGL, shader appearance, interactive layout or actual browser gas-playback validation is claimed.
+- Outreach and LinkedIn drafts remain outside this public repository. The original discussion note is unchanged. Older sections below describe historical versions, not current rendering.
+
 # Current verification: version 7.2, 25 October 2026
 
 This section supersedes the historical entries below where behaviour differs.

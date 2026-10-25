@@ -1,0 +1,55 @@
+{
+  "epoch": 2026,
+  "sampleSize": 1387,
+  "method": "Nominal constant space velocity relative to the Solar System barycentre; no new uncertainty propagation at 1000/10000 years. Not a discovery or habitability forecast.",
+  "epochs": [
+    {
+      "years": 100,
+      "solarPathLy": 0.07772043418116943,
+      "solarAngleDeg": 0.00016650148946727574,
+      "medianSightlineArcsec": 44.36565466091001,
+      "p90SightlineArcsec": 118.34834467177755,
+      "medianAbsDistanceChangePercent": 0.012603307847458556,
+      "approaching": 684,
+      "receding": 703,
+      "accessibilityInitial": 29.63207064352205,
+      "accessibilityFuture": 29.641181766101873,
+      "accessibilityChange": 0.009111122579828296,
+      "accessibilityChangePercent": 0.03074750559768966,
+      "gainers": 42,
+      "losers": 45
+    },
+    {
+      "years": 1000,
+      "solarPathLy": 0.7772043418116943,
+      "solarAngleDeg": 0.0016650148946727571,
+      "medianSightlineArcsec": 443.8913083783044,
+      "p90SightlineArcsec": 1183.7468264826648,
+      "medianAbsDistanceChangePercent": 0.12565951306097167,
+      "approaching": 682,
+      "receding": 705,
+      "accessibilityInitial": 29.63207064352205,
+      "accessibilityFuture": 29.715777043225852,
+      "accessibilityChange": 0.08370639970380156,
+      "accessibilityChangePercent": 0.28248582662616206,
+      "gainers": 41,
+      "losers": 46
+    },
+    {
+      "years": 10000,
+      "solarPathLy": 7.772043418116943,
+      "solarAngleDeg": 0.01665014894672757,
+      "medianSightlineArcsec": 4461.906028054607,
+      "p90SightlineArcsec": 11862.46660835004,
+      "medianAbsDistanceChangePercent": 1.2620724544660011,
+      "approaching": 667,
+      "receding": 720,
+      "accessibilityInitial": 29.63207064352205,
+      "accessibilityFuture": 30.137859609358003,
+      "accessibilityChange": 0.5057889658359576,
+      "accessibilityChangePercent": 1.7068971383089273,
+      "gainers": 43,
+      "losers": 46
+    }
+  ]
+}

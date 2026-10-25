@@ -26,18 +26,43 @@ This project makes the question testable through explicit reference frames, a fi
 
 At an adopted Galactic tangential speed of **233 km/s**, the Sun travels approximately **4,915 AU (0.0777 light-years) in 100 years**; the integrated model including vertical motion gives **4,917.34 AU**. Travelling 100 light-years takes about **128,608 model years**, during which targets also move. The historical Proxima inputs imply present approach at **22.19 km/s** along the line of sight; a constant-velocity extrapolation reaches about **3.10 light-years after 26,700 years**, with important binary and acceleration omissions. A density scenario normalized to **373 stars within 10 pc** varies from about **292 to 397 stars** in an instantaneous 10 pc sphere over 250 Myr. That is neither a count of new arrivals nor a forecast of discoveries. Instrument capability, target selection, planet populations and observing time are still required to predict detections.
 
+## Evidence, gas and the next 10,000 years
+
+![Measured VLBI sources and synthetic Galactic structure](output/figures/Galaxy_Evidence_Model.png)
+
+**New in v7.3:** the Galaxy no longer uses a filled blue/amber outer shell or photograph-derived particles. Inspect **199 VLBI measurements (198 distinct names)**, published spiral-arm segments, and a separate synthetic stellar-light distribution. The model adopts Reid et al. (2019) arm geometry and a Wegg et al. (2015) bar scale. It does not claim to reconstruct every star or uniquely determine the far side of the Galaxy. [Data, equations and assumptions](GALAXY_DATA_REPORT.md).
+
+The **Gas hydrodynamics lab** is an actual finite-volume isothermal Euler experiment: 64×64 cells, open boundaries, rotating prescribed potential, CFL-controlled time steps and an exported mass budget. Its 3D surface plots density. This is **2D gas dynamics**, not a full 3D/MHD Milky Way reconstruction, and it does not move the stars or planets.
+
+| Years after 2026 | Solar path at 233 km/s (ly) | Median sightline shift (arcsec) | Net imaging-accessibility score change |
+|---|---:|---:|---:|
+| 100 | 0.0777 | 44.4 | +0.0307% |
+| 1,000 | 0.7772 | 443.9 | +0.2825% |
+| 10,000 | 7.7720 | 4461.9 | +1.7069% |
+
+Same 1,387 selected Gaia sources; nominal constant relative velocities; same hypothetical planet population and 60 mas baseline thresholds. The 10,000-year row is screening, with binary dynamics and Galactic differential acceleration omitted and **no new uncertainty propagation**. The century result separately has formal astrometric uncertainty in the main experiment. A 1.71% score increase is not 1.71% more discovered planets. Isotropic phase averaging makes this imaging score depend on distance and thresholds, not the sky-direction change itself.
+
+**What can be answered:** targets can get closer or farther, and transit windows can open or close. At 10,000 years the Sun travels about 7.77 ly and only 0.01665° around the centre—still the local neighbourhood. Identifying useful targets needs orbit-aware geometry, binary corrections and exposure-time modelling. **No result establishes life or a number of habitable worlds.** Changing transit-zone membership is already studied by [Kaltenegger & Faherty (2021)](https://doi.org/10.1038/s41586-021-03596-y); this project invites criticism rather than claiming priority over that work.
+
+$$
+\partial_t\Sigma+\nabla\cdot(\Sigma\mathbf u)=0,\qquad
+\partial_t(\Sigma\mathbf u)+\nabla\cdot(\Sigma\mathbf u\otimes\mathbf u+c_s^2\Sigma\mathbf I)=-\Sigma\nabla\Phi.
+$$
+
+The isothermal solver passes a travelling sound-wave refinement check (normalized L1 error 0.06338 → 0.03255 on 32 → 64 cells), uniform-flow preservation and boundary-flux mass accounting. These are numerical checks, not a fit to observed gas. Magnetic fields, self-gravity, cooling and feedback remain outside its scope.
+
 ## Explore the physics in 3D
 
 | View | Try this | What is calculated |
 |---|---|---|
-| **Milky Way** | Show warped disk; compare 1× and 5× vertical display | A 250 Myr Solar orbit in a smooth static potential; a separate kinematic warp |
+| **Milky Way** | Inspect measured evidence; then show warped disk at 1× / 5× | A 250 Myr Solar orbit in a smooth static potential; a separate kinematic warp |
 | **2026 reference** | Compare the fixed marker and passive probe | AU separations; the passive probe inherits its release velocity |
 | **Earth & Sun** | Play the forward-path view; reset camera when needed | A three-year path in a frame translating at 98% of Solar velocity, with true orbital distances |
 | **Sun & all planets** | Compare full Galactic and 98% frames; toggle Follow Sun | Eight planetary orbits, illustrative Moon, mass-weighted Solar reflex and a prominent gold Solar trail |
 | **Heliosphere** | Show the heliosphere in Sun & all planets | A labelled 120 AU reference envelope, 90 AU shock scale and radial 400 km/s wind tracers |
 | **Space & Time** | Play the entire Solar System, then select Earth | All-body positions on a years clock; summed weak field at a fixed test point; separate isolated-body clock experiments |
 | **Coupled 1PN lab** | Integrate, then play all planets | Sun, eight planets and Moon with Newtonian/first-post-Newtonian comparison |
-| **Research report** | Open Proxima and catalogue experiments | Equations, uncertainty propagation, sensitivity controls, tutorial and CSV exports |
+| **Research report** | Compare 100 / 1,000 / 10,000 years; inspect Proxima and catalogue experiments | Equations, uncertainty propagation, sensitivity controls, tutorial and CSV exports |
 
 The scene occupies the space between the controls rather than rendering behind them. Labels have collision avoidance and leader lines; a permanent body-colour key remains available. Planet histories are capped at two revolutions by default to reduce clutter; the cap changes drawing history, not physics. The Sun keeps the selected full trail. The Moon requires a close-up to resolve at its physical orbital scale.
 
@@ -125,7 +150,7 @@ The formal interval excludes uncertainties in planet populations, instruments, b
 
 ## Stellar density and speed: what can we infer?
 
-The smooth thin/thick-disk scenario is normalized to a historical **373-star census inside 10 pc**, giving $n_0=373/(4\pi10^3/3)=0.0890\ \mathrm{pc^{-3}}$. Over the model's 250 Myr orbit it spans **0.784–1.063** times its starting density, equivalent to **292–397** stars in an instantaneous 10 pc sphere. It excludes arm enhancements, clusters and migration. Neither the textured galaxy nor the heliosphere determines this density.
+The smooth thin/thick-disk scenario is normalized to a historical **373-star census inside 10 pc**, giving $n_0=373/(4\pi10^3/3)=0.0890\ \mathrm{pc^{-3}}$. Over the model's 250 Myr orbit it spans **0.784–1.063** times its starting density, equivalent to **292–397** stars in an instantaneous 10 pc sphere. It excludes arm enhancements, clusters and migration. Neither the synthetic stellar-light model nor the heliosphere determines this density.
 
 For a homogeneous population with an illustrative relative speed of 30 km/s, the incoming rate through a sphere of radius 10 pc is $n\pi b^2v$, giving **0.086 inward crossings per century**. This simple flux estimate is not a precise encounter prediction, a count of all sightline changes, or a discovery yield.
 
@@ -170,7 +195,9 @@ The build embeds scripts, equations and report illustrations in the offline HTML
 | `galactic-clock.cjs`, `warp.cjs`, `environment.cjs` | Separate Galactic dynamics, warp geometry and density scenario |
 | `gravity.cjs`, `relativity.cjs` | Weak-field readouts and coupled 1PN dynamics |
 | `heliosphere.cjs`, `heliosphere-view.js` | Explicitly schematic envelope and wind scales |
-| `research.cjs`, `data/research-results.json` | Frozen catalogue experiment and outputs |
+| `research.cjs`, `future-sightlines.cjs` | Frozen catalogue experiment and nominal 100–10,000-year comparisons |
+| `milky-way-model.cjs`, `import-milky-way.py` | Synthetic light, published arm segments and frozen VLBI import |
+| `gas-hydro.cjs`, `validate-gas.cjs` | Isothermal finite-volume experiment and numerical checks |
 | `illustrated-report.py`, `report-assets.py` | Six-page report and original-figure provenance |
 
 PDF generation uses Python with NumPy, Matplotlib, Pillow, ReportLab and pypdf. Run `node export-illustrated.cjs`, then `python illustrated-report.py`. The committed figure assets suffice to rebuild the PDF. `report-assets.py` optionally re-extracts the original-note figures and copies the related project's plot from a sibling `finding-earth-2` checkout; hashes identify the source version.
@@ -186,4 +213,4 @@ Verification covers units, barycentric identities, frame invariance, Galactic in
 
 The simulation does not determine a future number of habitable planets. I am an independent researcher without a formal supervisor and welcome expert guidance on the assumptions, prior work and most useful next experiment.
 
-**Authorship:** Biswajit Jana, 2026. Numerical work and original project documents are attributed accordingly. Third-party data and artwork retain their source credits; the Milky Way simulation texture is ESA/Gaia/DPAC, Stefan Payne-Wardenaar, CC BY-SA 3.0 IGO. The original discussion-note illustration has separate, unverified underlying image provenance. No NASA, ESA or ESO affiliation or endorsement is implied.
+**Authorship:** Biswajit Jana, 2026. Numerical work and original project documents are attributed accordingly. Third-party data and artwork retain their source credits; the earlier Milky Way artwork remains credited to ESA/Gaia/DPAC, Stefan Payne-Wardenaar, CC BY-SA 3.0 IGO. The current measured layer and arm geometry cite Reid et al. (2019). The original discussion-note illustration has separate, unverified underlying image provenance. No NASA, ESA or ESO affiliation or endorsement is implied.

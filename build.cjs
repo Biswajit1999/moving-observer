@@ -4,6 +4,10 @@ const read=f=>fs.readFileSync(path.join(__dirname,f),'utf8'),write=(f,s)=>fs.wri
 function report(){
  const results=JSON.parse(read('data/research-results.json')),sum=results.sum;
  const extensions=JSON.parse(read('data/extensions-results.json'));
+ const future=JSON.parse(read('data/future-sightlines.json'));
+ const futureRows=future.epochs.map(x=>'| '+x.years.toLocaleString('en-GB')+' | '+x.solarPathLy.toFixed(4)+' | '+x.medianSightlineArcsec.toFixed(1)+' | '+x.medianAbsDistanceChangePercent.toFixed(4)+'% | '+x.accessibilityChange.toFixed(6)+' ('+x.accessibilityChangePercent.toFixed(4)+'%) |').join('\n');
+ const futureText='| Years after 2026 | Solar path (ly) | Median sightline shift (arcsec) | Median absolute distance change | Change in accessibility sum |\n|---|---:|---:|---:|---:|\n'+futureRows+'\n\nScores use the same hypothetical 1 AU, Earth-radius planet distribution and baseline 60 mas / 10⁻¹⁰ contrast / G=30 thresholds. They are not discovery counts.\n\n<div id="futureComparison"></div>\n';
+ const galaxyReport=includeSection(read('GALAXY_DATA_REPORT.md'),'<!--FUTURE_RESULTS-->',futureText);
  let spaceTime=read('SPACE_TIME_REPORT.md')+'\n\n'+read('HELIOPHYSICS_REPORT.md');
  const timeRows=extensions.catalogueTimeSweep.map(x=>'| '+x.years+' | '+x.motionScore.toFixed(6)+' | '+x.motionPercent.toFixed(4)+'% | '+x.approaching+' / '+x.receding+' |').join('\n');
  const clockRows=extensions.isolatedSurfaceClocks.map(x=>'| '+x.body+' | '+x.accelerationMS2.toFixed(3)+' | '+x.clockLagMicrosecondsPerDay.toFixed(2)+' |').join('\n');
@@ -13,7 +17,7 @@ function report(){
  const labels={c00:'2026, baseline thresholds S00',c10:'2126, baseline thresholds S10',c01:'2026, improved thresholds S01',c11:'2126, improved thresholds S11',motion:'Motion alone',technology:'Instrument change alone',interaction:'Interaction'};
  const rows=Object.entries(labels).map(([k,label])=>'| '+label+' | '+sum[k].toFixed(5)+' | '+(results.interval[k]?results.interval[k].map(x=>x.toFixed(5)).join(' to '):'—')+' |').join('\n');
  experiment=experiment.replace(/\| Quantity \|[\s\S]*?(?=\n\n)/,'| Quantity | Nominal score | 95% formal-astrometry interval for differences |\n|---|---:|---|\n'+rows);
- const source=includeSection(includeSection(includeSection(read('REPORT.md'),'<!--EXPERIMENT-->',experiment),'<!--SPACE_TIME-->',spaceTime),'<!--ENVIRONMENT-->',includeSection(read('ENVIRONMENT_REPORT.md'),'<!--RELATIVITY-->',read('RELATIVITY_REPORT.md')));
+ const source=includeSection(includeSection(includeSection(read('REPORT.md'),'<!--EXPERIMENT-->',experiment),'<!--SPACE_TIME-->',spaceTime),'<!--ENVIRONMENT-->',includeSection(read('ENVIRONMENT_REPORT.md')+'\n\n'+galaxyReport,'<!--RELATIVITY-->',read('RELATIVITY_REPORT.md')));
  let html=renderReport(source).html;
  // Keep the labelled report figure available in the single-file offline copy.
  html=html.replace('src="output/figures/Moving_Observer_Galactic_Map.png"','src="data:image/png;base64,'+fs.readFileSync(path.join(__dirname,'output/figures/Moving_Observer_Galactic_Map.png')).toString('base64')+'"');

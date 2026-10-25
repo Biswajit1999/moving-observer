@@ -3,3 +3,6 @@ data/gaia-nearby.csv -text
 *.pdf binary
 
 *.mp4 binary
+
+data/milky-way/*.dat -text -whitespace
+data/milky-way/ReadMe -text

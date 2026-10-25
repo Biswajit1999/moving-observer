@@ -1,3 +1,11 @@
+# Current model notes: v7.3
+
+The current equations, provenance and tutorial for the Galactic reconstruction and gas experiment are in [GALAXY_DATA_REPORT.md](GALAXY_DATA_REPORT.md). The current 3D Galaxy uses synthetic light plus a separate observed VLBI overlay, not the earlier photo-derived particles or filled surface. The six-page report and full web report include the nominal 100/1,000/10,000-year comparison. The gas lab is a separately clocked 2D isothermal Euler experiment with a 3D density graph, not a fitted 3D gas or MHD model.
+
+See [AUDIT.md](AUDIT.md) for current verification. Live WebGL appearance has not been revalidated. PDF pages and the static model-input figure have been rendered and inspected. The sections below are **historical notes for their labelled versions**; old browser checks, scene defaults and artwork descriptions do not describe v7.3.
+
+---
+
 # Version 7.1 extension
 
 `ENVIRONMENT_REPORT.md` describes the density scenario, observed-versus-model circular speeds, reference-frame transformation, circular lunar approximation and exterior Schwarzschild clock/embedding equations. These additions do not refit the Galactic force model. The hypothetical density count combines published disk scale parameters with a historical 373-star 10 pc normalization; it is a scenario, not a census forecast.
