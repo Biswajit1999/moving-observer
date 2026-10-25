@@ -23,8 +23,8 @@ function report(){
 }
 (async()=>{
  const content=report(),css=read('report.css');
- const worker=await esbuild.build({entryPoints:[path.join(__dirname,'relativity-worker.js')],bundle:true,format:'iife',minify:true,write:false});
- await esbuild.build({entryPoints:[path.join(__dirname,'app.js')],bundle:true,format:'iife',minify:true,legalComments:'inline',define:{__RELATIVITY_WORKER__:JSON.stringify(worker.outputFiles[0].text)},loader:{'.jpg':'dataurl'},outfile:path.join(__dirname,'bundle.js')});
+ const worker=await esbuild.build({entryPoints:[path.join(__dirname,'relativity-worker.js')],bundle:true,format:'iife',minify:true,supported:{'template-literal':false},write:false});
+ await esbuild.build({entryPoints:[path.join(__dirname,'app.js')],bundle:true,format:'iife',minify:true,supported:{'template-literal':false},legalComments:'inline',define:{__RELATIVITY_WORKER__:JSON.stringify(worker.outputFiles[0].text)},loader:{'.jpg':'dataurl'},outfile:path.join(__dirname,'bundle.js')});
  const html=read('index.template.html').replace('/*__REPORT_CSS__*/',()=>css).replace('/*__REPORT_CONTENT__*/',()=>content).replace('/*__BUNDLE__*/',()=>read('bundle.js').replace(/<\/script/gi,'<\\/script'));
  for(const file of ['index.html','Galactic_Journey.html','Moving_Observer_2026.html'])write(file,html);
  await esbuild.build({entryPoints:[path.join(__dirname,'report-main.js')],bundle:true,format:'iife',minify:true,outfile:path.join(__dirname,'report-bundle.js')});
