@@ -11,6 +11,11 @@ function makeLine(color,opacity=.75){return new THREE.Line(new THREE.BufferGeome
 function replace(object,points){object.geometry.dispose();object.geometry=new THREE.BufferGeometry().setFromPoints(points.map(p=>new THREE.Vector3(...p)));}
 export function createExtendedViews(){
  const system=new THREE.Scene(),spacetime=new THREE.Scene(),labels=[];
+ const motionDirection=new THREE.Vector3(...P.velocity).normalize(),crossDirection=new THREE.Vector3(-motionDirection.y,motionDirection.x,0).normalize();
+ const travelArrow=new THREE.ArrowHelper(motionDirection,new THREE.Vector3(),4,0xffcf82,.7,.25);system.add(travelArrow);
+ const travelRungs=Array.from({length:19},()=>{const q=makeLine(0x486779,.26);system.add(q);return q;});
+ const releaseMarker=new THREE.Mesh(new THREE.OctahedronGeometry(.17,0),new THREE.MeshBasicMaterial({color:0x79e4df}));system.add(releaseMarker);
+ labels.push({text:'2026 ORIGIN IN SELECTED FRAME',scene:'system',position:()=>releaseMarker.position,visible:()=>releaseMarker.visible});
  const systemNames=[...names,'Moon'];
  const bodies=systemNames.map(name=>{const mesh=new THREE.Mesh(new THREE.SphereGeometry(1,24,16),new THREE.MeshBasicMaterial({color:SS.colors[name]||0xbfc7d0})),trail=makeLine(SS.colors[name]||0xbfc7d0),orbit=makeLine(SS.colors[name]||0xbfc7d0,.2);system.add(mesh,trail,orbit);if(name!=='Sun'&&name!=='Moon')replace(orbit,Array.from({length:361},(_,i)=>P.planet(name,SS.periods[name]*i/360)));labels.push({text:name.toUpperCase(),scene:'system',position:()=>mesh.position,visible:()=>mesh.visible});return {name,mesh,trail,orbit};});
  const bary=new THREE.Mesh(new THREE.OctahedronGeometry(.001,0),new THREE.MeshBasicMaterial({color:0x7be7e3}));system.add(bary);labels.push({text:'SYSTEM BARYCENTRE',scene:'system',position:()=>bary.position,visible:()=>bary.visible});
@@ -25,7 +30,13 @@ export function createExtendedViews(){
  let lastT=null,lastMode=null,lastDuration=null,lastFrame=null,lastFocus=null;
  function updateSystem(t){
   const mode=$('systemMode').value,duration=+$('systemTrail').value,s=Lunar.state(t),wobble=mode==='wobble',paths=mode==='paths',moon=mode==='moon';
-  const fraction=+$('systemFrame').value,inner=$('systemFocus').value==='inner',rebuild=lastT!==t||lastMode!==mode||lastDuration!==duration||lastFrame!==fraction||lastFocus!==inner,history=wobble?30:moon?Lunar.periodYears*1.1:duration,begin=Math.max(0,t-history),count=Math.min(5000,Math.max(600,Math.ceil((t-begin)*110))),historyStates=[];
+  const fraction=+$('systemFrame').value,inner=$('systemFocus').value==='inner',rebuild=lastT===null||Math.abs(lastT-t)>=(inner?.01:.1)||lastMode!==mode||lastDuration!==duration||lastFrame!==fraction||lastFocus!==inner,history=wobble?30:moon?Lunar.periodYears*1.1:duration,begin=Math.max(0,t-history),count=Math.min(5000,Math.max(600,Math.ceil((t-begin)*110))),historyStates=[];
+  const relativeTravel=P.sub(P.sun(t),P.velocity.map(v=>v*fraction*t)),spacing=inner?2:20,along=dot(relativeTravel,motionDirection.toArray());
+  travelArrow.visible=paths;travelArrow.position.set(...s.Sun);travelArrow.setLength(inner?3:12,inner?.5:2,inner?.2:.7);
+  travelRungs.forEach((q,i)=>{q.visible=paths;const d=(i-9)*spacing-((along%spacing)+spacing)%spacing,centre=motionDirection.clone().multiplyScalar(d+along).sub(new THREE.Vector3(...relativeTravel)),span=inner?3:35;replace(q,[centre.clone().addScaledVector(crossDirection,-span).toArray(),centre.clone().addScaledVector(crossDirection,span).toArray()]);});
+  releaseMarker.visible=paths&&P.norm(relativeTravel)<Math.max(45,duration*(1-fraction)*66);releaseMarker.position.set(...relativeTravel.map(v=>-v));
+  $('systemTravel').textContent=fmt(P.norm(P.sun(t)),1)+' AU';
+  $('systemMotion').textContent=paths?'Gold arrow: forward Solar motion. Grid spacing '+spacing+' AU, fixed in the selected '+(fraction?'98% co-moving':'Galactic')+' frame. The camera follows the Sun; reference lines move past it.':'Orbital frame: common Galactic travel is removed. Select Paths through the Galaxy to include it.';
   if(rebuild&&(wobble||paths||moon))for(let i=0;i<=count;i++){const when=begin+(t-begin)*i/count;historyStates.push({when,state:wobble?{Sun:SS.reflex(when)}:Lunar.state(when),shift:paths?P.sub(P.sub(P.sun(when),P.sun(t)),P.velocity.map(v=>v*fraction*(when-t))):[0,0,0]});}
   for(const b of bodies){b.mesh.visible=moon?['Earth','Moon'].includes(b.name):!wobble||b.name==='Sun';if(inner&&!wobble&&!moon&&['Jupiter','Saturn','Uranus','Neptune'].includes(b.name))b.mesh.visible=false;b.orbit.visible=b.mesh.visible&&!wobble&&!paths&&!moon&&$('plane').checked&&!['Sun','Moon'].includes(b.name);b.trail.visible=b.mesh.visible&&(moon?b.name==='Moon':wobble?b.name==='Sun':paths);
    b.mesh.scale.setScalar(moon?(b.name==='Earth'?6371:1737.4)/P.AU_KM:wobble?SS.radiusKm.Sun/P.AU_KM:b.name==='Sun'?.35:['Jupiter','Saturn'].includes(b.name)?.23:.12);b.mesh.position.set(...(moon?P.sub(s[b.name],s.Earth):s[b.name]));
@@ -36,7 +47,7 @@ export function createExtendedViews(){
   $('baryOffset').textContent=fmt(P.norm(s.Sun)*P.AU_KM,0)+' km';
   $('barySolarRadii').textContent=fmt(P.norm(s.Sun)*P.AU_KM/SS.radiusKm.Sun,2)+' Solar radii';
   $('systemScale').textContent=moon?'Earth & Moon at true AU scale and body radii. Circular illustrative lunar orbit; phase is not an ephemeris.':wobble?'True AU scale; Solar radius shown to scale. Other bodies lie outside this close-up.':paths?'Galactic frame; true AU distances. Sun + eight planets + an illustrative Moon. Lunar and inner-planet trails merge at this scale; use the close-ups. Markers enlarged.':'True AU distances in the Solar System barycentric frame. Body markers are enlarged.';
-  lastT=t;lastMode=mode;lastDuration=duration;lastFrame=fraction;lastFocus=inner;if(paths)$('systemScale').textContent+=(fraction?' Frame translates at 98% of the initial Solar velocity; coordinates are still true AU.':'');
+  if(rebuild)lastT=t;lastMode=mode;lastDuration=duration;lastFrame=fraction;lastFocus=inner;if(paths)$('systemScale').textContent+=(fraction?' Frame translates at 98% of the initial Solar velocity; coordinates are still true AU.':'');
  }
  function updateGravity(t,seconds=0){
   const selected=$('gravityBody').value,overview=selected==='All',name=overview?'Sun':selected,multiple=+$('clockRadius').value,depth=+$('wellDepth').value,state=SS.state(t),span=overview?36:7,mode=$('gravityGeometry').value,clockMode=$('gravityClockMode').value;

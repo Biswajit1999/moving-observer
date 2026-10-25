@@ -19,3 +19,15 @@ Web searches included: `exoplanet direct imaging yield stellar proper motion fut
 The search did not identify an exact duplicate of this particular dated sample, paired four-scenario calculation and IWA sign-sensitivity test. That is not proof of novelty. Do not describe the work as the first demonstration that moving viewpoints change detectability, or as deeper than established mission-yield studies. The current contribution is a reproducible exploratory comparison and a falsifiable follow-up question. Expert review may identify closer precedents.
 
 Warp references: [Poggio et al. 2020](https://www.nature.com/articles/s41550-020-1017-3), [Poggio et al. 2025](https://doi.org/10.1051/0004-6361/202451668), and [ESA's explanation](https://www.esa.int/Science_Exploration/Space_Science/Gaia/Gaia_discovers_our_galaxy_s_great_wave). The supplied social video is a visual reference, not a calibrated source for periods, amplitudes or reference-frame velocities.
+
+## Update checked 25 October 2026
+
+- Poggio et al. (2025), above: distinguishes the approximately 700 pc warp at R = 14 kpc from a 150–200 pc corrugation. The display uses the warp scale; it does not fit the corrugation.
+- Stark et al. (2025 preprint), [cross-model exposure-time calculator validation](https://arxiv.org/abs/2502.18556): motivates a calibrated observing-time model before interpreting geometry scores as yield.
+- Tuchow et al. (2025), [TSS25 target priorities](https://arxiv.org/abs/2509.20544): a living target list for a possible follow-up; it has not been substituted for the project's Gaia sample.
+- Rosenthal, Kaltenegger et al. (August 2026 preprint, in review), [Veiled in Starlight](https://arxiv.org/abs/2608.06207): stellar contamination limits atmospheric retrieval. This is contextual work, not a direct follow-up to the 2021 transit-zone paper.
+- Bailer-Jones & Kreidberg (2026), [binary component masses from Gaia](https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/708/A249): possible supporting information for unresolved binaries; not incorporated here.
+- Marocco et al. (2026, including Faherty), [Spitzer + HST parallaxes of cold brown dwarfs](https://arxiv.org/abs/2603.08984): illustrates why a Gaia RV-selected sample is not a complete local census.
+- Boffin & Jones (2025), [The importance of binary stars](https://doi.org/10.31577/caosp.2025.55.3.21): motivates source-level multiplicity checks.
+
+This targeted search does not establish novelty or absence of prior work. A defensible next question is whether target-specific motion effects survive a calculation that includes orbital geometry, uncertainty and fixed exposure time.

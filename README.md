@@ -111,7 +111,7 @@ The cyan fixed reference is a coordinate thought experiment. A passive probe ret
 
 ## Validation and data
 
-`npm test` runs **79 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks, four scene-construction checks, eight environment/label/relativity checks, five journey/recording-control checks, and twelve relativistic-dynamics checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
+`npm test` runs **81 check groups**: seven century checks, eight underlying-potential checks, four independent audit groups, six long-clock checks, seven stellar-motion checks, nine research checks, nine extension checks, six scene-construction checks, eight environment/label/relativity checks, five journey/recording-control checks, and twelve relativistic-dynamics checks. These include archived JPL Horizons comparisons for four planets at six epochs, independent scalar closest-approach geometry, radial/transverse decomposition, common-velocity cancellation, transit boundaries and convergence tests. They assess implementation consistency and selected comparisons—not observational validation of the entire model.
 
 | File | Purpose |
 |---|---|
@@ -176,7 +176,7 @@ Browser recording uses the standard [canvas capture API](https://developer.mozil
 
 ### Illustrated discussion report
 
-[Download the six-page illustrated report](output/pdf/Moving_Observer_Illustrated_Report.pdf). It includes seven numbered figures, the original sightline/transit question, the catalogue experiment, stellar environment, 3D path comparisons, Earth-orbit clocks and a tutorial. The Milky Way artwork retains its ESA credit and licence; other figures are generated from model data. The two-page brief remains separate.
+[Download the six-page illustrated report](output/pdf/Moving_Observer_Illustrated_Report.pdf). It includes six numbered figures: a labelled conceptual Galactic map, transit geometry, the catalogue experiment, stellar environment, 3D path comparisons and Earth-orbit clocks, followed by a tutorial and references. Figures are project diagrams or generated from model data. The simulation's separate Milky Way artwork retains its ESA credit and licence. The two-page brief remains separate.
 
 Reproduce using the same Python media dependencies listed above:
 
@@ -193,3 +193,12 @@ Open **Space & Time → Relativistic Solar System · coupled 1PN lab**. It integ
 This is a weak-field 1PN model, not a full Einstein-field solver or JPL ephemeris replacement. Sparse JPL comparisons measure actual discrepancies; the Moon differs by about 17.8 km at one year and 215 km at ten years. The isolated Mercury precession benchmark gives 42.9798 arcseconds/century (analytic 42.9807). Live browser execution remains unverified; model and worker calculations are tested under Node.
 
 Starting data and independent comparison epochs: [relativity-horizons.json](data/relativity-horizons.json). Saved checks: [relativity-validation.json](data/relativity-validation.json). Refresh data sequentially with `python fetch-relativity.py`; run checks with `node validate-relativity.cjs` after building. Surface-clock estimates and signal-delay approximations have separate, documented scopes.
+
+### Display update: 25 October 2026
+
+- **Milky Way → Show the bend**: line-of-nodes camera, warped rings, gold cross-section and grey flat-plane reference. The preset labels its 5× vertical display scale; physical readouts are unchanged.
+- **Sun & all planets**: all-body paths by default; separate 3-year inner and 84-year outer presets; reference lines show forward travel past the following camera.
+- **Space & Time**: circular-clock default, Earth orbit presets that start playback, and all-planet 1PN playback after calculation. Galactic translation belongs to the winding-path view, not the barycentric 1PN lab.
+- **Six-page report**: newly drawn labelled top-down map with A/today, B/future, C/later future, arms, centre, Solar orbit and warp inset. This is explicitly a conceptual diagram. Rebuild with `python illustrated-report.py` after the numerical exports; `report-galaxy.py` creates the reusable map.
+
+Scene checks include projected warp visibility and all-body/reference motion. They are not live browser screenshots or WebGL validation.

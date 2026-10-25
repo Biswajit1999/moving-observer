@@ -34,5 +34,19 @@ const Grav=require('./gravity.cjs'),assert=require('node:assert/strict'),esbuild
  assert.equal(system.length,2+101*10);assert.equal(gravity.length,2+4*9);
  assert.ok(!/NaN|undefined|Infinity/.test(system.join('')+gravity.join('')));
  console.log('PASS New-view CSV exports include every body and finite numerical values');
- console.log('4 scene-construction validation groups passed (rendering unverified)');
+ elements.systemMode.value='paths';elements.systemFrame.value='.98';elements.systemFocus.value='all';elements.systemTrail.value='84';
+ views.update(84,'system');const beforeOrigin=views.labels.find(l=>l.text==='2026 ORIGIN IN SELECTED FRAME').position().clone();
+ assert.equal(views.labels.filter(l=>l.scene==='system'&&l.visible()&&['SUN','MERCURY','VENUS','EARTH','MARS','JUPITER','SATURN','URANUS','NEPTUNE','MOON'].includes(l.text)).length,10);
+ views.update(85,'system');const afterOrigin=views.labels.find(l=>l.text==='2026 ORIGIN IN SELECTED FRAME').position();
+ assert.ok(afterOrigin.distanceTo(beforeOrigin)>.9&&afterOrigin.distanceTo(beforeOrigin)<1.1);
+ assert.ok(elements.systemMotion.textContent.includes('98%'));finiteScene(views.system);
+ console.log('PASS All ten body markers are visible and the reference advances by residual Solar travel');
+ const W=require('./warp.cjs'),THREE=require('three');
+ for(const time of [0,30,125,250]){
+  const camera=new THREE.PerspectiveCamera(46,1.5,.01,100);camera.up.set(0,0,1);camera.position.set(...W.edgeCamera(time));camera.lookAt(0,0,0);camera.updateMatrixWorld();
+  const section=W.section(time),flat=W.section(time,false);const i=150;assert.ok(Math.abs(section[i][2]-.7)<1e-12);assert.equal(flat[i][2],0);
+  const project=p=>new THREE.Vector3(...p).project(camera);assert.ok(Math.abs(project(section[i]).y-project(flat[i]).y)>.025,'edge-on projection must expose the physical bend');
+ }
+ console.log('PASS Warp camera exposes the +/-700 pc bend at multiple precession phases');
+ console.log('6 scene-construction validation groups passed (rendering unverified)');
 })().catch(e=>{console.error(e);process.exitCode=1;});

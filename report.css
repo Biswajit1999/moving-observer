@@ -52,5 +52,7 @@
 .report-equation{background:#f5f6f2;border-left:2px solid #567c88;padding:20px 16px;text-align:center;max-width:100%}
 .inline-equation{white-space:nowrap;font-size:1em}.inline-equation math{display:inline math}
 .plain-answer{padding:20px 24px;background:#edf2ef;border-left:3px solid #5d8272;margin:24px 0}.plain-answer p{margin:0!important;text-align:left!important}
+.report-article img{display:block;max-width:100%;height:auto;margin:18px auto;break-inside:avoid}
+.section-body p:has(>img){column-span:all}
 @media(max-width:720px){.report-article{padding:24px 20px 60px}.report-cover{padding-top:10px}.report-cover h1{font-size:31px}.report-cover p{font-size:13px}.report-article h2{font-size:24px}.section-body{columns:1}.report-article .section-body p{text-align:left}.report-equation{padding:16px 8px;font-size:13px}}
 @media print{.report-article{padding:0}.report-cover{position:static!important;background:none!important}.report-cover h1{font-size:24pt}.report-cover p{font-size:10pt}.section-body{columns:1}.report-article .section-body p,.report-article .section-body li{font-size:10.5pt;line-height:1.55}.report-equation{font-size:10pt}.report-article h2{font-size:16pt}}

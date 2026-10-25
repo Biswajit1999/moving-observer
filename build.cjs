@@ -14,7 +14,10 @@ function report(){
  const rows=Object.entries(labels).map(([k,label])=>'| '+label+' | '+sum[k].toFixed(5)+' | '+(results.interval[k]?results.interval[k].map(x=>x.toFixed(5)).join(' to '):'—')+' |').join('\n');
  experiment=experiment.replace(/\| Quantity \|[\s\S]*?(?=\n\n)/,'| Quantity | Nominal score | 95% formal-astrometry interval for differences |\n|---|---:|---|\n'+rows);
  const source=includeSection(includeSection(includeSection(read('REPORT.md'),'<!--EXPERIMENT-->',experiment),'<!--SPACE_TIME-->',spaceTime),'<!--ENVIRONMENT-->',includeSection(read('ENVIRONMENT_REPORT.md'),'<!--RELATIVITY-->',read('RELATIVITY_REPORT.md')));
- let html=renderReport(source).html;let n=0;html=html.replace(/<h2>/g,()=>'<h2 id="report-section-'+(++n)+'">');
+ let html=renderReport(source).html;
+ // Keep the labelled report figure available in the single-file offline copy.
+ html=html.replace('src="output/figures/Moving_Observer_Galactic_Map.png"','src="data:image/png;base64,'+fs.readFileSync(path.join(__dirname,'output/figures/Moving_Observer_Galactic_Map.png')).toString('base64')+'"');
+ let n=0;html=html.replace(/<h2>/g,()=>'<h2 id="report-section-'+(++n)+'">');
  const toc='<nav class="report-toc" aria-label="Report contents"><span>In this report</span><a href="#report-section-1">Overview</a><a href="#catalogueExperiment">Catalogue experiment</a><a href="#report-space-time">Space &amp; Time</a><a href="#report-environment">Density, speed &amp; 3D clocks</a><a href="#report-section-3">Equations &amp; frames</a><a href="#report-proxima">Proxima lab</a><a href="#report-section-14">Warp &amp; trajectories</a><a href="#report-section-12">Simulation tutorial</a><a href="#report-section-11">Review questions</a></nav>';
  html=html.replace(/^([\s\S]*?)(?=<h2)/,(_,intro)=>'<header class="report-cover"><p class="report-kicker">Finding Earth 2.0 / Research &amp; simulation report</p>'+intro+'</header>');
  html=html.replace(/(<h2[^>]*>[\s\S]*?<\/h2>)([\s\S]*?)(?=<h2|$)/g,(_,heading,body)=>'<section class="paper-section">'+heading+'<div class="section-body">'+body+'</div></section>');

@@ -5,7 +5,7 @@ import SS from './solar-system.cjs';
 import earthImage from './earth.jpg';
 const $=id=>document.getElementById(id);
 export function initRelativity({onOpen}){
- let renderer,scene,camera,controls,worker,rows=null,meshes=[],trails=[],ghosts=[],last=0,playing=false,frame=0,index=0,playbackDay=0;
+ let renderer,scene,camera,controls,worker,workerURL,rows=null,meshes=[],trails=[],ghosts=[],last=0,playing=false,frame=0,index=0,playbackDay=0;
  const dialog=$('relativityDialog'),canvas=$('relativityCanvas'),status=$('relativityStatus');
  function stop() {playing=false;$('relativityPlay').textContent='Play';}
  function setup(){
@@ -28,12 +28,12 @@ export function initRelativity({onOpen}){
   const clocks=R.clockOffsets(row.pn);$('relativityClock').textContent=clocks[target].toFixed(2)+' µs/day';$('relativityAccumulated').textContent=row.clockSeconds[target].toFixed(6)+' s';
   const signal=R.earthSignal(row.pn,target);$('relativityShapiro').textContent=signal.samePosition?'Same position':signal.blocked?'Sun intersects the geometric ray':(signal.delaySeconds*1e6).toFixed(3)+' µs';
   $('relativityLabels').textContent=R.names.filter((_,i)=>visible(i)).join(' · ');
-  $('relativityScale').textContent=(focus==='moon'?'Earth-centred; AU coordinates. Earth/Moon markers enlarged.':focus==='bary'?'Barycentric; AU coordinates. The Sun moves too. Body markers enlarged.':'Sun-centred; AU coordinates. Body markers enlarged.')+' Grey: Newtonian comparison. Real 1PN differences are usually too small to distinguish visually.';lines();
+  $('relativityScale').textContent=(focus==='moon'?'Earth-centred; AU coordinates. Earth/Moon markers enlarged.':focus==='bary'?'Barycentric; AU coordinates. The Sun moves too. Body markers enlarged.':'Sun-centred; AU coordinates. Body markers enlarged.')+' Grey: Newtonian comparison. Galactic translation is omitted here; use Sun & all planets for forward travel. Real 1PN differences are usually too small to distinguish visually.';lines();
  }
  function calculate(){stop();worker?.terminate();rows=null;$('relativityRun').disabled=true;$('relativityPlay').disabled=true;$('relativityTime').disabled=true;status.textContent='Integrating both models in a background worker…';
-  worker=new Worker(URL.createObjectURL(new Blob([__RELATIVITY_WORKER__],{type:'text/javascript'})));
+  if(workerURL)URL.revokeObjectURL(workerURL);workerURL=URL.createObjectURL(new Blob([__RELATIVITY_WORKER__],{type:'text/javascript'}));worker=new Worker(workerURL);
   worker.onerror=e=>{$('relativityRun').disabled=false;status.textContent='Integration worker failed: '+e.message+'. Use Calculate to retry.';};
-  worker.onmessage=e=>{const data=e.data;if(data.error){$('relativityRun').disabled=false;status.textContent=data.error;return;}if(data.progress){status.textContent='Integrating Newtonian and 1PN: '+Math.round(data.progress*100)+'%';return;}if(data.done){$('relativityRun').disabled=false;rows=data.rows;index=0;$('relativityTime').max=rows.length-1;$('relativityTime').disabled=false;$('relativityPlay').disabled=false;status.textContent='Ready · '+data.years+' years · RK4 step '+data.h+' day · '+rows.length+' saved epochs. Check the documented error budget before interpreting differences.';fit();renderState();}};
+  worker.onmessage=e=>{const data=e.data;if(data.error){$('relativityRun').disabled=false;status.textContent=data.error;return;}if(data.progress){status.textContent='Integrating Newtonian and 1PN: '+Math.round(data.progress*100)+'%';return;}if(data.done){$('relativityRun').disabled=false;rows=data.rows;index=Math.min(15,rows.length-1);playbackDay=rows[index].day;$('relativityTime').max=rows.length-1;$('relativityTime').disabled=false;$('relativityPlay').disabled=false;status.textContent='Ready · '+data.years+' years · RK4 step '+data.h+' day · '+rows.length+' saved epochs. Check the documented error budget before interpreting differences.';fit();renderState();playing=true;$('relativityPlay').textContent='Pause';}};
   worker.postMessage({years:+$('relativityYears').value,h:+$('relativityStep').value});
  }
  function animate(now){if(!dialog.open){frame=0;return;}const dt=Math.min(.1,(now-last)/1000);last=now;if(playing&&rows){playbackDay=Math.min(rows[rows.length-1].day,playbackDay+dt*+$('relativitySpeed').value);index=Math.min(rows.length-1,Math.floor(playbackDay/2));if(playbackDay===rows[rows.length-1].day)index=rows.length-1;renderState();if(index===rows.length-1)stop();}controls.update();renderer.render(scene,camera);frame=requestAnimationFrame(animate);}

@@ -1,3 +1,11 @@
+## Warp, forward motion and report revision · 25 October 2026
+
+The edge-on camera now looks along the warp line of nodes, exposing the bend across the image. Rings and a maximum-bend cross-section follow the same height function as the artwork, against a flat-plane reference. The reveal preset turns the warp on and labels its 5× vertical display. Projection checks resolve the 700 pc bend at four precession phases.
+
+The planetary view opens with all ten bodies. Separate three-year inner and 84-year all-planet presets use reference lines fixed in the selected translating frame. The camera follows the Sun, so these lines move past it. A scene check measures the expected approximately 0.98 AU/year residual motion in the 98% frame. Long-trail resampling is bounded to reduce per-frame work. Earth-clock presets start playback; the 1PN lab shows all planets and starts playback after calculation.
+
+All 81 numerical and scene-control check groups passed. Fresh live browser rendering remains unverified because access is restricted; no alternate browser automation was used. The six PDF pages were rendered with Poppler and visually inspected, including a second inspection of the revised cover diagram. The opening figure is now a project-drawn conceptual map with named arms, centre, Solar orbit, A/B/C epochs, an internal legend and a warp inset. It is not an observed arm-position map.
+
 ## Coupled 1PN Solar System lab · 25 October 2026
 
 The new dynamics branch uses order-reduced all-included-body EIH 1PN equations, frozen geometric barycentric Horizons states and paired Newtonian integration. Twelve validation groups include a Mercury apsidal benchmark, the Schwarzschild test-particle limit, covariance/scaling, 30-day step refinement, three sparse JPL comparison epochs, clocks, signal geometry, and actual worker numerical execution under Node. Measured errors and the distinction from a full-GR solver are in `RELATIVITY_REPORT.md`. No browser rendering or encoding claim is added. The previous illustrated PDF remains unchanged.

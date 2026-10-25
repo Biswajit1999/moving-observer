@@ -62,3 +62,12 @@ The physical scale comparison explains why the Sun can look straight in a short 
 5. **What would change the conclusion?** Supply a target, assumptions and a reproducible counterexample where motion has a substantial advantage.
 
 Feedback and corrections can be recorded in the [public project discussion through GitHub issues](https://github.com/Biswajit1999/moving-observer/issues). No email or outreach is required. These questions invite scrutiny of the calculation; they do not assert that a new physical principle or a previously unstudied problem has been discovered.
+
+
+### Display revisions: making motion legible
+
+The **Show the bend** control looks along the warp line of nodes, so the vertical bend lies across the image instead of along the line of sight. Gold shows the maximum-bend section, grey its flat-plane reference, and blue rings follow the same height function as the artwork. The 5× view is labelled; **1×** restores equal spatial proportions. The 2025 corrugation is distinct from this warp and has not been fitted or forecast.
+
+**Sun & all planets** opens with all bodies in the winding-path view. Two presets resolve inner-planet motion over three years and all-planet tracks over 84 years. Gold marks forward Solar motion. Reference lines at 2 AU (inner) or 20 AU (all bodies) are fixed in the selected translating frame; they move past the camera that follows the Sun. The 98% co-moving frame leaves about 0.98 AU/year of residual Solar travel. Switching to the Galactic frame restores approximately 49 AU/year. These are coordinate changes, not a modification of planetary orbits.
+
+**Space & Time** defaults to a circular test clock. Earth orbit presets start playback. The separate 1PN lab starts from saved JPL initial states, shows all planets by default, and begins playback after integration. Its barycentric/Sun-centred orbital views remove common Galactic translation; use the planetary winding-path view to see that separate effect.
