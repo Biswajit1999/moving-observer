@@ -1,0 +1,26 @@
+name: Causal Frontier foundation tests
+
+on:
+  pull_request:
+    paths:
+      - "causal-frontier/**"
+      - ".github/workflows/causal-frontier-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: causal-frontier
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install staged research package
+        run: python -m pip install -e ".[test]"
+      - name: Run numerical controls
+        run: python -m pytest -q
+      - name: Generate baseline diagnostic JSON
+        run: python examples/baselines.py
