@@ -1,3 +1,18 @@
+# Current verification: version 7.2, 25 October 2026
+
+This section supersedes the historical entries below where behaviour differs.
+
+- The main renderer now uses a central viewport between controls; label projections use the same viewport. This is a source-level layout change. **Live WebGL visual inspection remains blocked by the existing browser security restriction.** No alternate browser or screen-capture route was used.
+- The Solar-System camera can remain fixed in the selected translating frame. A physical approximately 0.98 AU/year displacement is verified for the 98% frame; following the Sun removes that camera-relative translation. Thick gold Solar paths and optional two-orbit planetary trail limits change rendering only.
+- Space & Time now defaults to all eight planets, Sun and illustrative Moon. The years clock advances their positions. Single-body views retain their seconds clock. Tests check quarter-year Earth motion, all ten bodies and a finite ten-mass field at the stated test point.
+- The heliosphere is explicitly a reference geometry: 120 AU boundary, 90 AU shock, 400 km/s radial tracers inside the shock. Unit conversions and spherical radii are checked. No magnetic-fluid solution, global-shape measurement or shielding efficiency is implied.
+- The original galaxy illustration and catalogue screenshot are extracted from the unchanged supplied discussion note. The Finding Earth 2.0 plot retains its dated saved source, subset counts and SHA-256 provenance. The six-page PDF was rebuilt, rendered and all six pages visually inspected; equations and captions are legible without detected clipping or overlap.
+- The public README and full report now separate numerical results, conditional instrument thresholds, physical assumptions, visualization choices and outstanding questions. The current audit does not claim a newly completed browser inspection or full-GR accuracy.
+
+## Historical verification records
+
+The following dated records describe earlier versions. Their counts, screenshots, defaults and limitations are retained as history, not the current feature list. In particular, the earlier browser inspection predates the present rendering restrictions and recent changes.
+
 ## Visible outer-disk warp correction
 
 The supplied screenshot showed a faint warped outer disk dominated by a flat bright centre. The surface shader's global plane-angle fade was nearly zero at the intended edge-on camera angle. The correction retains at least 65% of the surface fade multiplier and adds an optional, explicitly labelled height-coloured structural surface in the outer disk. The same height function deforms the surface, points and guide rings; no dynamics parameters changed.

@@ -1,0 +1,15 @@
+{
+  "original_figures": {
+    "source": "discussion-note.pdf",
+    "sha256": "d782950abe75964574e44f60733ef639647d7e70c1e2c21ea2984caf17ad4f65",
+    "type": "cropped original conceptual galaxy illustration and historical discovery-sky screenshot; underlying image provenance not independently established"
+  },
+  "hz_plot": {
+    "source": "https://github.com/Biswajit1999/finding-earth-2/blob/14828643bdd9342eeb2aff65c5dd32eef31dd2c3/results/figures/hz_diagram.png",
+    "sha256": "ce5e5a414b916f869f5c772a679b88c92d6ef6d40633afa316a8392f8d8c0671",
+    "analysis_utc": "2026-08-28T20:00:42Z",
+    "shown_planets": 5767,
+    "catalogue_confirmed": 6354,
+    "note": "Original plot retained; data-availability subset, not complete catalogue. Similarity index is not life probability."
+  }
+}

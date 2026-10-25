@@ -4,15 +4,15 @@
 
 **Biswajit Jana**<br>
 Finding Earth 2.0 · Independent research and simulation project<br>
-Research and simulation report, version 7.1 · 25 October 2026 · Not peer reviewed
+Research and simulation report, version 7.2 · 25 October 2026 · Not peer reviewed
 
 ## Report overview
 
 This report investigates a question prompted by curiosity: as the Solar System moves through the Milky Way, could our changing viewpoint help us observe different planetary systems? It describes what the simulation calculates, what the current results mean, and what evidence would be needed for a stronger conclusion. Neighbouring stars move too, so relative motion is central to the question. This project asks how their **relative** motion changes distances, directions and opportunities to observe exoplanets. We distinguish three questions: how far we move from a fixed spatial reference; how far we move relative to a particular star; and whether the resulting geometry improves a specified detection method. These are different calculations. The demonstration combines a 250-million-year illustrative Galactic orbit model, a published-input Proxima Centauri case study, and a simple transit-geometry experiment. It does not forecast a number of newly discovered or habitable planets. A new Gaia DR3 experiment adds 1,387 selected sources, correlated astrometric errors and a four-scenario comparison of century motion and instrument thresholds. It finds a small, threshold-dependent motion contribution in a standardised planet-injection experiment. This is single-visit accessibility, not a mission discovery forecast.
 
-![Conceptual Galactic map showing today, future and later-future observer positions, named arms, the Galactic centre and an edge-on warp section](output/figures/Moving_Observer_Galactic_Map.png)
+![Original conceptual galaxy illustration: today, future, later future, Galactic centre and named arms](output/figures/Original_Galactic_Concept.png)
 
-*Conceptual diagram based on the original discussion note. Arm positions are schematic; observer epochs follow an ideal 8.2 kpc circular path at 233 km/s. The warp inset has an enlarged vertical axis and is not a fitted future prediction.*
+*Original conceptual illustration reproduced from the supplied discussion note. Named arms, arrows and A/B/C epochs explain the question; they are not a measured future map or an external photograph. Its underlying image provenance is not independently established here. Quantitative trajectories use the separately documented model.*
 
 ## 1. What can already be answered?
 

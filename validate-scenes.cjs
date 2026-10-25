@@ -56,5 +56,17 @@ const Grav=require('./gravity.cjs'),assert=require('node:assert/strict'),esbuild
  for(const id of ['warpSurface','warpFollow','warpProfile'])assert.ok(html.includes('id="'+id+'"'));
  assert.ok(html.includes('<option value="5" selected>'));
  console.log('PASS Edge-on disk remains visible; height overlay and default warp controls exist');
- console.log('7 scene-construction validation groups passed (rendering unverified)');
+ elements.gravityBody.value='All';elements.gravityGeometry.value='body';
+ views.update(0,'spacetime');const earth=views.labels.find(l=>l.scene==='spacetime'&&l.text==='EARTH'),initialEarth=earth.position().clone();
+ views.update(.25,'spacetime');assert.ok(earth.position().distanceTo(initialEarth)>1);
+ assert.equal(views.labels.filter(l=>l.scene==='spacetime'&&l.visible()).length,11);
+ assert.ok(elements.gravityName.textContent.includes('ten bodies'));const fieldCSV=views.exportCSV('spacetime',0).csv;assert.equal(fieldCSV.trim().split('\n').length,103);assert.ok(!/NaN|undefined|Infinity/.test(fieldCSV));
+ const rate=elements.clockLag.textContent;elements.wellDepth.value='1';views.update(.25,'spacetime');assert.equal(elements.clockLag.textContent,rate);
+ console.log('PASS Whole-system clock advances all bodies; ten-mass field is independent of sheet depth');
+ elements.systemMode.value='paths';elements.systemFrame.value='.98';elements.followSun.checked=false;views.camera('system',1,84);views.update(84,'system');const p0=views.system.position.clone();views.update(85,'system');assert.ok(views.system.position.distanceTo(p0)>.9);elements.followSun.checked=true;views.update(85,'system');assert.ok(views.system.position.length()<1e-12);
+ elements.heliosphere.checked=true;views.update(85,'system');finiteScene(views.system);assert.ok(views.labels.find(l=>l.text.startsWith('HELIOPAUSE')).visible());
+ const H=require('./heliosphere.cjs');assert.ok(Math.abs(H.travelDays(1)-4.328642)<.00001);assert.ok(Math.abs(H.windDistanceAU(1)-84.38)<.01);assert.ok(Math.abs(Math.hypot(...H.spherePoint(120,1,.3))-120)<1e-10);
+ const P=require('./physics2026.cjs'),q=Grav.field([0,0,1],[{name:'Sun',position:[0,0,0]}]);assert.ok(Math.abs(q.accelerationMS2-.00593)<.00001);assert.ok(q.clockLagMicrosecondsPerDay>852&&q.clockLagMicrosecondsPerDay<855);
+ console.log('PASS Camera-frame translation and heliosphere scales preserve physical positions and units');
+ console.log('9 scene-construction validation groups passed (rendering unverified)');
 })().catch(e=>{console.error(e);process.exitCode=1;});

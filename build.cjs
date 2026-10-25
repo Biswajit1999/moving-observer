@@ -4,7 +4,7 @@ const read=f=>fs.readFileSync(path.join(__dirname,f),'utf8'),write=(f,s)=>fs.wri
 function report(){
  const results=JSON.parse(read('data/research-results.json')),sum=results.sum;
  const extensions=JSON.parse(read('data/extensions-results.json'));
- let spaceTime=read('SPACE_TIME_REPORT.md');
+ let spaceTime=read('SPACE_TIME_REPORT.md')+'\n\n'+read('HELIOPHYSICS_REPORT.md');
  const timeRows=extensions.catalogueTimeSweep.map(x=>'| '+x.years+' | '+x.motionScore.toFixed(6)+' | '+x.motionPercent.toFixed(4)+'% | '+x.approaching+' / '+x.receding+' |').join('\n');
  const clockRows=extensions.isolatedSurfaceClocks.map(x=>'| '+x.body+' | '+x.accelerationMS2.toFixed(3)+' | '+x.clockLagMicrosecondsPerDay.toFixed(2)+' |').join('\n');
  const extensionText='### Same sample, different waiting times\n\n| Years after 2026 | Change in accessibility sum | Relative change | Approaching / receding sources |\n|---|---:|---:|---:|\n'+timeRows+'\n\n### Isolated-body surface clock comparison\n\n| Body | Gravity (m/s²) | Clock lag (microseconds/day vs infinity) |\n|---|---:|---:|\n'+clockRows+'\n\nThe sampled Solar barycentric offset spans **'+Math.round(extensions.solarReflex.minOffsetKm).toLocaleString('en-GB')+'–'+Math.round(extensions.solarReflex.maxOffsetKm).toLocaleString('en-GB')+' km** over 2026–2126 (1,001 samples). The smooth Galactic model travels **'+extensions.solarCentury.travelAU.toFixed(2)+' AU** in that century and departs from its initial straight tangent by **'+extensions.solarCentury.departureFromInitialTangentAU.toFixed(5)+' AU**. Its long-clock vertical oscillation spans approximately **±99 pc**. These are distinct physical scales. At 1 AU from an isolated Sun, a stationary clock has a predicted lag of **'+extensions.solarFieldAt1AU.clockLagMicrosecondsPerDay.toFixed(2)+' microseconds/day** relative to infinity.\n';
@@ -17,6 +17,7 @@ function report(){
  let html=renderReport(source).html;
  // Keep the labelled report figure available in the single-file offline copy.
  html=html.replace('src="output/figures/Moving_Observer_Galactic_Map.png"','src="data:image/png;base64,'+fs.readFileSync(path.join(__dirname,'output/figures/Moving_Observer_Galactic_Map.png')).toString('base64')+'"');
+ html=html.replace(/src="(output\/figures\/[^"]+\.png)"/g,(_,file)=>'src="data:image/png;base64,'+fs.readFileSync(path.join(__dirname,file)).toString('base64')+'"');
  let n=0;html=html.replace(/<h2>/g,()=>'<h2 id="report-section-'+(++n)+'">');
  const toc='<nav class="report-toc" aria-label="Report contents"><span>In this report</span><a href="#report-section-1">Overview</a><a href="#catalogueExperiment">Catalogue experiment</a><a href="#report-space-time">Space &amp; Time</a><a href="#report-environment">Density, speed &amp; 3D clocks</a><a href="#report-section-3">Equations &amp; frames</a><a href="#report-proxima">Proxima lab</a><a href="#report-section-14">Warp &amp; trajectories</a><a href="#report-section-12">Simulation tutorial</a><a href="#report-section-11">Review questions</a></nav>';
  html=html.replace(/^([\s\S]*?)(?=<h2)/,(_,intro)=>'<header class="report-cover"><p class="report-kicker">Finding Earth 2.0 / Research &amp; simulation report</p>'+intro+'</header>');
