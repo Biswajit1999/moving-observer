@@ -52,7 +52,7 @@ const Grav=require('./gravity.cjs'),assert=require('node:assert/strict'),esbuild
  for(const id of ['warpSurface','warpFollow','warpProfile','evidenceTour','hydroOpen'])assert.ok(html.includes('id="'+id+'"'));
  assert.ok(html.includes('<option value="1" selected>'));
  const app=require('fs').readFileSync('app.js','utf8');assert.ok(!app.includes('new Image()'));assert.ok(app.includes('createMilkyWay(scenes.galaxy)'));
- console.log('PASS Measured and synthetic layers replace the image surface; true vertical scale is default');
+ console.log('PASS Reconstructed appearance and measured layers stay distinct; true vertical scale is default');
  elements.gravityBody.value='All';elements.gravityGeometry.value='body';
  views.update(0,'spacetime');const earth=views.labels.find(l=>l.scene==='spacetime'&&l.text==='EARTH'),initialEarth=earth.position().clone();
  views.update(.25,'spacetime');assert.ok(earth.position().distanceTo(initialEarth)>1);
@@ -65,5 +65,23 @@ const Grav=require('./gravity.cjs'),assert=require('node:assert/strict'),esbuild
  const H=require('./heliosphere.cjs');assert.ok(Math.abs(H.travelDays(1)-4.328642)<.00001);assert.ok(Math.abs(H.windDistanceAU(1)-84.38)<.01);assert.ok(Math.abs(Math.hypot(...H.spherePoint(120,1,.3))-120)<1e-10);
  const P=require('./physics2026.cjs'),q=Grav.field([0,0,1],[{name:'Sun',position:[0,0,0]}]);assert.ok(Math.abs(q.accelerationMS2-.00593)<.00001);assert.ok(q.clockLagMicrosecondsPerDay>852&&q.clockLagMicrosecondsPerDay<855);
  console.log('PASS Camera-frame translation and heliosphere scales preserve physical positions and units');
- console.log('9 scene-construction validation groups passed (rendering unverified)');
+ elements.systemMode.value='orbits';elements.heliosphere.checked=false;
+ const SS=require('./solar-system.cjs'),Lunar=require('./lunar.cjs');
+ for(const body of ['Sun',...SS.names,'Moon']){
+  elements.systemInspect.value=body;
+  for(const epoch of [0,50,100]){
+   views.update(epoch,'system');finiteScene(views.system);
+   const cam=views.camera('system',1,epoch),expected=Lunar.state(epoch)[body];
+   assert.deepEqual(cam.target,expected);assert.ok(cam.pos.every(Number.isFinite));
+   assert.ok(cam.min>0&&cam.max>cam.min);assert.deepEqual(views.focusPoint().toArray(),expected);
+   const mesh=views.system.getObjectByName('Body: '+body);
+   assert.equal(mesh.scale.x,(SS.radiusKm[body]||1737.4)/P.AU_KM);
+  }
+ }
+ const saturn=views.system.getObjectByName('Body: Saturn');assert.equal(saturn.children.filter(c=>c.name==='Illustrative Saturn ring band').length,7);
+ const layout=require('./label-layout.cjs'),anchor={x:300,y:250,radius:90},placed=layout.place(anchor,{w:100,h:22},{x:0,y:0,w:600,h:500},[],[anchor]);
+ assert.ok(placed);assert.ok(!layout.intersects(placed,{x:210,y:160,w:180,h:180}));
+ console.log('PASS Every physical-size inspection follows its unchanged state; labels clear body disks');
+ console.log('10 scene-construction validation groups passed (rendering unverified)');
+
 })().catch(e=>{console.error(e);process.exitCode=1;});

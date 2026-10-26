@@ -10,3 +10,5 @@ This does not restrict components already licensed by their owners:
 - discussion-note.pdf was supplied by Biswajit Jana and is included unchanged as the originating note.
 
 Authorship does not imply institutional endorsement or peer review.
+
+- Planet maps in `assets/planets/`: Solar System Scope / INOVE, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), [source](https://www.solarsystemscope.com/textures/). Downloaded unchanged and mapped onto rendered spheres. Enhanced colours and filled terrain gaps are disclosed by the source. File URLs and SHA-256 hashes are recorded in `assets/planets/sources.json`. Earth retains its previously credited Three.js example map.

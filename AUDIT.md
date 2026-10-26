@@ -1,10 +1,18 @@
+## Current rendering: v7.4 — 26 October 2026
+
+- Default Galaxy appearance now uses the credited ESA/Gaia reconstruction on a tessellated warped disk, with a shallow emissive volume at grazing angles. The earlier synthetic sampler remains an archived structural experiment. This change does not fit a new Galactic mass, dust or star-density model.
+- Shared mapped surfaces extend across Earth & Sun, Sun & all planets, Space & Time and the coupled 1PN lab. Added illustrative Saturn ring bands, a restrained Solar halo and Earth limb. Source URLs, licence and SHA-256 hashes accompany the downloaded maps.
+- Added physical-radius close-ups for all ten bodies. Camera target and body radii are checked at 2026, 2076 and 2126 against the existing trajectory module. Labels account for projected body size. Sun-centred lighting replaces the directional presentation light in the whole-system gravity view; isolated-body scenes retain a presentation light.
+- Body close-ups and material changes do not alter trajectories, fields, clock rates, measurement inputs or research results. Complete orbital guides replace zero-length trails in the whole-system gravity view at the initial epoch; they are labelled as orbit shapes.
+- Build and all 93 numerical, data, source and scene validation groups pass. Nine downloaded texture files match their recorded hashes and dimensions. **Live browser/WebGL validation remains unavailable because browser access was denied.** No runtime screenshot, shader-compilation or frame-rate verification is claimed. Source assets and finite scene geometry are not substitutes for that validation. The six-page PDF remains the v7.3 scientific brief; the online report contains the new appearance documentation.
+
 ## Rendering update: v7.3.1 — 26 October 2026
 
 Replaced additive 190,000-point rendering with continuous 3D emission/absorption and bounded exposure, retaining approximately 6,130 faint point sources. The light-density map derives from the existing deterministic populations; the physical orbital models and observational catalogue are unchanged. Dust opacity and luminosity weights remain illustrative. Default measurement markers are off; evidence mode restores them. The Galaxy renders at at most one device pixel per CSS pixel to limit fragment cost; HTML labels remain sharp.
 
 The independent CPU projection was inspected for centre saturation, continuity and colour. Scene/data tests check finite light channels, bounded emission blending and transformed camera coordinates. These checks do not substitute for live WebGL shader, frame-rate or UI validation, which remains unavailable.
 
-## Current release: v7.3 — 25 October 2026
+## Previous release: v7.3 — 25 October 2026
 
 - Replaced the photo-derived Galaxy and filled outer surface with deterministic synthetic light plus selectable published arm fits and 199 archived VLBI parallax entries. Imported positions pass independent rounded Galactic-coordinate checks; raw table checksum is preserved across platforms.
 - The observed overlay is explicitly at catalogue epochs, disappears during future playback, and is not a predicted stellar census. Faint arm extensions and light weights are display assumptions. Default vertical scale is 1×; bend tour is labelled 5×.
@@ -13,7 +21,7 @@ The independent CPU projection was inspected for centre saturation, continuity a
 - Build and 92 numerical/source/scene validation groups pass. The static scientific figure and all six PDF pages are inspected separately. Browser access was unavailable: no live WebGL, shader appearance, interactive layout or actual browser gas-playback validation is claimed.
 - Outreach and LinkedIn drafts remain outside this public repository. The original discussion note is unchanged. Older sections below describe historical versions, not current rendering.
 
-# Current verification: version 7.2, 25 October 2026
+# Historical verification: version 7.2, 25 October 2026
 
 This section supersedes the historical entries below where behaviour differs.
 

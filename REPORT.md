@@ -4,7 +4,7 @@
 
 **Biswajit Jana**<br>
 Finding Earth 2.0 · Independent research and simulation project<br>
-Research and simulation report, version 7.3 · 25 October 2026 · Not peer reviewed
+Research and simulation report, version 7.4 · 26 October 2026 · Not peer reviewed
 
 ## Report overview
 
@@ -148,7 +148,7 @@ We integrate with a kick–drift–kick leapfrog at 0.01 Myr steps. The exact in
 | Illustrative B | 0.238 kpc | 2.417 kpc |
 | Illustrative C | 0.366 kpc | 4.131 kpc |
 
-This particular example set separates over the full interval. It is not a representative sample and cannot establish a Galactic encounter rate, a future nearest-neighbour catalogue or a discovery yield. Their motion nevertheless demonstrates why the observer alone is insufficient. The current synthetic stellar-light model follows published arm and bar geometry; the separate cyan layer contains measured VLBI positions at catalogue epochs. Optional light-pattern rotation is schematic. Light samples are not the integrated targets or individual catalogue stars. See section 16 for data provenance and limits; [6] documents the earlier artwork.
+This particular example set separates over the full interval. It is not a representative sample and cannot establish a Galactic encounter rate, a future nearest-neighbour catalogue or a discovery yield. Their motion nevertheless demonstrates why the observer alone is insufficient. The visible Galaxy uses the ESA/Gaia artist’s reconstruction, with illustrative depth and warp; the separate cyan layer contains measured VLBI positions at catalogue epochs. Optional pattern rotation is schematic. The visual reconstruction is not a set of integrated individual stars. See section 16 for data provenance and limits; [6] documents the artwork.
 
 The Sun travels about 59.57 kpc over 250 Myr but ends about 7.70 kpc from the 2026 fixed reference. At the nominal 216.21 Myr circular period it has travelled about 51.52 kpc and is about 0.062 kpc from that reference. Path length, displacement and star–observer distance must remain separate quantities.
 
@@ -249,7 +249,7 @@ Please distinguish corrections to the implementation, corrections to the physics
 2. Click **Play Galactic journey** or **Play**. Gold marks the Sun and its elapsed path. The cyan reference stays at its 2026 Galactic coordinate. The timeline slider selects an epoch; **2026** resets the active clock. **Playback speed** changes how many model years pass per real second; it does not change the equations.
 3. Compare **Distance travelled** with **Sun → fixed 2026 reference**. The first is accumulated path length; the second is straight-line separation. **Jump to ≈ one Galactic orbit** illustrates why they differ: the Sun can return near its starting location after travelling a long distance.
 4. Use **Plane view** for the disk from above, **Edge-on** for thickness, or **Reset camera** for the initial perspective. Drag to rotate and scroll or use **Zoom + / −** to change magnification. **Plane guides** and **Object labels** can be switched off.
-5. **Evolving outer-disk warp** controls a sourced-scale kinematic surface. Use **Edge-on** to inspect it; the Solar-height plot separately reveals vertical oscillation. **Animate disk pattern** controls schematic rotation of the synthetic light pattern. It does not control the integrated Solar orbit. **Enhance arm contrast** changes display brightness and haze; it does not change stellar density or the gravity model.
+5. **Evolving outer-disk warp** controls a sourced-scale kinematic surface. Use **Edge-on** to inspect it; the Solar-height plot separately reveals vertical oscillation. **Animate disk pattern** controls schematic rotation of the illustrated Galaxy. It does not control the integrated Solar orbit. **Enhance arm contrast** changes display brightness and haze; it does not change stellar density or the gravity model.
 
 ### B. Compare the Sun with moving stars
 
@@ -309,7 +309,7 @@ Please distinguish corrections to the implementation, corrections to the physics
 9. **Bailer-Jones, C. A. L. et al. (2018).** New stellar encounters discovered in the second Gaia data release. *A&A* 616, A37. DOI: 10.1051/0004-6361/201833456. https://arxiv.org/abs/1805.07581
 10. **JPL approximate planetary positions** and **Gaia ICRS/Galactic transformation** (underlying century model). https://ssd.jpl.nasa.gov/planets/approx_pos.html ; https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html
 
-The current rendering uses synthetic light sampled from published arm and bar geometry, with an independently selectable VLBI measurement layer (section 16). The ESA reconstruction is retained only as earlier artwork. The edge-on dust attenuation is a visual approximation; these artistic depth parameters are not a fitted 3D stellar or dust catalogue. Planet illumination is provided by the modeled Sun, with dim ambient light for readability. Body markers remain enlarged.
+The current rendering maps the detailed ESA/Gaia reconstruction onto a bent three-dimensional disk, with illustrative thickness at grazing angles and an independently selectable VLBI layer (section 16). These depth parameters are not a fitted 3D stellar or dust catalogue. Multi-body planet illumination comes from the modeled Sun with dim ambient light; isolated-body experiments use a presentation light. Overview body markers remain enlarged. The new Sun & all planets inspection control follows a selected body at physical radius, using illustrative mapped surfaces; these do not alter the trajectory or field calculations.
 
 ## Authorship and attribution
 

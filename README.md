@@ -28,11 +28,11 @@ At an adopted Galactic tangential speed of **233 km/s**, the Sun travels approxi
 
 ## Evidence, gas and the next 10,000 years
 
-![Continuous stellar light and dust: independent model preview](output/figures/Galaxy_Light_Preview.png)
+![ESA/Gaia reconstruction used as the new Galaxy appearance asset](milky-way-gaia.jpg)
 
-*Independent CPU projection of the volume equations, not a website screenshot. The natural-light view uses a warm core, subdued blue arm light and illustrative dust absorption. Measurement overlays are optional.*
+*Source appearance asset, not a browser screenshot. ESA/Gaia/DPAC, Stefan Payne-Wardenaar · [source](https://www.esa.int/ESA_Multimedia/Images/2025/01/The_best_Milky_Way_map_by_Gaia) · CC BY-SA 3.0 IGO. The simulation bends this reconstruction in 3D and adds illustrative vertical depth. No external photograph of the Galaxy exists from this viewpoint.*
 
-**New in v7.3:** the Galaxy no longer uses a filled blue/amber outer shell or photograph-derived particles. Inspect **199 VLBI measurements (198 distinct names)**, published spiral-arm segments, and a separate synthetic stellar-light distribution. The model adopts Reid et al. (2019) arm geometry and a Wegg et al. (2015) bar scale. It does not claim to reconstruct every star or uniquely determine the far side of the Galaxy. [Data, equations and assumptions](GALAXY_DATA_REPORT.md).
+**New in v7.4:** a detailed Gaia-informed reconstruction supplies the Galaxy’s appearance; mapped planets, physical-size inspection cameras and clearer gravity views extend across the simulation. Inspect **199 VLBI measurements (198 distinct names)** and published spiral-arm segments separately. The reconstruction is an appearance model, not a new measurement of the far side or a forecast. [Data, equations and assumptions](GALAXY_DATA_REPORT.md).
 
 The **Gas hydrodynamics lab** is an actual finite-volume isothermal Euler experiment: 64×64 cells, open boundaries, rotating prescribed potential, CFL-controlled time steps and an exported mass budget. Its 3D surface plots density. This is **2D gas dynamics**, not a full 3D/MHD Milky Way reconstruction, and it does not move the stars or planets.
 
@@ -60,11 +60,20 @@ The isothermal solver passes a travelling sound-wave refinement check (normalize
 | **Milky Way** | Inspect measured evidence; then show warped disk at 1× / 5× | A 250 Myr Solar orbit in a smooth static potential; a separate kinematic warp |
 | **2026 reference** | Compare the fixed marker and passive probe | AU separations; the passive probe inherits its release velocity |
 | **Earth & Sun** | Play the forward-path view; reset camera when needed | A three-year path in a frame translating at 98% of Solar velocity, with true orbital distances |
-| **Sun & all planets** | Compare full Galactic and 98% frames; toggle Follow Sun | Eight planetary orbits, illustrative Moon, mass-weighted Solar reflex and a prominent gold Solar trail |
+| **Sun & all planets** | Inspect Earth, Jupiter or Saturn at physical body size; compare full Galactic and 98% frames | Eight planetary orbits, illustrative Moon, mass-weighted Solar reflex and a prominent gold Solar trail |
 | **Heliosphere** | Show the heliosphere in Sun & all planets | A labelled 120 AU reference envelope, 90 AU shock scale and radial 400 km/s wind tracers |
 | **Space & Time** | Play the entire Solar System, then select Earth | All-body positions on a years clock; summed weak field at a fixed test point; separate isolated-body clock experiments |
 | **Coupled 1PN lab** | Integrate, then play all planets | Sun, eight planets and Moon with Newtonian/first-post-Newtonian comparison |
 | **Research report** | Compare 100 / 1,000 / 10,000 years; inspect Proxima and catalogue experiments | Equations, uncertainty propagation, sensitivity controls, tutorial and CSV exports |
+
+### New visual controls
+
+- **Detailed Gaia reconstruction:** structured dust and starlight on a bent 3D disk; measured VLBI positions remain separately selectable.
+- **Inspect a planet:** follow any of the ten bodies with physical body radii and a close camera. Choose Whole system to return to the wide view, or the path tours to compare moving frames.
+- **Space & Time:** the whole system now has Sun-centred lighting and complete orbit guides at the starting epoch; isolated-body views frame the selected body and clock more closely.
+- **Mapped planets:** shared surface maps, a restrained Solar glow, Earth’s atmospheric limb and approximate Saturn ring bands extend across the main views and 1PN lab. Maps are appearance assets, not precision surface, spin or cloud forecasts.
+
+Planet textures: [Solar System Scope / INOVE](https://www.solarsystemscope.com/textures/), CC BY 4.0; see [asset provenance and hashes](assets/planets/sources.json). Source colours are enhanced and some mapping gaps are filled. Scene-construction tests do not replace visual inspection of the actual WebGL renderer.
 
 The scene occupies the space between the controls rather than rendering behind them. Labels have collision avoidance and leader lines; a permanent body-colour key remains available. Planet histories are capped at two revolutions by default to reduce clutter; the cap changes drawing history, not physics. The Sun keeps the selected full trail. The Moon requires a close-up to resolve at its physical orbital scale.
 

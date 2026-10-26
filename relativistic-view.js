@@ -4,14 +4,14 @@ import R from './relativity.cjs';
 import SS from './solar-system.cjs';
 import earthImage from './earth.jpg';
 const $=id=>document.getElementById(id);
-export function initRelativity({onOpen}){
+export function initRelativity({onOpen,decorateBodies}){
  let renderer,scene,camera,controls,worker,workerURL,rows=null,meshes=[],trails=[],ghosts=[],last=0,playing=false,frame=0,index=0,playbackDay=0;
  const dialog=$('relativityDialog'),canvas=$('relativityCanvas'),status=$('relativityStatus');
  function stop() {playing=false;$('relativityPlay').textContent='Play';}
  function setup(){
   if(renderer)return;renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(900,610,false);renderer.setClearColor(0x040b14);
-  scene=new THREE.Scene();scene.add(new THREE.HemisphereLight(0xc7d9ed,0x111a28,1.3));const sunLight=new THREE.PointLight(0xfff0d5,2,0,0);sunLight.name='relativitySunlight';scene.add(sunLight);const earthTexture=new THREE.TextureLoader().load(earthImage);earthTexture.colorSpace=THREE.SRGBColorSpace;camera=new THREE.PerspectiveCamera(45,900/610,1e-6,1000);camera.up.set(0,0,1);controls=new OrbitControls(camera,canvas);controls.enableDamping=true;
-  R.names.forEach((n,i)=>{const color=SS.colors[n]||0xbfc7d0,mesh=new THREE.Mesh(new THREE.SphereGeometry(1,20,16),(n==='Sun'?new THREE.MeshBasicMaterial({color}):new THREE.MeshStandardMaterial({color:n==='Earth'?0xffffff:color,map:n==='Earth'?earthTexture:null,roughness:1})));mesh.rotation.x=Math.PI/2;scene.add(mesh);meshes.push(mesh);for(const list of [trails,ghosts]){const line=new THREE.Line(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({color:list===trails?color:0x758698,transparent:true,opacity:list===trails?.85:.3}));list.push(line);scene.add(line);}});
+  scene=new THREE.Scene();scene.add(new THREE.HemisphereLight(0xc7d9ed,0x111a28,.18));const sunLight=new THREE.PointLight(0xfff0d5,2,0,0);sunLight.name='relativitySunlight';scene.add(sunLight);const earthTexture=new THREE.TextureLoader().load(earthImage);earthTexture.colorSpace=THREE.SRGBColorSpace;camera=new THREE.PerspectiveCamera(45,900/610,1e-6,1000);camera.up.set(0,0,1);controls=new OrbitControls(camera,canvas);controls.enableDamping=true;
+  R.names.forEach((n,i)=>{const color=SS.colors[n]||0xbfc7d0,mesh=new THREE.Mesh(new THREE.SphereGeometry(1,64,40),(n==='Sun'?new THREE.MeshBasicMaterial({color}):new THREE.MeshStandardMaterial({color:n==='Earth'?0xffffff:color,map:n==='Earth'?earthTexture:null,roughness:1})));if(decorateBodies)decorateBodies(mesh,n);mesh.rotation.x=Math.PI/2;scene.add(mesh);meshes.push(mesh);for(const list of [trails,ghosts]){const line=new THREE.Line(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({color:list===trails?color:0x758698,transparent:true,opacity:list===trails?.85:.3}));list.push(line);scene.add(line);}});
  }
  function selected(){return $('relativityFocus').value;}
  function visible(i){const n=R.names[i],focus=selected();return ['all','bary','moon'].includes(focus)?['all','bary'].includes(focus)||['Earth','Moon'].includes(n):['Sun','Mercury','Venus','Earth','Mars'].includes(n);}
