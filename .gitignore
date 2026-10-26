@@ -11,3 +11,10 @@ tmp/
 # Outreach drafts are maintained outside the public project.
 OUTREACH.md
 Outrage.md
+
+# Local LaTeX compiler products; the published PDF lives in output/pdf/.
+report-latex/*.aux
+report-latex/*.out
+report-latex/*.xdv
+report-latex/*.synctex.gz
+report-latex/main.pdf

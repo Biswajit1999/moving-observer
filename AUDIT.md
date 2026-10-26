@@ -1,3 +1,9 @@
+## Illustrated report: LaTeX edition — 26 October 2026
+
+- Rebuilt the canonical six-page report in LaTeX with native equations, embedded text fonts, three vector chart assets, a high-resolution credited Galaxy reconstruction with vector labels, linked references, quantitative tables and a reader tutorial. The original discussion note remains unchanged.
+- All six final page renders were visually inspected for equation rendering, table spacing, figure labels, paragraph alignment and page boundaries. Page count, author metadata and extractable text are checked before the build replaces the canonical PDF. Source and reproducible build instructions are in `report-latex/`.
+- This changes the report's presentation, not the simulation, observational inputs or numerical results. The figures distinguish schematic artwork, model trajectories and the original Finding Earth 2.0 plot. The stated uncertainty and model limitations remain alongside the results. The legacy ReportLab generator now writes a separate temporary PDF.
+
 ## Current rendering: v7.4 — 26 October 2026
 
 - Default Galaxy appearance now uses the credited ESA/Gaia reconstruction on a tessellated warped disk, with a shallow emissive volume at grazing angles. The earlier synthetic sampler remains an archived structural experiment. This change does not fit a new Galactic mass, dust or star-density model.

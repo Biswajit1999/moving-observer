@@ -1,4 +1,4 @@
-"""Six-page illustrated discussion report. Reproduce after node export-illustrated.cjs.
+"""Legacy ReportLab layout. The canonical report is built by report-latex/build_report.py.
 Numerical figures are generated from the project modules; no browser screenshots.
 """
 import json, math, runpy
@@ -92,7 +92,7 @@ def figures():
         for i,e in enumerate(rows):fig.text(.04,1-(i+.8)/len(rows),e,fontsize=17,color=INK)
         save(fig,name)
 
-DEST=ROOT/'output/pdf/Moving_Observer_Illustrated_Report.pdf'
+DEST=TMP/'Legacy_Illustrated_Report.pdf'
 styles={
  'body':ParagraphStyle('body',fontName='Times-Roman',fontSize=10.8,leading=14.6,textColor=colors.HexColor(INK),alignment=TA_JUSTIFY),
  'small':ParagraphStyle('small',fontName='Helvetica',fontSize=8.3,leading=11.3,textColor=colors.HexColor(GRAY)),

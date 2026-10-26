@@ -1,0 +1,53 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newpxtext,newpxmath}
+\usepackage{tgheros}
+\setsansfont{texgyreheros-regular.otf}[BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf,BoldItalicFont=texgyreheros-bolditalic.otf]
+\usepackage{microtype}
+\usepackage[a4paper,left=18mm,right=18mm,top=18mm,bottom=18mm,headheight=13pt,headsep=6mm,footskip=9mm]{geometry}
+\usepackage{graphicx,xcolor,booktabs,tabularx,array,amsmath,enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{fancyhdr,titlesec,caption,multicol}
+\usepackage[pdfencoding=auto,psdextra]{hyperref}
+\definecolor{ink}{HTML}{183B50}
+\definecolor{teal}{HTML}{237F85}
+\definecolor{gold}{HTML}{AA7939}
+\definecolor{muted}{HTML}{5D6F79}
+\definecolor{pale}{HTML}{EFF5F6}
+\definecolor{rule}{HTML}{CEDADD}
+\hypersetup{colorlinks=true,linkcolor=teal,urlcolor=teal,citecolor=teal,
+ pdftitle={The Moving Observer: Does a moving viewpoint change the exoplanet sky?},
+ pdfauthor={Biswajit Jana},pdfsubject={An illustrated research report from Finding Earth 2.0}}
+\graphicspath{{images/}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5.5pt}
+\linespread{1.12}\setlength{\emergencystretch}{1.5em}\setlength{\columnsep}{7mm}
+\setlist{nosep,leftmargin=1.2em,topsep=3pt}
+\captionsetup{font={small,sf},labelfont={bf,color=ink},textfont={color=muted},skip=5pt,justification=raggedright,singlelinecheck=false}
+\titleformat{\section}{\Large\bfseries\color{ink}}{}{0pt}{}
+\titleformat{\subsection}{\large\bfseries\color{ink}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0pt}{8pt}\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\scriptsize\color{muted}FINDING EARTH 2.0\quad /\quad THE MOVING OBSERVER}
+\fancyhead[R]{\sffamily\scriptsize\color{muted}26 OCTOBER 2026\quad /\quad v7.4}
+\fancyfoot[L]{\sffamily\scriptsize\color{muted}Biswajit Jana\quad\textbar\quad Independent research\quad\textbar\quad Not peer reviewed}
+\fancyfoot[R]{\sffamily\scriptsize\color{muted}\thepage\ / 6}
+\renewcommand{\headrulewidth}{.3pt}\renewcommand{\footrulewidth}{.3pt}
+\renewcommand{\headrule}{\color{rule}\hrule width\headwidth height\headrulewidth}
+\renewcommand{\footrule}{\color{rule}\hrule width\headwidth height\footrulewidth\vskip3pt}
+\newcommand{\kicker}[1]{{\sffamily\small\bfseries\color{teal}#1}\par\vspace{4pt}}
+\newcommand{\takeaway}[2]{\par\vspace{5pt}\begingroup\setlength{\fboxsep}{9pt}\colorbox{pale}{\parbox{\dimexpr\linewidth-18pt\relax}{\color{ink}\textbf{#1}\enspace #2}}\endgroup\par}
+\newcommand{\figcap}[1]{\captionof{figure}{#1}}
+\newcommand{\unit}[1]{\,\mathrm{#1}}
+\newcommand{\source}[1]{{\sffamily\scriptsize\color{muted}#1}}
+\newcommand{\reportpage}[2]{\newpage\kicker{#1}\section*{#2}}
+\newcommand{\reference}[3]{\noindent\makebox[2.2em][l]{\textcolor{teal}{[#1]}}\parbox[t]{\dimexpr\linewidth-2.2em\relax}{\href{#3}{#2}}\par\vspace{3pt}}
+\begin{document}\color{ink}
+\input{sections/01-question}
+\input{sections/02-geometry}
+\input{sections/03-experiment}
+\input{sections/04-neighbourhood}
+\input{sections/05-physics}
+\input{sections/06-guide}
+\end{document}

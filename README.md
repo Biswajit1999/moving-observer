@@ -209,9 +209,10 @@ The build embeds scripts, equations and report illustrations in the offline HTML
 | `research.cjs`, `future-sightlines.cjs` | Frozen catalogue experiment and nominal 100–10,000-year comparisons |
 | `milky-way-model.cjs`, `import-milky-way.py` | Synthetic light, published arm segments and frozen VLBI import |
 | `gas-hydro.cjs`, `validate-gas.cjs` | Isothermal finite-volume experiment and numerical checks |
-| `illustrated-report.py`, `report-assets.py` | Six-page report and original-figure provenance |
+| `report-latex/main.tex`, `report-latex/build_report.py` | Canonical six-page LaTeX report and checked PDF build |
+| `report-latex/build_figures.py`, `report-assets.py` | Vector quantitative figures and original-figure provenance |
 
-PDF generation uses Python with NumPy, Matplotlib, Pillow, ReportLab and pypdf. Run `node export-illustrated.cjs`, then `python illustrated-report.py`. The committed figure assets suffice to rebuild the PDF. `report-assets.py` optionally re-extracts the original-note figures and copies the related project's plot from a sibling `finding-earth-2` checkout; hashes identify the source version.
+The illustrated PDF is typeset in **LaTeX**, with native equations, vector charts, centred author attribution, an annotated Galactic illustration, quantitative comparisons and a reader's tutorial. Install Tectonic and Python with `pypdf`, then run `python report-latex/build_report.py`. Committed figures suffice to rebuild it; use `--refresh-figures` to regenerate numerical plots with Node, NumPy, Matplotlib and Pillow. See [editable source and build instructions](report-latex/README.md). The older `illustrated-report.py` is retained for comparison and writes only to `tmp/illustrated/Legacy_Illustrated_Report.pdf`. `report-assets.py` optionally re-extracts the original-note figures and copies the related project's plot from a sibling `finding-earth-2` checkout; hashes identify the source version.
 
 Verification covers units, barycentric identities, frame invariance, Galactic integration, astrometric covariance, detection inequalities, clock rates, 1PN benchmarks and scene construction. **Live WebGL rendering was not revalidated in the restricted browser environment**; source-level scene checks cannot establish visual perfection. See [audit](AUDIT.md).
 
