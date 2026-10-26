@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-25",
-  "version": "7.3.0",
+  "date": "2026-10-26",
+  "version": "7.3.1",
   "checks": [
     {
       "name": "Independent JPL Horizons comparisons: four bodies at six epochs",
@@ -41,7 +41,7 @@
       "name": "Offline HTML: no external runtime assets, matching build aliases",
       "status": "PASS",
       "details": {
-        "htmlBytes": 5042507,
+        "htmlBytes": 5047439,
         "note": "Source hyperlinks are allowed; images and application code are embedded."
       }
     },

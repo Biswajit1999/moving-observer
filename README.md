@@ -28,7 +28,9 @@ At an adopted Galactic tangential speed of **233 km/s**, the Sun travels approxi
 
 ## Evidence, gas and the next 10,000 years
 
-![Measured VLBI sources and synthetic Galactic structure](output/figures/Galaxy_Evidence_Model.png)
+![Continuous stellar light and dust: independent model preview](output/figures/Galaxy_Light_Preview.png)
+
+*Independent CPU projection of the volume equations, not a website screenshot. The natural-light view uses a warm core, subdued blue arm light and illustrative dust absorption. Measurement overlays are optional.*
 
 **New in v7.3:** the Galaxy no longer uses a filled blue/amber outer shell or photograph-derived particles. Inspect **199 VLBI measurements (198 distinct names)**, published spiral-arm segments, and a separate synthetic stellar-light distribution. The model adopts Reid et al. (2019) arm geometry and a Wegg et al. (2015) bar scale. It does not claim to reconstruct every star or uniquely determine the far side of the Galaxy. [Data, equations and assumptions](GALAXY_DATA_REPORT.md).
 

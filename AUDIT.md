@@ -1,3 +1,9 @@
+## Rendering update: v7.3.1 — 26 October 2026
+
+Replaced additive 190,000-point rendering with continuous 3D emission/absorption and bounded exposure, retaining approximately 6,130 faint point sources. The light-density map derives from the existing deterministic populations; the physical orbital models and observational catalogue are unchanged. Dust opacity and luminosity weights remain illustrative. Default measurement markers are off; evidence mode restores them. The Galaxy renders at at most one device pixel per CSS pixel to limit fragment cost; HTML labels remain sharp.
+
+The independent CPU projection was inspected for centre saturation, continuity and colour. Scene/data tests check finite light channels, bounded emission blending and transformed camera coordinates. These checks do not substitute for live WebGL shader, frame-rate or UI validation, which remains unavailable.
+
 ## Current release: v7.3 — 25 October 2026
 
 - Replaced the photo-derived Galaxy and filled outer surface with deterministic synthetic light plus selectable published arm fits and 199 archived VLBI parallax entries. Imported positions pass independent rounded Galactic-coordinate checks; raw table checksum is preserved across platforms.
