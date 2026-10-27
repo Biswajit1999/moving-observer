@@ -22,6 +22,17 @@ This project makes the question testable through explicit reference frames, a fi
 
 > **Current result:** in the selected 1,387-source experiment, 100 years of motion changes the baseline accessibility sum by **+0.00911 (+0.03075%)**. The chosen instrument-improvement scenario adds **+73.09093**. These are conditional accessibility scores, **not numbers of planets discovered**. A different angular threshold reverses the motion effect. No novelty, habitability discovery or institutional endorsement is claimed.
 
+## Compare and share the answer
+
+Open the [100-, 1,000- and 10,000-year comparison](https://biswajit1999.github.io/moving-observer/Report.html?years=1000&iwa=60#report-future-sightlines). It separates Solar path length, median sightline change and imaging-accessibility change, with a count of sources ending closer or farther.
+
+- **Copy answer** includes the selected interval, quantitative results and assumptions in one paragraph.
+- **Copy link** preserves the interval and the separate century sensitivity setting. Shared links open the public report, not a local server.
+- **Download CSV** exports all three intervals; **Save scenario (JSON)** includes baseline thresholds, the hypothetical planet, catalogue checksum, results and limitations.
+- Stable section links preserve earlier numbered links, and keyboard focus follows the destination heading.
+
+The timescale comparison always uses the fixed baseline thresholds. The century sensitivity control is a separate experiment; changing it does not silently change the timescale table. “Ends closer” compares two endpoints and does not assert continuous approach.
+
 ## A quantitative answer in one paragraph
 
 At an adopted Galactic tangential speed of **233 km/s**, the Sun travels approximately **4,915 AU (0.0777 light-years) in 100 years**; the integrated model including vertical motion gives **4,917.34 AU**. Travelling 100 light-years takes about **128,608 model years**, during which targets also move. The historical Proxima inputs imply present approach at **22.19 km/s** along the line of sight; a constant-velocity extrapolation reaches about **3.10 light-years after 26,700 years**, with important binary and acceleration omissions. A density scenario normalized to **373 stars within 10 pc** varies from about **292 to 397 stars** in an instantaneous 10 pc sphere over 250 Myr. That is neither a count of new arrivals nor a forecast of discoveries. Instrument capability, target selection, planet populations and observing time are still required to predict detections.
@@ -211,8 +222,12 @@ The build embeds scripts, equations and report illustrations in the offline HTML
 | `gas-hydro.cjs`, `validate-gas.cjs` | Isothermal finite-volume experiment and numerical checks |
 | `report-latex/main.tex`, `report-latex/build_report.py` | Canonical six-page LaTeX report and checked PDF build |
 | `report-latex/build_figures.py`, `report-assets.py` | Vector quantitative figures and original-figure provenance |
+| `report-latex/facts.cjs`, `facts.json`, `facts.tex` | Checked numerical report values and source checksums |
+| `research-summary.cjs`, `future-comparison.js` | Shared interval summaries, settings and provenance exports |
 
 The illustrated PDF is typeset in **LaTeX**, with native equations, vector charts, centred author attribution, an annotated Galactic illustration, quantitative comparisons and a reader's tutorial. Install Tectonic and Python with `pypdf`, then run `python report-latex/build_report.py`. Committed figures suffice to rebuild it; use `--refresh-figures` to regenerate numerical plots with Node, NumPy, Matplotlib and Pillow. See [editable source and build instructions](report-latex/README.md). The older `illustrated-report.py` is retained for comparison and writes only to `tmp/illustrated/Legacy_Illustrated_Report.pdf`. `report-assets.py` optionally re-extracts the original-note figures and copies the related project's plot from a sibling `finding-earth-2` checkout; hashes identify the source version.
+
+The PDF build checks 40 generated numerical macros against the model results and source checksums before compiling. `npm test` now also checks report facts, stale-value rejection, internal report links, shared settings and CSV/JSON exports. These checks preserve reproducibility; they do not establish a new scientific result.
 
 Verification covers units, barycentric identities, frame invariance, Galactic integration, astrometric covariance, detection inequalities, clock rates, 1PN benchmarks and scene construction. **Live WebGL rendering was not revalidated in the restricted browser environment**; source-level scene checks cannot establish visual perfection. See [audit](AUDIT.md).
 

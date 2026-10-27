@@ -1,6 +1,6 @@
 <div id="report-galaxy-data"></div>
 
-## 16. Building a Galaxy from evidence, and separating gas from stars
+## 19. Building a Galaxy from evidence, and separating gas from stars
 
 The default Galaxy view uses the detailed [ESA/Gaia artist’s reconstruction by Stefan Payne-Wardenaar](https://www.esa.int/ESA_Multimedia/Images/2025/01/The_best_Milky_Way_map_by_Gaia), geometrically mapped onto a warped 3D disk. A shallow emissive volume supplies thickness at grazing angles. This is an **illustrated reconstruction**, not an external photograph or a fitted three-dimensional density survey. Published VLBI measurements remain a separate, selectable evidence layer. The appearance does not determine any orbit, density readout or exoplanet result.
 
@@ -52,7 +52,7 @@ Tests preserve uniform gas exactly, conserve periodic mass, account for open-bou
 
 <div id="report-future-sightlines"></div>
 
-## 17. What changes after 100, 1,000 and 10,000 years?
+## 20. What changes after 100, 1,000 and 10,000 years?
 
 <!--FUTURE_RESULTS-->
 

@@ -22,8 +22,25 @@ function report(){
  // Keep the labelled report figure available in the single-file offline copy.
  html=html.replace('src="output/figures/Moving_Observer_Galactic_Map.png"','src="data:image/png;base64,'+fs.readFileSync(path.join(__dirname,'output/figures/Moving_Observer_Galactic_Map.png')).toString('base64')+'"');
  html=html.replace(/src="(output\/figures\/[^"]+\.png)"/g,(_,file)=>'src="data:image/png;base64,'+fs.readFileSync(path.join(__dirname,file)).toString('base64')+'"');
- let n=0;html=html.replace(/<h2>/g,()=>'<h2 id="report-section-'+(++n)+'">');
- const toc='<nav class="report-toc" aria-label="Report contents"><span>In this report</span><a href="#report-section-1">Overview</a><a href="#catalogueExperiment">Catalogue experiment</a><a href="#report-space-time">Space &amp; Time</a><a href="#report-environment">Density, speed &amp; 3D clocks</a><a href="#report-section-3">Equations &amp; frames</a><a href="#report-proxima">Proxima lab</a><a href="#report-section-14">Warp &amp; trajectories</a><a href="#report-section-12">Simulation tutorial</a><a href="#report-section-11">Review questions</a></nav>';
+ // Semantic headings keep shared links stable when sections are added or reordered.
+ const sectionIds={
+  'Report overview':'report-overview',
+  'Reference frames and equations':'report-equations',
+  'Questions for researchers and interested readers':'report-questions',
+  'Tutorial: using the simulation':'report-tutorial',
+  'A warped disk, vertical Solar motion, and planetary paths':'report-warp',
+  'Space & Time: what does a gravity grid mean?':'report-space-time',
+  'Are we entering a denser region, and how fast do other stars move?':'report-environment',
+  'Building a Galaxy from evidence, and separating gas from stars':'report-galaxy-data',
+  'What changes after 100, 1,000 and 10,000 years?':'report-future-sightlines'
+ };
+ // Move previously empty anchors onto their headings; preserve older numbered links.
+ for(const id of Object.values(sectionIds))html=html.replace('<div id="'+id+'"></div>','');
+ let n=0;html=html.replace(/<h2>([\s\S]*?)<\/h2>/g,(_,title)=>{
+  const legacy='report-section-'+(++n),key=title.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/^\d+\.\s*/,''),id=sectionIds[key];
+  return id?'<h2 id="'+id+'"><span id="'+legacy+'" aria-hidden="true"></span>'+title+'</h2>':'<h2 id="'+legacy+'">'+title+'</h2>';
+ });
+ const toc='<nav class="report-toc" aria-label="Report contents"><span>In this report</span><a href="#report-overview">Overview</a><a href="#report-future-sightlines">100–10,000 years</a><a href="#catalogueExperiment">Catalogue experiment</a><a href="#report-space-time">Space &amp; Time</a><a href="#report-environment">Density, speed &amp; 3D clocks</a><a href="#report-equations">Equations &amp; frames</a><a href="#report-proxima">Proxima lab</a><a href="#report-warp">Warp &amp; trajectories</a><a href="#report-tutorial">Simulation tutorial</a><a href="#report-questions">Review questions</a></nav>';
  html=html.replace(/^([\s\S]*?)(?=<h2)/,(_,intro)=>'<header class="report-cover"><p class="report-kicker">Finding Earth 2.0 / Research &amp; simulation report</p>'+intro+'</header>');
  html=html.replace(/(<h2[^>]*>[\s\S]*?<\/h2>)([\s\S]*?)(?=<h2|$)/g,(_,heading,body)=>'<section class="paper-section">'+heading+'<div class="section-body">'+body+'</div></section>');
 

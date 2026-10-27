@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "note": "Model results and assumptions, not discoveries. Source hashes are LF-normalized except the byte-frozen Gaia catalogue. No build timestamp is included.",
+  "sourceSha256": {
+    "data/gaia-nearby.csv": "d4048ebdb08ffcad8795b39726690c267f9fcd92055d18d268a31cceca745d08",
+    "data/research-results.json": "5ebebf9e441ba5e7808b1a7a35a6abfa460ff03c1695d9a8fa70c62d3c701cde",
+    "data/future-sightlines.json": "1354250228f0fde5e0776a4e5f690baeaa7a649f6d16af9ae39c03f403498ca2",
+    "data/proxima-input.json": "4bc2f8e61900e3859941a42b4b84c6a413328efacfe1de85acb4035838549ef5",
+    "data/ephemeris-jupiter.json": "444ba74e79f2cac35a56aff00054f05b0c75b1551b32c7db5092880e395d25d1",
+    "data/ephemeris-saturn.json": "0d48f25f10da2a6cc3e44113d7e03fb643d86cac0924bec90b1e1c2db2fd4cf3",
+    "data/ephemeris-uranus.json": "3949c3c3be80c19c0220dbd00f89f6cdfb31ecccd1e9fb6e2401beadbc4edf47",
+    "data/ephemeris-neptune.json": "39879cc9df12e063658d94ea1857881d111070a42c85bdaedb98a6ed82f0faec",
+    "research.cjs": "764e1bae50af13f3720034684a9e1030f8959c5ffdcbab5245f75d495b41cbb2",
+    "future-sightlines.cjs": "9cf69fa3a495b8aae267b7c2d9391744d64c4a2b0437da47beb6b0279da470eb",
+    "physics2026.cjs": "b4b6c8bddefab003e90f6c02cb7c7595b723050ebf2ac6e50969d29d3f2ca057",
+    "dynamics.cjs": "5d8f13411d310ab2ef33ab4eb042c7965b8355baf12c49b662ca780fbfbd21c8",
+    "galactic-clock.cjs": "1cd999d5a0641e2605e505c3cbf2ed0c496b5ae6ef5465072eeacef9ffaf5339",
+    "environment.cjs": "16f232b3fe6548460f194de9aab22a01f2d642b441730ca170b3c3efade6e034",
+    "stellar-motion.cjs": "e08e6214919a7ba31d373e58f96ba34162506e5a55c27f76e1f051624b12d4ec",
+    "journey.cjs": "ecc7ddd353fc5af8d89559a8c0cc2949b66c206af4d15c1871ab74a6afa78a52",
+    "solar-system.cjs": "04ff93afba77896251b640cb6721bb4ba0c6076f694a0a4dfd8be6adadec485d",
+    "ephemeris.cjs": "0d3f1fa5ea7a55ef47f616a4c8931c1934518d415bec4b3f689a110c25182343",
+    "lunar.cjs": "94505ebee8e826460fe109ebda9ca91666e6069a76cd413ac14422c17082abf2",
+    "export-illustrated.cjs": "208c70a46375936554254774c0e48efe8467839406f87046a1824b2f176f2db4",
+    "export-media.cjs": "0f7f8bbabb065151092538d3e5f3946200c7142c8cb22c5114348d4178b7a194",
+    "create-share-media.py": "ce693d2613802d245f798008b9e20df65c68ff582d200cd9364b5331a7ef911d",
+    "report-latex/build_figures.py": "69404eaabc30048e0a428399e4e6dfea94ba164bf47af983060c611769bf52dd"
+  },
+  "solar": {
+    "tangentialKmS": 233,
+    "centuryPathAU": 4915.12396907398,
+    "hundredLightYearsDurationYears": 128608.38154130938
+  },
+  "research": {
+    "epoch": 2026,
+    "years": 100,
+    "sampleSize": 1387,
+    "draws": 1024,
+    "sum": {
+      "c00": 29.63207064352205,
+      "c10": 29.641181766101873,
+      "c01": 102.72300367875344,
+      "c11": 102.72476156886137,
+      "motion": 0.009111122579828296,
+      "technology": 73.09093303523136,
+      "interaction": -0.007353232471903087
+    },
+    "motionPercent": 0.03074750559768966,
+    "interval": [
+      0.008679902131363701,
+      0.011524487023974428
+    ],
+    "gainers": 42,
+    "losers": 45,
+    "sensitivity70": -0.0014450650328183164
+  },
+  "future": [
+    {
+      "years": 100,
+      "solarPathLy": 0.07772043418116943,
+      "solarAngleDeg": 0.00016650148946727574,
+      "medianSightlineArcsec": 44.36565466091001,
+      "p90SightlineArcsec": 118.34834467177755,
+      "medianAbsDistanceChangePercent": 0.012603307847458556,
+      "approaching": 684,
+      "receding": 703,
+      "accessibilityInitial": 29.63207064352205,
+      "accessibilityFuture": 29.641181766101873,
+      "accessibilityChange": 0.009111122579828296,
+      "accessibilityChangePercent": 0.03074750559768966,
+      "gainers": 42,
+      "losers": 45
+    },
+    {
+      "years": 1000,
+      "solarPathLy": 0.7772043418116943,
+      "solarAngleDeg": 0.0016650148946727571,
+      "medianSightlineArcsec": 443.8913083783044,
+      "p90SightlineArcsec": 1183.7468264826648,
+      "medianAbsDistanceChangePercent": 0.12565951306097167,
+      "approaching": 682,
+      "receding": 705,
+      "accessibilityInitial": 29.63207064352205,
+      "accessibilityFuture": 29.715777043225852,
+      "accessibilityChange": 0.08370639970380156,
+      "accessibilityChangePercent": 0.28248582662616206,
+      "gainers": 41,
+      "losers": 46
+    },
+    {
+      "years": 10000,
+      "solarPathLy": 7.772043418116943,
+      "solarAngleDeg": 0.01665014894672757,
+      "medianSightlineArcsec": 4461.906028054607,
+      "p90SightlineArcsec": 11862.46660835004,
+      "medianAbsDistanceChangePercent": 1.2620724544660011,
+      "approaching": 667,
+      "receding": 720,
+      "accessibilityInitial": 29.63207064352205,
+      "accessibilityFuture": 30.137859609358003,
+      "accessibilityChange": 0.5057889658359576,
+      "accessibilityChangePercent": 1.7068971383089273,
+      "gainers": 43,
+      "losers": 46
+    }
+  ],
+  "density": {
+    "localStars": 373,
+    "localPerPc3": 0.08904719065991544,
+    "minimumRatio": 0.7836247963673773,
+    "maximumRatio": 1.0630654682549123,
+    "minimumStars": 292.2920490450317,
+    "maximumStars": 396.5234196590823
+  },
+  "proxima": {
+    "initial": {
+      "years": 0,
+      "rPc": [
+        -0.4742725407673498,
+        -0.36220945207042166,
+        -1.1549219544850031
+      ],
+      "distancePc": 1.2999903272896043,
+      "distanceLy": 4.240001362155811,
+      "radialKmS": -22.18857431649905,
+      "speedKmS": 32.513113797597704,
+      "transverseKmS": 23.764884569817227,
+      "xLy": 4.24000136215581,
+      "yLy": -1.3578987006355044e-16,
+      "fluxRatio": 1,
+      "angularSeparationRatio": 1
+    },
+    "closest": {
+      "years": 26680.80748699726,
+      "rPc": [
+        -0.7310650118344173,
+        0.24093135532195809,
+        -0.5571224137926468
+      ],
+      "distancePc": 0.9502049007745001,
+      "distanceLy": 3.0991538852530858,
+      "radialKmS": -1.869446093103039e-15,
+      "speedKmS": 32.513113797597704,
+      "transverseKmS": 32.513113797597704,
+      "xLy": 2.2652716317986745,
+      "yLy": 2.1150175504348576,
+      "fluxRatio": 1.871740811405102,
+      "angularSeparationRatio": 1.3681157887419844
+    }
+  }
+}

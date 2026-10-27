@@ -5,27 +5,27 @@ Many disk stars share Galactic rotation but have different three-dimensional vel
 
 \begin{minipage}[t]{.485\linewidth}\vspace{0pt}\setlength{\parskip}{3pt}
 \subsection*{Density is not a discovery count}
-A historical census of 373 stars within 10 pc [5] sets the local reference:
+A historical census of \ReportDensityLocalStars{} stars within 10 pc [5] sets the local reference:
 \[
- n_0=\frac{373}{(4\pi/3)(10\unit{pc})^3}
-     =0.0890\unit{pc^{-3}}.
+ n_0=\frac{\ReportDensityLocalStars{}}{(4\pi/3)(10\unit{pc})^3}
+     =\ReportDensityLocal\unit{pc^{-3}}.
 \]
-The adopted thin/thick-disk scenario [6] ranges over \textbf{0.784--1.063} times its initial density in 250 Myr: about \textbf{292--397 stars} in an instantaneous 10 pc sphere. It omits spiral-arm enhancements, clusters and migration. These are neither distinct arrivals nor planets found.
+The adopted thin/thick-disk scenario [6] ranges over \textbf{\ReportDensityMinRatio{}--\ReportDensityMaxRatio{}} times its initial density in 250 Myr: about \textbf{\ReportDensityMinStars{}--\ReportDensityMaxStars{} stars} in an instantaneous 10 pc sphere. It omits spiral-arm enhancements, clusters and migration. These are neither distinct arrivals nor planets found.
 \end{minipage}\hfill
 \begin{minipage}[t]{.485\linewidth}\vspace{0pt}\setlength{\parskip}{3pt}
 \subsection*{Proxima is approaching now}
-The adopted historical inputs [7] give about \textbf{4.24 ly} in 2026 and a radial velocity of \textbf{$-22.19\unit{km\,s^{-1}}$}; distance is decreasing. The total relative speed is about $32.51\unit{km\,s^{-1}}$.
+The adopted historical inputs [7] give about \textbf{\ReportProximaInitial{} ly} in 2026 and a radial velocity of \textbf{$\ReportProximaRadial\unit{km\,s^{-1}}$}; distance is decreasing. The total relative speed is about $\ReportProximaSpeed\unit{km\,s^{-1}}$.
 
-Straight-line propagation gives a minimum near \textbf{3.10 ly after 26,700 years}. This omits the Alpha Centauri system's orbital dynamics and Galactic differential acceleration. A negative radial speed today does not imply permanent approach.
+Straight-line propagation gives a minimum near \textbf{\ReportProximaClosest{} ly after \ReportProximaClosestYears{} years}. This omits the Alpha Centauri system's orbital dynamics and Galactic differential acceleration. A negative radial speed today does not imply permanent approach.
 \end{minipage}
 
 \subsection*{The next 100, 1,000 and 10,000 years}
 \begin{tabularx}{\linewidth}{@{}rXXX@{}}\toprule
-Years & Solar path at 233 km/s & Median sightline shift & Accessibility change\\\midrule
-100 & 0.0777 ly & 44.4 arcsec & $+0.0307\%$\\
-1,000 & 0.7772 ly & 443.9 arcsec & $+0.2825\%$\\
-10,000 & 7.7720 ly & $1.2394^\circ$ & $+1.7069\%$\\\bottomrule
+Years & Solar path at \ReportSolarSpeed{} km/s & Median sightline shift & Accessibility change\\\midrule
+100 & \ReportCenturyTablePath{} ly & \ReportCenturyTableSightline{} arcsec & $\ReportCenturyTableChange\%$\\
+1,000 & \ReportMillenniumTablePath{} ly & \ReportMillenniumTableSightline{} arcsec & $\ReportMillenniumTableChange\%$\\
+10,000 & \ReportTenMillenniaTablePath{} ly & $\ReportTenMillenniaTableSightline^\circ$ & $\ReportTenMillenniaTableChange\%$\\\bottomrule
 \end{tabularx}\par\vspace{7pt}
-The last two columns use the same selected 1,387 Gaia sources and baseline imaging thresholds as page 3. They are nominal constant-relative-velocity calculations, with \textbf{no new uncertainty propagation} for the longer intervals. Binary dynamics and differential Galactic acceleration are omitted. The score responds to distance and thresholds, not sky angle alone.
+The last two columns use the same selected \ReportSampleSize{} Gaia sources and baseline imaging thresholds as page 3. They are nominal constant-relative-velocity calculations, with \textbf{no new uncertainty propagation} for the longer intervals. Binary dynamics and differential Galactic acceleration are omitted. The score responds to distance and thresholds, not sky angle alone.
 
-\takeaway{Still local}{In 10,000 years, the model Sun sweeps only $0.01665^\circ$ around the Galactic centre. A path of 7.77 light-years does not place it in a different spiral arm. Closer targets may be easier to study, but none of these results establishes life or predicts a habitable-planet discovery.}
+\takeaway{Still local}{In 10,000 years, the model Sun sweeps only $\ReportTenThousandAngle^\circ$ around the Galactic centre. A path of \ReportTenThousandPath{} light-years does not place it in a different spiral arm. Closer targets may be easier to study, but none of these results establishes life or predicts a habitable-planet discovery.}

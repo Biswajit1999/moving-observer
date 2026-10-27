@@ -20,8 +20,10 @@ def main():
         parser.error('Tectonic was not found. Install it or pass --tectonic with its executable path.')
     if args.refresh_figures:
         for command in [['node', 'export-illustrated.cjs'], ['node', 'export-media.cjs'],
-                        [sys.executable, 'report-latex/build_figures.py']]:
+                        [sys.executable, 'report-latex/build_figures.py'],
+                        ['node', 'report-latex/facts.cjs', '--write']]:
             subprocess.run(command, cwd=ROOT, check=True)
+    subprocess.run(['node', 'report-latex/facts.cjs'], cwd=ROOT, check=True)
     staging = ROOT / 'tmp/latex-report'
     staging.mkdir(parents=True, exist_ok=True)
     subprocess.run([compiler, '--keep-logs', '--outdir', str(staging),

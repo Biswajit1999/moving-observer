@@ -4,7 +4,7 @@ This is the canonical source of the six-page illustrated report by **Biswajit Ja
 
 ## Build the PDF
 
-Install [Tectonic](https://tectonic-typesetting.github.io/) and Python with `pypdf`, then run from the repository root:
+Install [Tectonic](https://tectonic-typesetting.github.io/), Node.js and Python with `pypdf`, then run from the repository root:
 
 ```sh
 python report-latex/build_report.py
@@ -16,7 +16,7 @@ For an executable outside your PATH:
 python report-latex/build_report.py --tectonic /absolute/path/to/tectonic
 ```
 
-The build was checked with Tectonic 0.17.0. Its first run downloads the required TeX packages and fonts. The script checks the page count, author metadata and extractable text before replacing `output/pdf/Moving_Observer_Illustrated_Report.pdf`. Intermediate files stay in `tmp/latex-report/`.
+The build was checked with Tectonic 0.17.0. Its first run downloads the required TeX packages and fonts. The script first checks the frozen numerical facts and source hashes, then checks the page count, author metadata and extractable text before replacing `output/pdf/Moving_Observer_Illustrated_Report.pdf`. Intermediate files stay in `tmp/latex-report/`.
 
 All figure assets are committed, so editing and compiling the report does not require recomputing the simulation. `main.tex` includes six files in `sections/`; edit these to revise the narrative. The source uses XeTeX/OpenType fonts through Tectonic. A direct `tectonic main.tex` from this folder also compiles it, but does not perform the publishing checks or copy the canonical output.
 
@@ -28,7 +28,13 @@ With the project's Node dependencies and Python packages NumPy, Matplotlib and P
 python report-latex/build_report.py --refresh-figures
 ```
 
-This runs the existing numerical exports followed by `build_figures.py`. The three chart PDFs contain vector paths and embedded fonts; their plotted values come from the project modules. Refreshing figures does not automatically rewrite numerical claims in the prose: reconcile the text with any changed model results before publication.
+This runs the existing numerical exports followed by `build_figures.py`, and regenerates `facts.json` and `facts.tex`. The three chart PDFs contain vector paths and embedded fonts; their plotted values come from the project modules. Core quantitative statements on pages 1, 3 and 4 use generated LaTeX macros rather than manually copied numbers. Review the interpretation and assumptions whenever scientific inputs change: generated values cannot check whether the prose remains justified.
+
+## Check report consistency
+
+Run `node validate-report.cjs` without a PDF compiler. It checks that the source/data hashes, recorded facts and LaTeX values agree, and verifies that stale values or source hashes are rejected. Text hashes normalize LF/CRLF so a Windows checkout and Linux CI agree; the Gaia catalogue remains byte-frozen. The manifest has no build timestamp.
+
+Use `node report-latex/facts.cjs --write` to deliberately regenerate the facts after reviewing a numerical change. This command does not redraw the PDF charts; use the full `--refresh-figures` build when results change. Facts include provenance for plot inputs, but figure appearance still requires visual inspection. The original plot and reconstruction retain their separate source credits.
 
 ## Artwork and provenance
 

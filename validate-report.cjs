@@ -1,0 +1,16 @@
+const assert = require('node:assert/strict');
+const path = require('node:path');
+const F = require('./report-latex/facts.cjs');
+const args = process.argv.slice(2), i = args.indexOf('--root');
+const root = i >= 0 ? path.resolve(args[i + 1]) : __dirname;
+const facts = F.check(root, __dirname);
+console.log('PASS Report numerical facts and source provenance are current');
+const staleResult = structuredClone(facts);
+staleResult.research.sum.motion += .01;
+assert.throws(() => F.compareFacts(facts, F.serialize(staleResult), F.tex(facts)), /stale/);
+const staleSource = structuredClone(facts);
+staleSource.sourceSha256['data/gaia-nearby.csv'] = 'changed';
+assert.throws(() => F.compareFacts(facts, F.serialize(staleSource), F.tex(facts)), /stale/);
+assert.throws(() => F.compareFacts(facts, F.serialize(facts), F.tex(facts).replace('\\newcommand{\\ReportSolarSpeed}{', '\\newcommand{\\ReportSolarSpeed}{999')), /stale/);
+console.log('PASS A changed result, changed source checksum or edited LaTeX value is rejected');
+console.log('2 report consistency validation groups passed');

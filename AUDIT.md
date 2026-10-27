@@ -1,3 +1,11 @@
+## Reader tools and report consistency — 27 October 2026
+
+- Added a comparison for 100, 1,000 and 10,000 years that separates Solar travel, relative sightline change and conditional imaging accessibility. Source counts compare endpoint distances. The controls use the existing frozen outputs without changing physical models or inferred results.
+- Added a plain-language answer with assumptions, shareable interval/sensitivity settings, CSV export and a selected-scenario JSON record with catalogue checksum. Clipboard failure provides selectable text. The timescale comparison retains baseline thresholds independently of the century sensitivity experiment.
+- Replaced fragile contents links with semantic heading anchors while preserving old numbered fragments. Report navigation focuses the destination; section labels are unique and sticky-header offsets apply to anchor targets.
+- Core numerical claims on PDF pages 1, 3 and 4 now use 40 generated LaTeX macros checked against a deterministic source/results manifest. The PDF build rejects stale facts. The Proxima chart annotation reads its numerical inputs. The citation metadata now matches model version 7.4.0.
+- All six rebuilt PDF pages were visually inspected. New validation covers catalogue recomputation, shared settings, CSV/JSON fidelity, copy fallback, internal links and rejection of stale report facts. Interaction checks use a minimal DOM, not a browser renderer. Live WebGL/browser appearance has not been revalidated; prior browser-access restrictions still apply. Visual inspection of the PDF is separate from website rendering.
+
 ## Illustrated report: LaTeX edition — 26 October 2026
 
 - Rebuilt the canonical six-page report in LaTeX with native equations, embedded text fonts, three vector chart assets, a high-resolution credited Galaxy reconstruction with vector labels, linked references, quantitative tables and a reader tutorial. The original discussion note remains unchanged.

@@ -56,3 +56,23 @@
 .section-body p:has(>img){column-span:all}
 @media(max-width:720px){.report-article{padding:24px 20px 60px}.report-cover{padding-top:10px}.report-cover h1{font-size:31px}.report-cover p{font-size:13px}.report-article h2{font-size:24px}.section-body{columns:1}.report-article .section-body p{text-align:left}.report-equation{padding:16px 8px;font-size:13px}}
 @media print{.report-article{padding:0}.report-cover{position:static!important;background:none!important}.report-cover h1{font-size:24pt}.report-cover p{font-size:10pt}.section-body{columns:1}.report-article .section-body p,.report-article .section-body li{font-size:10.5pt;line-height:1.55}.report-equation{font-size:10pt}.report-article h2{font-size:16pt}}
+
+/* Reader comparison: separate travel, sightline geometry and conditional access. */
+#reportPage .report-article [id]{scroll-margin-top:130px}
+#reportPage .future-comparison{background:#f1f5f3;padding:28px 30px;border-top:2px solid #508998;border-bottom:1px solid #b7cbd0}
+.future-comparison h3{font:500 clamp(25px,3vw,34px)/1.2 Georgia,serif;margin:8px 0 14px}
+.future-comparison h4{font:600 16px/1.4 system-ui,sans-serif;margin:0 0 12px}
+.future-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 0}
+.future-toolbar label{margin:0}.future-toolbar>span{font:12px/1.5 system-ui,sans-serif;color:#50636b}
+.future-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid #b7cbd0;padding:22px 0;gap:24px;font-variant-numeric:tabular-nums}
+.future-metrics span{font-size:12px;display:block;color:#50636b}.future-metrics strong{font:500 clamp(26px,3vw,37px)/1.4 Georgia,serif;display:block;color:#183e50}
+.future-metrics small{font:14px/1.4 system-ui,sans-serif}.future-metrics p{font-size:12px;margin:4px 0 0!important;line-height:1.5!important}
+.future-findings{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:26px 0}.future-findings section{min-width:0}
+.future-count-bar{height:13px;display:flex;gap:3px;margin:18px 0 10px;overflow:hidden}.future-count-bar span:first-child{background:#3c777a}.future-count-bar span:last-child{background:#9f783e}
+.future-count-labels{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-variant-numeric:tabular-nums}.future-count-labels strong{font-size:21px;display:block}
+.future-findings p{margin:10px 0}.future-answer{font:17px/1.8 Georgia,serif;margin:0 0 20px;padding-top:20px;border-top:1px solid #b7cbd0}
+.future-comparison .future-assumptions{background:transparent;padding:0;margin:18px 0}.future-assumptions li{font-size:14px!important;text-align:left!important}
+#futureStatus{font:13px/1.5 system-ui,sans-serif;min-height:1.5em;margin-bottom:0}
+#futureCopyFallback[hidden]{display:none!important}#futureCopyText{display:block;width:100%;margin-top:8px;padding:10px;font:14px/1.6 system-ui,sans-serif;color:#202d3b;background:white;border:1px solid #81989c}
+@media(max-width:720px){#reportPage .future-comparison{padding:22px 16px}.future-metrics{grid-template-columns:1fr;gap:18px}.future-metrics>div{border-bottom:1px solid #d6e1de;padding-bottom:12px}.future-metrics>div:last-child{border:0;padding-bottom:0}.future-findings{grid-template-columns:1fr;gap:18px}.future-toolbar{align-items:flex-start}.future-comparison .lab-actions button{flex:1 1 180px}#reportPage .report-article [id]{scroll-margin-top:150px}}
+@media print{#reportPage .future-comparison{background:white;padding:15px 0;break-inside:auto}.future-metrics{grid-template-columns:repeat(3,1fr);break-inside:avoid}.future-metrics strong{font-size:19pt}.future-findings{break-inside:avoid}.future-toolbar,.future-assumptions,#futureStatus,#futureCopyFallback{display:none!important}}

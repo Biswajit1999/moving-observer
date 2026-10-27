@@ -37,7 +37,7 @@ h=D['density'];axs[0].plot([x['timeMyr'] for x in h],[x['ratio'] for x in h],c=T
 axs[0].axhline(1,c=GRAY,ls=':',lw=.8);axs[0].set(xlabel='Million years after 2026',ylabel='Density / initial density',title='A  Smooth-density scenario',ylim=(.75,1.1))
 h=D['proxima'];axs[1].plot([x['years']/1000 for x in h],[x['distanceLy'] for x in h],c=BLUE,lw=1.5)
 q=D['proximaClosest'];axs[1].scatter([q['years']/1000],[q['distanceLy']],s=18,c=GOLD,zorder=4)
-axs[1].annotate('3.10 ly at +26.7 kyr',(q['years']/1000,q['distanceLy']),xytext=(7,3.75),arrowprops={'arrowstyle':'-','color':GRAY},fontsize=8)
+axs[1].annotate(f"{q['distanceLy']:.2f} ly at +{q['years']/1000:.1f} kyr",(q['years']/1000,q['distanceLy']),xytext=(7,3.75),arrowprops={'arrowstyle':'-','color':GRAY},fontsize=8)
 axs[1].set(xlabel='Thousand years after 2026',ylabel='Sun–Proxima distance (ly)',title='B  Constant-velocity extrapolation')
 for ax in axs:ax.grid(alpha=.45)
 save(fig,'neighbourhood')
