@@ -241,3 +241,18 @@ Verification covers units, barycentric identities, frame invariance, Galactic in
 The simulation does not determine a future number of habitable planets. I am an independent researcher without a formal supervisor and welcome expert guidance on the assumptions, prior work and most useful next experiment.
 
 **Authorship:** Biswajit Jana, 2026. Numerical work and original project documents are attributed accordingly. Third-party data and artwork retain their source credits; the earlier Milky Way artwork remains credited to ESA/Gaia/DPAC, Stefan Payne-Wardenaar, CC BY-SA 3.0 IGO. The current measured layer and arm geometry cite Reid et al. (2019). The original discussion-note illustration has separate, unverified underlying image provenance. No NASA, ESA or ESO affiliation or endorsement is implied.
+
+## Research evidence and downloads
+
+- [Download the machine-readable table profiles](evidence/table-profiles.json) for 1 archived tables. Open `table-evidence.html` from the checkout for the coverage chart.
+- Start with [Provenance](output/figures/provenance.json), [Astropy comparison](data/astropy-comparison.json), [Extensions results](data/extensions-results.json).
+- [View Finding Earth 2 HZ](output/figures/Finding_Earth_2_HZ.png).
+
+Run these commands from the repository root to rebuild the published evidence.
+
+```sh
+python scripts/evidence_catalog.py
+python scripts/render_evidence_page.py
+python scripts/profile_evidence_tables.py
+python scripts/render_table_profiles.py
+```
