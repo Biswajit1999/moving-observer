@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "project": "The Moving Observer",
+  "repository": "https://github.com/Biswajit1999/moving-observer",
+  "files": [
+    {
+      "label": "Astropy comparison",
+      "path": "data/astropy-comparison.json",
+      "role": "Data and provenance",
+      "bytes": 434,
+      "sha256": "b24dec520cd212671bee0dc8caba256fe600e9e2f690834ce9d1a4fad8972412",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "comparison",
+        "astropy_version",
+        "sources",
+        "max_absolute_distance_difference_pc",
+        "scope"
+      ],
+      "arrays": {}
+    },
+    {
+      "label": "Extensions results",
+      "path": "data/extensions-results.json",
+      "role": "Data and provenance",
+      "bytes": 4141,
+      "sha256": "3e4b7a315af2cfd19510ec6c8ee9578f83e1d9f1a8a57cac1b056da77d0feb18",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "model",
+        "solarReflex",
+        "solarCentury",
+        "galacticHeightPc",
+        "isolatedSurfaceClocks",
+        "solarFieldAt1AU",
+        "catalogueTimeSweep"
+      ],
+      "arrays": {
+        "isolatedSurfaceClocks": 9,
+        "catalogueTimeSweep": 4
+      }
+    },
+    {
+      "label": "Horizons v7 comparison",
+      "path": "data/horizons-v7-comparison.json",
+      "role": "Data and provenance",
+      "bytes": 7767,
+      "sha256": "daeb10f232bc964aa6829b596be8850a934c30467651f501fea59184f7d0b805",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "records": 9,
+      "fields": [
+        "body",
+        "check",
+        "samples",
+        "maxPositionErrorKm"
+      ]
+    },
+    {
+      "label": "Relativity validation",
+      "path": "data/relativity-validation.json",
+      "role": "Data and provenance",
+      "bytes": 3044,
+      "sha256": "e54f7562f9d8003e0784122231f1937ebfe4af30e549096244649b4958e51942",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "model",
+        "epochJDTDB",
+        "stepDays",
+        "scope",
+        "mercury",
+        "convergence30days",
+        "horizons"
+      ],
+      "arrays": {
+        "horizons": 3
+      }
+    },
+    {
+      "label": "Research results",
+      "path": "data/research-results.json",
+      "role": "Data and provenance",
+      "bytes": 577882,
+      "sha256": "5ebebf9e441ba5e7808b1a7a35a6abfa460ff03c1695d9a8fa70c62d3c701cde",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "schema",
+        "epoch",
+        "years",
+        "draws",
+        "seed",
+        "sampleSize",
+        "catalogueSha256"
+      ],
+      "arrays": {
+        "sensitivity": 6,
+        "targets": 1387
+      }
+    },
+    {
+      "label": "Ephemeris jupiter",
+      "path": "data/ephemeris-jupiter.json",
+      "role": "Data and provenance",
+      "bytes": 78996,
+      "sha256": "444ba74e79f2cac35a56aff00054f05b0c75b1551b32c7db5092880e395d25d1",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "source",
+        "request",
+        "frame",
+        "units",
+        "states"
+      ],
+      "arrays": {
+        "states": 401
+      }
+    },
+    {
+      "label": "Ephemeris neptune",
+      "path": "data/ephemeris-neptune.json",
+      "role": "Data and provenance",
+      "bytes": 78701,
+      "sha256": "39879cc9df12e063658d94ea1857881d111070a42c85bdaedb98a6ed82f0faec",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "source",
+        "request",
+        "frame",
+        "units",
+        "states"
+      ],
+      "arrays": {
+        "states": 401
+      }
+    },
+    {
+      "label": "Ephemeris saturn",
+      "path": "data/ephemeris-saturn.json",
+      "role": "Data and provenance",
+      "bytes": 78749,
+      "sha256": "0d48f25f10da2a6cc3e44113d7e03fb643d86cac0924bec90b1e1c2db2fd4cf3",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "source",
+        "request",
+        "frame",
+        "units",
+        "states"
+      ],
+      "arrays": {
+        "states": 401
+      }
+    },
+    {
+      "label": "Ephemeris uranus",
+      "path": "data/ephemeris-uranus.json",
+      "role": "Data and provenance",
+      "bytes": 78764,
+      "sha256": "3949c3c3be80c19c0220dbd00f89f6cdfb31ecccd1e9fb6e2401beadbc4edf47",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "source",
+        "request",
+        "frame",
+        "units",
+        "states"
+      ],
+      "arrays": {
+        "states": 401
+      }
+    },
+    {
+      "label": "Future sightlines",
+      "path": "data/future-sightlines.json",
+      "role": "Data and provenance",
+      "bytes": 1961,
+      "sha256": "1354250228f0fde5e0776a4e5f690baeaa7a649f6d16af9ae39c03f403498ca2",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "epoch",
+        "sampleSize",
+        "method",
+        "epochs"
+      ],
+      "arrays": {
+        "epochs": 3
+      }
+    },
+    {
+      "label": "Gaia nearby",
+      "path": "data/gaia-nearby.csv",
+      "role": "Data and provenance",
+      "bytes": 466686,
+      "sha256": "d4048ebdb08ffcad8795b39726690c267f9fcd92055d18d268a31cceca745d08",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 1387,
+      "columns": 26,
+      "headers": [
+        "source_id",
+        "ra",
+        "dec",
+        "parallax",
+        "pmra",
+        "pmdec",
+        "radial_velocity"
+      ],
+      "preview": [
+        [
+          "630505494719360",
+          "46.613135424105224",
+          "1.961063920576691",
+          "67.9335016849359",
+          "389.253050210783",
+          "-925.0262599814663",
+          "-31.353418"
+        ],
+        [
+          "769456276704128",
+          "47.51489911594037",
+          "2.572769511017299",
+          "53.084367738704444",
+          "180.20093187991495",
+          "-320.7204528643748",
+          "-51.70547"
+        ],
+        [
+          "4267552520347776",
+          "47.56392170930795",
+          "5.90623884657126",
+          "55.240631750607875",
+          "-122.2030270613495",
+          "-563.343416515233",
+          "-5.684577"
+        ],
+        [
+          "14912165107085184",
+          "47.251989727646745",
+          "10.021186116181132",
+          "79.45324543622554",
+          "286.34308194709666",
+          "-586.2967992412398",
+          "-29.26276"
+        ]
+      ]
+    },
+    {
+      "label": "GAIA PROVENANCE",
+      "path": "data/GAIA_PROVENANCE.md",
+      "role": "Data and provenance",
+      "bytes": 2639,
+      "sha256": "f5c971af11bd85eeb0b08be617257e83f567686cefb6821961559dc0d09cfe4f",
+      "hash_basis": "LF-normalised text",
+      "format": "MD"
+    },
+    {
+      "label": "Provenance",
+      "path": "output/figures/provenance.json",
+      "role": "Tables and numerical results",
+      "bytes": 789,
+      "sha256": "0766c95f6317acdccebe519d004e57d939c6b08b294cc8bd7668aee233da6dc0",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "original_figures",
+        "hz_plot"
+      ],
+      "arrays": {}
+    },
+    {
+      "label": "Finding Earth 2 HZ",
+      "path": "output/figures/Finding_Earth_2_HZ.png",
+      "role": "Figures",
+      "bytes": 465673,
+      "sha256": "ce5e5a414b916f869f5c772a679b88c92d6ef6d40633afa316a8392f8d8c0671",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Galaxy Evidence Model",
+      "path": "output/figures/Galaxy_Evidence_Model.png",
+      "role": "Figures",
+      "bytes": 712534,
+      "sha256": "d02a1e9829415664422ec514c0353dc1aa0c22a77f891d11444e582296453280",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Galaxy Light Preview",
+      "path": "output/figures/Galaxy_Light_Preview.png",
+      "role": "Figures",
+      "bytes": 191547,
+      "sha256": "aafef76121293d19e7ed1d259e20945ba8c1ad85ad4bc65d5ee95138f526e8de",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Moving Observer Galactic Map",
+      "path": "output/figures/Moving_Observer_Galactic_Map.png",
+      "role": "Figures",
+      "bytes": 722374,
+      "sha256": "4177ae81fd07c30f215159e8d974b974e4dfe6f23b84b222ca5a541d6cd64607",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Original Discovery Sky",
+      "path": "output/figures/Original_Discovery_Sky.png",
+      "role": "Figures",
+      "bytes": 197543,
+      "sha256": "a3fd807ef640aef9d23ebbdce98c18e8bb1c521caa7edfcf1aa1bfbf4a5522db",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    },
+    {
+      "label": "Original Galactic Concept",
+      "path": "output/figures/Original_Galactic_Concept.png",
+      "role": "Figures",
+      "bytes": 516616,
+      "sha256": "e291b82b67e982e3f8ebd3b8d7c40e33f42bdfe9d0c6d0bbd5a8e3505bef88b5",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    }
+  ]
+}

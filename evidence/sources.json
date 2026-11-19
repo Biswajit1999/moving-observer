@@ -1,0 +1,101 @@
+{
+  "project": "The Moving Observer",
+  "repository": "https://github.com/Biswajit1999/moving-observer",
+  "files": [
+    {
+      "label": "Astropy comparison",
+      "path": "data/astropy-comparison.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Extensions results",
+      "path": "data/extensions-results.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Horizons v7 comparison",
+      "path": "data/horizons-v7-comparison.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Relativity validation",
+      "path": "data/relativity-validation.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Research results",
+      "path": "data/research-results.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Ephemeris jupiter",
+      "path": "data/ephemeris-jupiter.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Ephemeris neptune",
+      "path": "data/ephemeris-neptune.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Ephemeris saturn",
+      "path": "data/ephemeris-saturn.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Ephemeris uranus",
+      "path": "data/ephemeris-uranus.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Future sightlines",
+      "path": "data/future-sightlines.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Gaia nearby",
+      "path": "data/gaia-nearby.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "GAIA PROVENANCE",
+      "path": "data/GAIA_PROVENANCE.md",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Provenance",
+      "path": "output/figures/provenance.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Finding Earth 2 HZ",
+      "path": "output/figures/Finding_Earth_2_HZ.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Galaxy Evidence Model",
+      "path": "output/figures/Galaxy_Evidence_Model.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Galaxy Light Preview",
+      "path": "output/figures/Galaxy_Light_Preview.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Moving Observer Galactic Map",
+      "path": "output/figures/Moving_Observer_Galactic_Map.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Original Discovery Sky",
+      "path": "output/figures/Original_Discovery_Sky.png",
+      "role": "Figures"
+    },
+    {
+      "label": "Original Galactic Concept",
+      "path": "output/figures/Original_Galactic_Concept.png",
+      "role": "Figures"
+    }
+  ]
+}
