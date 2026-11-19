@@ -1,0 +1,250 @@
+{
+  "schema": 1,
+  "project": "The Moving Observer",
+  "tables": [
+    {
+      "path": "data/gaia-nearby.csv",
+      "label": "Gaia nearby",
+      "role": "Data and provenance",
+      "rows": 1387,
+      "width_mismatches": 0,
+      "columns": [
+        {
+          "name": "source_id",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 630505494719360.0,
+          "maximum": 6.916929660661726e+18
+        },
+        {
+          "name": "ra",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.5413575083856307,
+          "maximum": 358.73570743127874
+        },
+        {
+          "name": "dec",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -86.54629290223104,
+          "maximum": 84.40965990897092
+        },
+        {
+          "name": "parallax",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 50.0364884312193,
+          "maximum": 768.0665391873573
+        },
+        {
+          "name": "pmra",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -4406.469178827325,
+          "maximum": 6765.995136250774
+        },
+        {
+          "name": "pmdec",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -5817.8001940492695,
+          "maximum": 10362.394206546573
+        },
+        {
+          "name": "radial_velocity",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -414.01544,
+          "maximum": 245.05313
+        },
+        {
+          "name": "ref_epoch",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 2016.0,
+          "maximum": 2016.0
+        },
+        {
+          "name": "ra_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.006092232,
+          "maximum": 0.19945914
+        },
+        {
+          "name": "dec_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.006861597,
+          "maximum": 0.27729583
+        },
+        {
+          "name": "parallax_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.009651008,
+          "maximum": 0.1837598
+        },
+        {
+          "name": "pmra_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.008020839,
+          "maximum": 0.22984484
+        },
+        {
+          "name": "pmdec_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.010014353,
+          "maximum": 0.2787889
+        },
+        {
+          "name": "radial_velocity_error",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.115252845,
+          "maximum": 37.91321
+        },
+        {
+          "name": "ruwe",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 0.55199,
+          "maximum": 1.3993816
+        },
+        {
+          "name": "phot_g_mean_mag",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": 4.246856,
+          "maximum": 15.917443
+        },
+        {
+          "name": "ra_dec_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.83175534,
+          "maximum": 0.6913223
+        },
+        {
+          "name": "ra_parallax_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.6388919,
+          "maximum": 0.70293325
+        },
+        {
+          "name": "ra_pmra_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.90670186,
+          "maximum": 0.7953833
+        },
+        {
+          "name": "ra_pmdec_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.81611603,
+          "maximum": 0.85260355
+        },
+        {
+          "name": "dec_parallax_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.7990648,
+          "maximum": 0.4381961
+        },
+        {
+          "name": "dec_pmra_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.82803833,
+          "maximum": 0.8279847
+        },
+        {
+          "name": "dec_pmdec_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.9147546,
+          "maximum": 0.90386987
+        },
+        {
+          "name": "parallax_pmra_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.6631641,
+          "maximum": 0.6219364
+        },
+        {
+          "name": "parallax_pmdec_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.56925416,
+          "maximum": 0.6009549
+        },
+        {
+          "name": "pmra_pmdec_corr",
+          "blank": 0,
+          "text": 0,
+          "finite": 1387,
+          "nonfinite": 0,
+          "minimum": -0.90048206,
+          "maximum": 0.82352585
+        }
+      ]
+    }
+  ],
+  "excluded": []
+}
